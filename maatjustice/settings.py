@@ -34,6 +34,7 @@ INSTALLED_APPS = [
 
     # our apps
     'core',
+    'api',
 
     # django apps
     'django.contrib.admin',
@@ -42,6 +43,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # thirdparty apps
+    'rest_framework',
+
 ]
 
 MIDDLEWARE = [
@@ -128,3 +133,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'core.User'
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
