@@ -11,6 +11,6 @@ urlpatterns = [
         "reports/<pk>/",
         api_views.ReportRetrieveUpdateDestroyView.as_view(),
         name="api_report"),
-    path("users/", api_views.UserListView.as_view(), name="api_users_list"),
+    # path("users/", api_views.UserListView.as_view(), name="api_users_list"),
 
 ]
