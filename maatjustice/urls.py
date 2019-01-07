@@ -22,6 +22,7 @@ from core import views
 urlpatterns = [
     path('', include('pwa.urls')),
     path('', views.index, name='home'),
+    path('accounts/', include('allauth.urls')),
     path('about/', views.about, name='about'),
     path('faq/', views.faq, name='faq'),
     path('privacy/', views.about, name='privacy'),

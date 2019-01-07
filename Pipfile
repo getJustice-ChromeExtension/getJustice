@@ -9,6 +9,7 @@ django = "==2.1"
 djangorestframework = "*"
 python-dotenv = "*"
 django-progressive-web-app = "*"
+django-allauth = "*"
 
 [dev-packages]
 "autopep8" = "*"

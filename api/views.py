@@ -49,6 +49,6 @@ class ReportRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
         return super().check_object_permissions(request, report)
 
 
-class UserListView(generics.ListAPIView):
-    serializer_class = UserSerializer
-    queryset = User.objects.all()
+# class UserListView(generics.ListAPIView):
+#     serializer_class = UserSerializer
+#     queryset = User.objects.all()
