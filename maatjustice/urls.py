@@ -23,8 +23,8 @@ urlpatterns = [
     path('', views.index, name='home'),
     path('about/', views.about, name='about'),
     path('faq/', views.faq, name='faq'),
-    path('privacy/', views.about, name='about'),
-    path('terms/', views.about, name='about'),
+    path('privacy/', views.about, name='privacy'),
+    path('terms/', views.about, name='terms'),
     path("api/", include("api.urls")),
     path('admin/', admin.site.urls),
 ]

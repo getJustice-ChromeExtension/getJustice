@@ -1,4 +1,7 @@
 from django.shortcuts import render, redirect
+from django.core import serializers
+from core.models import User, Report, Tweet
+import json
 
 # Create your views here.
 def index(request):
