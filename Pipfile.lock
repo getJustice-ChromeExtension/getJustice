@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "17d2c7fc010744426e3f6db830f7d490a14ba82f6a34a10c580fcf168611b455"
+            "sha256": "201f1e0e0533d03fe0933455f663d7ae04cfac862e07f91b5ea960caaa80ac54"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -23,6 +23,14 @@
             ],
             "index": "pypi",
             "version": "==2.1"
+        },
+        "django-progressive-web-app": {
+            "hashes": [
+                "sha256:5c0db3b0d78557094c73333bb73a5ce168d07af75a7588c85de4093bcde37a64",
+                "sha256:d158db2cd4c95bd8fd254eb79ab206392d4fdf8c2ba836e6446bbceecb033bc3"
+            ],
+            "index": "pypi",
+            "version": "==0.1.1"
         },
         "djangorestframework": {
             "hashes": [
@@ -78,10 +86,10 @@
         },
         "pytz": {
             "hashes": [
-                "sha256:31cb35c89bd7d333cd32c5f278fca91b523b0834369e757f4c5641ea252236ca",
-                "sha256:8e0f8568c118d3077b46be7d654cc8167fa916092e28320cde048e54bfc9f1e6"
+                "sha256:32b0891edff07e28efe91284ed9c31e123d84bea3fd98e1f72be2508f43ef8d9",
+                "sha256:d5f05e487007e29e03409f9398d074e158d920d36eb82eaf66fb1136b0c5374c"
             ],
-            "version": "==2018.7"
+            "version": "==2018.9"
         }
     },
     "develop": {

@@ -8,6 +8,7 @@ django = "==2.1"
 "psycopg2" = "*"
 djangorestframework = "*"
 python-dotenv = "*"
+django-progressive-web-app = "*"
 
 [dev-packages]
 "autopep8" = "*"
