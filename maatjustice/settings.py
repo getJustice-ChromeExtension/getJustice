@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 from dotenv import load_dotenv
+import django_heroku
 
 load_dotenv()
 
@@ -164,3 +165,5 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+# Activate django_heroku
+django_heroku.settings(locals())
