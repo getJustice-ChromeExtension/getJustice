@@ -11,6 +11,8 @@ django-progressive-web-app = "*"
 django-allauth = "*"
 django = "==2.1.5"
 pillow = "*"
+gunicorn = "*"
+django-heroku = "*"
 
 [dev-packages]
 "autopep8" = "*"

@@ -5,10 +5,7 @@ import json
 
 # Create your views here.
 def index(request):
-    tweets = Tweet.objects.all()
-    return render(request, 'core/index.html', {
-        'tweets': tweets,
-    })
+    return render(request, 'core/index.html')
 
 def base_layout(request):
 	return render(request, 'core/base.html')
