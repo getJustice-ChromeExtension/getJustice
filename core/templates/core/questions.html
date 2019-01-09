@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+{% load pwa %}
+{% load static %}
+{% extends 'base.html' %}
+{% block title %}
+
+    Homepage -- {% block.super %}
+        
+{% endblock title %}
+<body>
+{% block content %}
+<h2>The injustice/violation you want to report:</h2>
+
+<p id="police">Police brutality? <button id="ypolice">Yes</button></p>
+<p id="hate">Hate crime? <button id="yhate">Yes</button></p>
+<p id="civil">Civil injustice? <button id="ycivil">Yes</button></p>
+
+{% endblock content %}
+</body>
+</html>

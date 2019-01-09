@@ -1,5 +1,6 @@
+from core.models import Report, User
 from rest_framework import serializers
-from core.models import Report, Tweet, User
+# SerializerMethodField
 
 
 class CreatableSlugRelatedField(serializers.SlugRelatedField):
@@ -19,18 +20,34 @@ class ReportSerializer(serializers.ModelSerializer):
     #     source="author.email", read_only=True)
     content = serializers.CharField(
         max_length=None, min_length=None, allow_blank=False, trim_whitespace=True)
+    picture = serializers.SerializerMethodField()
+    videofile = serializers.SerializerMethodField()
     queryset = Report.objects.all()
 
     class Meta:
         model = Report
         fields = ("content",
-                  "pk",)
+                  "pk", "picture", "videofile")
+
+    def get_picture(self, obj):
+        try:
+            picture = obj.image.url
+        except:
+            picture = None
+        return picture
+
+    def get_video(self, obj):
+        try:
+            videofile = obj.videofile.url
+        except:
+            videofile = None
+        return videofile
 
 
-class TweetSerializer(serializers.ModelSerializer):
-    content = serializers.CharField(
-        max_length=None, min_length=None, allow_blank=False, trim_whitespace=True)
-    queryset = Tweet.objects.all()
+# class TweetSerializer(serializers.ModelSerializer):
+#     content = serializers.CharField(
+#         max_length=None, min_length=None, allow_blank=False, trim_whitespace=True)
+#     queryset = Tweet.objects.all()
 
 
 class UserSerializer(serializers.ModelSerializer):

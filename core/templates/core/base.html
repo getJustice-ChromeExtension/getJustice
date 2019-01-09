@@ -4,15 +4,17 @@
 {% load static %}
 <head>
 {% progressive_web_app_meta %}
-	<title>MaatJustice</title>
+	<title>getJustice</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.min.css">
   	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
-  	<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+  	{% comment %} <script src="https://unpkg.com/onsenui/js/onsenui.min.js" defer></script> {% endcomment %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous" defer></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous" defer></script>
+	<script src="js/app.js" defer> </script>
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"> 
 	<style type="text/css">
 		.dropdown-span{
@@ -61,7 +63,10 @@
   js = d.createElement(s); js.id = id;
   js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=1056221064581632&autoLogAppEvents=1';
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));</script> 
+
+
+
 <script>
 // Facebook Login
   window.fbAsyncInit = function() {
@@ -101,9 +106,10 @@
 	}
 
 </script>
+{% block title %}
 	<div class="wrapper">	
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<a class="navbar-brand" href="#"><h2>MaatJustice</h2></a>	
+			<a class="navbar-brand" href="#"><h2>getJustice</h2></a>	
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  	</button>
@@ -119,12 +125,17 @@
 			        		<a class="nav-link" href="faq">FAQ</a>
 			      		</li>
 						  <li class="nav-item active">
+<<<<<<< HEAD
+						  <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div> 
+						  
+=======
 						  <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div>
+>>>>>>> master
 		  				</li>
 				  </ul>
 		  	</div>
 		</nav>
-
+{% endblock title %}
 
 
 
@@ -135,7 +146,7 @@
 			{% endblock %}
 		</div>
 		<div class="footer bg-dark">
-			<p>&copy MaatJustice 2019</p>
+			<p>&copy getJustice 2019</p>
 			<a class="alink" href="privacy">Privacy policy</a>&nbsp
 			<a class="alink" href="terms">Terms</a>
 		</div>
