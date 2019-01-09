@@ -10,6 +10,8 @@ python-dotenv = "*"
 django-progressive-web-app = "*"
 django-allauth = "*"
 django = "==2.1.5"
+gunicorn = "*"
+django-heroku = "*"
 
 [dev-packages]
 "autopep8" = "*"
