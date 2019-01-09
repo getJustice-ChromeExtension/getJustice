@@ -1,10 +1,11 @@
 from django.shortcuts import render
-from core.models import Report, Tweet, User
-from api.serializers import ReportSerializer, TweetSerializer, UserSerializer
+from core.models import Report,  User
+from api.serializers import ReportSerializer,  UserSerializer
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import generics
 from rest_framework.exceptions import PermissionDenied
+from django.core.mail import send_mail
 # from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
 
 
@@ -25,6 +26,15 @@ class ReportListCreateView(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         print(self.request)
         serializer.save(author=self.request.user)
+
+    # def save(self, *args, **kwargs):
+    #     retval = super().save(*args, **kwargs)
+    #     send_mail(
+    #         # f"""Dear madam/sir,
+    #         # I am a concerned Durhamite who wishes to raise this issue of civil injustice that I am aware of. I request you to take up this matter seriously and hope that my concerns as well as that of others in this matter of public importance will be addressed by you at the earliest. Regards.""", 'maatjusticeinfo@gmail.com', [to emails],
+    #         # message.attach
+    #         # fail_silently=False),
+    #     return retval
 
 
 class MyReportListCreateView(generics.ListCreateAPIView):

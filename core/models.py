@@ -18,6 +18,7 @@ class Report(models.Model):
         upload_to='images/', blank=True)
     videofile = models.FileField(
         upload_to='videos/', null=True, verbose_name="")
+    url = models.URLField(max_length=255, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
 
