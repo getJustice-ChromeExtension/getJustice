@@ -4,7 +4,7 @@
 {% load static %}
 <head>
 {% progressive_web_app_meta %}
-	<title>MaatJustice</title>
+	<title>getJustice</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.min.css">
@@ -106,9 +106,10 @@
 	}
 
 </script>
+{% block title %}
 	<div class="wrapper">	
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<a class="navbar-brand" href="#"><h2>MaatJustice</h2></a>	
+			<a class="navbar-brand" href="#"><h2>getJustice</h2></a>	
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  	</button>
@@ -130,7 +131,7 @@
 				  </ul>
 		  	</div>
 		</nav>
-
+{% endblock title %}
 
 
 
@@ -141,7 +142,7 @@
 			{% endblock %}
 		</div>
 		<div class="footer bg-dark">
-			<p>&copy MaatJustice 2019</p>
+			<p>&copy getJustice 2019</p>
 			<a class="alink" href="privacy">Privacy policy</a>&nbsp
 			<a class="alink" href="terms">Terms</a>
 		</div>

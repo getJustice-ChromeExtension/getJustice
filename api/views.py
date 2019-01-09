@@ -30,8 +30,7 @@ class ReportListCreateView(generics.ListCreateAPIView):
     # def save(self, *args, **kwargs):
     #     retval = super().save(*args, **kwargs)
     #     send_mail(
-    #         # f"""Dear madam/sir,
-    #         # I am a concerned Durhamite who wishes to raise this issue of civil injustice that I am aware of. I request you to take up this matter seriously and hope that my concerns as well as that of others in this matter of public importance will be addressed by you at the earliest. Regards.""", 'maatjusticeinfo@gmail.com', [to emails],
+    #         'maatjusticeinfo@gmail.com', [to emails],
     #         # message.attach
     #         # fail_silently=False),
     #     return retval
