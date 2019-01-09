@@ -10,10 +10,14 @@ class Report(models.Model):
 
     title = models.CharField(max_length=250)
 
-    author = models.ForeignKey(
-        to=User, on_delete=models.CASCADE, related_name="reports"
-    )
+    # author = models.ForeignKey(
+    #     to=User, on_delete=models.CASCADE, related_name="reports"
+    # )
     content = models.TextField()
+    picture = models.ImageField(
+        upload_to='images/', blank=True)
+    videofile = models.FileField(
+        upload_to='videos/', null=True, verbose_name="")
 
     created_at = models.DateTimeField(auto_now_add=True)
 

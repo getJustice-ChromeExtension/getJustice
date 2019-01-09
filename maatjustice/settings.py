@@ -18,7 +18,8 @@ load_dotenv()
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'core/static/js', 'serviceworker.js')
+PWA_SERVICE_WORKER_PATH = os.path.join(
+    BASE_DIR, 'core/static/js', 'serviceworker.js')
 
 
 # Quick-start development settings - unsuitable for production
@@ -59,6 +60,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.twitter',
 
 
+
 ]
 
 MIDDLEWARE = [
@@ -84,20 +86,20 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
 ]
 
-AUTHENTICATION_BACKENDS=(
+AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
 )
 
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL= 'home'
-
+LOGIN_REDIRECT_URL = 'home'
 
 
 WSGI_APPLICATION = 'maatjustice.wsgi.application'
@@ -164,3 +166,5 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_URL = "/media/"

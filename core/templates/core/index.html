@@ -1,14 +1,21 @@
 {% extends 'core/base.html' %}
-{% block content %}
+
 {% load static %}
+
 <br><br><br>
 
 <body>
+{% block content %}
+<div id="userfeed">
+
+</div>
+
     {% for tweet in tweets %}
         { tweet.body }
     {% endfor %}
   <ons-button onclick="alert('You clicked me!')">Test Button</ons-button>
 </body>
+{% endblock content %}
 
 
-{% endblock %}
+
