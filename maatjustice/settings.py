@@ -175,10 +175,5 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
-<<<<<<< HEAD
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-MEDIA_URL = "/media/"
-=======
 # Activate django_heroku
 django_heroku.settings(locals())
->>>>>>> master
