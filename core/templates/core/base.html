@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html>
-{% load pwa %}
+{% comment %} {% load pwa %} {% endcomment %}
 {% load static %}
 <head>
-{% progressive_web_app_meta %}
+{% comment %} {% progressive_web_app_meta %} {% endcomment %}
 	<title>getJustice</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
-	
-<body>
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+	<link rel="stylesheet"href="{% static 'css/style.css' %}">
+	<script src="{% static 'js/app.js' %}" defer></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 {% block title %}
+<header>
 	<h1>getJustice</h1>	
+	<h2 class="kicker">for a better tomorrow for all</h2>
 
-	<nav>
-				<a href="{% url 'home' %}">Home </a>
-			    <a href="{% url 'about' %}">About us</a>      		
-			    <a href="{% url 'faq' %}">FAQ</a>
-			    <a href="{% url 'questions' %}">Questionnaire</a>  		
-		  	</div>
-		</nav>
+	 <nav>
+				<a href="{% url 'home' %}" class="topbar">Home </a>
+			    <a href="{% url 'about' %}" class="topbar">About us</a>      		
+			    <a href="{% url 'faq' %}" class="topbar">FAQs</a>
+			    <a href="{% url 'questions' %}" class="topbar">Questionnaire</a>  		
+		  	
+	</nav>
+
+</header>
 {% endblock title %}
-
+<body>
 
 
 		
@@ -31,8 +36,8 @@
 		
 		<div> 
 			<p>&copy getJustice 2019</p>
-			<a href="{% url 'privacy' %}">Privacy policy</a>&nbsp
-			<a href="{% url 'terms' %}">Terms</a>
+			<a href="{% url 'privacy' %}" class="green">Privacy policy</a>&nbsp
+			<a href="{% url 'terms' %}" class="green">Terms</a>
 		</div>
 	
 </body>
