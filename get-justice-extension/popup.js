@@ -6,13 +6,14 @@ let screenshotButton = document.getElementById('screenshotButton');
 
 
 function takeScreenshot() {
-    captureTab = chrome.tabs.captureVisibleTab(function (dataUrl) {
-        chrome.storage.local.set({"captured": dataUrl}, function () {
-            console.log('screenshot: ' + dataUrl);
-        });
-    })
-    takeScreenshot.onlclick = captureTab
-    // redirect to question.html
+    captureTab = function () {
+        chrome.tabs.captureVisibleTab(function (dataUrl) {
+            chrome.storage.local.set({"captured": dataUrl}, function () {
+                console.log('screenshot: ' + dataUrl);
+            });
+        })
+    }
+    screenshotButton.addEventListener("click", captureTab)
 }
 
 
