@@ -27,7 +27,6 @@ class Report(models.Model):
     police_brutality = models.BooleanField(default=False)
     civil_rights_violation = models.BooleanField(default=False)
 
-
     def crime_categories(self):
         categories = []
         if self.hate_crime:
@@ -47,3 +46,8 @@ class Tweet(models.Model):
         to=User, on_delete=models.CASCADE, related_name="tweets"
     )
     body = models.TextField()
+
+
+class Email(models.Model):
+    address = models.EmailField(max_length=255)
+    owner = models.CharField(max_length=255)
