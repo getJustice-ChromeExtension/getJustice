@@ -25,17 +25,10 @@ urlpatterns = [
     path('', views.index, name='home'),
     path('accounts/', include('allauth.urls')),
     path('about/', views.about, name='about'),
+    path('question/', views.questions, name="questions"),
     path('faq/', views.faq, name='faq'),
     path('privacy/', views.about, name='privacy'),
     path('terms/', views.about, name='terms'),
     path("api/", include("api.urls")),
     path('admin/', admin.site.urls),
-<<<<<<< HEAD
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-=======
-]
-
-if settings.DEBUG:
-    urlpatterns += static(
-        settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
->>>>>>> master

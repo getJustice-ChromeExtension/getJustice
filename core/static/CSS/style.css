@@ -1,0 +1,47 @@
+nav {
+    float: right;
+}
+
+header {
+
+    background-color: darkolivegreen;
+    padding: 2rem;
+
+
+}
+
+.topbar {
+
+    color:blanchedalmond
+
+}
+
+.green {
+
+    color: darkolivegreen;
+
+}
+h1 {
+
+    font-family: Impact;
+    color: Ivory;
+    font-size: 5rem;
+
+}
+
+.kicker {
+
+    font-style: Italic;
+    color: moccasin;
+    font-size: 1.5rem;
+
+}
+
+body {
+
+    padding: 4rem;
+
+}
+
+
+
