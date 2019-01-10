@@ -23,6 +23,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', include('pwa.urls')),
     path('', views.index, name='home'),
+    path('create-report/', views.create_report, name='report'),
+    path('report-draft/', views.report_detail, name='report_detail'),
+    path('edit-report/', views.edit_report, name='edit_report'),
     path('accounts/', include('allauth.urls')),
     path('about/', views.about, name='about'),
     path('question/', views.questions, name="questions"),
