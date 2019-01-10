@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    {{ report.title }} - {{ block.super }}
+{% endblock title %}
+
+{{report.title}}
+{{report.content}}
+{{report.url}}
+{{report.picture}}
+
+        <p>
+            Would you like to edit your report?
+            <a href="{% url 'edit_report' id=report.id %}">
+            Edit Report
+            </a>
+        </p>
+
