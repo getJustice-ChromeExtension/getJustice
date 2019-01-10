@@ -167,6 +167,15 @@ STATICFILES_DIR = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.SUCCESS: 'bg-green white pa3 br3 ma3',
+    messages.INFO: 'bg-light-gray black pa3 br3 ma3',
+    messages.WARNING: 'bg-light-blue black pa3 br3 ma3',
+    messages.ERROR: 'bg-dark-red white pa3 br3 ma3',
+}
+
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,

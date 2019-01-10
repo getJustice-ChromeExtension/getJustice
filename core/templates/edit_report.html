@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Edit Report - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+    <h3>Edit Report</h3>
+    <form role='form' action='' method='post'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="f4 link grow ph2 pv2 mb2 dib white bg-green" type='submit' value="Submit" />
+    </form>
+{% endblock content %}
