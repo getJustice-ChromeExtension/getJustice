@@ -1,9 +1,14 @@
 from django.shortcuts import render, redirect
 from django.core import serializers
 from core.models import User, Report, Tweet
+from django.core.mail import send_mail
+import smtplib
 import json
 
-# Create your views here.
+
+def test_mail():
+    send_mail('hi', 'testing if this works', 'getJusticereport@gmail.com', [
+        'tiana.horn@gmail.com', 'dacs2010@gmail.com'], fail_silently=False)
 
 
 def index(request):
@@ -32,3 +37,6 @@ def terms(request):
 
 def privacy(request):
     return render(request, 'core/privacy.html')
+
+
+# def get_post(request):

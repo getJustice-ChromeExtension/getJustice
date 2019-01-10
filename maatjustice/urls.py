@@ -26,6 +26,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('about/', views.about, name='about'),
     path('question/', views.questions, name="questions"),
+    path('email/', views.test_mail, name="test_mail"),
     path('faq/', views.faq, name='faq'),
     path('privacy/', views.about, name='privacy'),
     path('terms/', views.about, name='terms'),

@@ -10,9 +10,9 @@ function emailModal() {
     })
     $('#email-form').on('submit', function (event) {
         event.preventDefault()
-        $("emails").append($("#policeemail").innerText())
-        $("subject").append($("#policesubject").innerText())
-        $("content").append($("#brutalpolice").innerText())
+        //  email-addresses $("#policeemail").innerText())
+        // $("subject").append($("#policesubject").innerText())
+        // $("content").append($("#brutalpolice").innerText())
 
         $("#email-modal").removeClass('is-active')
     }

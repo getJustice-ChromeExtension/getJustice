@@ -6,12 +6,10 @@
 
 <body>
 {% block content %}
-<h2>The injustice/violation you want to report:</h2>
+<p class="tagline">The injustice/violation you want to report:</h2>
 
 
 <p id="police">Police brutality?
-
-
       <div class="level-item">
         <div class="buttons">
           <button id="ypolice" class="button is-link">Yes</button>
@@ -22,16 +20,16 @@
 <p id="hate">Hate crime? <button id="yhate">Yes</button></p>
 <p id="civil">Civil injustice? <button id="ycivil">Yes</button></p>
 
-
- <div id="email-modal" class="modal is-active">
+<div id="modal-div">
+ <div id="email-modal" class="modal">
     <div class="modal-background"></div>
     <div class="modal-content">
       <div class="box">
       <form id="email-form">
         <div class="field">
-          <label class="label" for="email-ids">Email to</label>
+          <label class="label" for="email-addresses">Email to</label>
           <div class="control">
-            <input class="input" type="text" id="email-ids" name="email">
+            <input class="input" type="text" id="email-addresses" name="email">
           </div>
         </div>
         <div class="field">
@@ -60,8 +58,9 @@
     <button class="modal-close is-large" aria-label="close"></button>
     </div>
   </div>
-
+  </div> 
 
 {% endblock content %}
 </body>
-</html>
+</html>   
+
