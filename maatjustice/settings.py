@@ -1,3 +1,4 @@
+from django.contrib.messages import constants as messages
 """
 Django settings for maatjustice project.
 
@@ -167,8 +168,6 @@ STATICFILES_DIR = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-from django.contrib.messages import constants as messages
-
 MESSAGE_TAGS = {
     messages.SUCCESS: 'bg-green white pa3 br3 ma3',
     messages.INFO: 'bg-light-gray black pa3 br3 ma3',
@@ -186,3 +185,10 @@ REST_FRAMEWORK = {
 }
 # Activate django_heroku
 django_heroku.settings(locals())
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

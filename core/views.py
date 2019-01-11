@@ -1,12 +1,18 @@
 from django.shortcuts import render, redirect
 from django.core import serializers
 from core.models import User, Report, Tweet
+from django.core.mail import send_mail
+import smtplib
 import json
 from django.db.models import Count
 from django.contrib import messages
 from core.forms import ReportForm
 
-# Create your views here.
+
+def test_mail(request):
+    send_mail('hi', 'testing if this works', 'getJusticereport@gmail.com', [
+        'sowmya.aji@gmail.com', 'rebecca@momentum.com'], fail_silently=False)
+    return render(request, 'core/base.html')
 
 
 def index(request):
