@@ -30,6 +30,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('about/', views.about, name='about'),
     path('question/', views.questions, name="questions"),
+    path('email/', views.test_mail, name="test_mail"),
     path('faq/', views.faq, name='faq'),
     path('your-rights/', views.rights, name="rights"),
     path('your-reps/', views.reps, name='reps'),
