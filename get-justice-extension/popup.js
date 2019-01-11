@@ -1,4 +1,7 @@
 /****** not currently working ******/
+// the popup.js does not currently take screen shots
+// that functionality has been passed to the background.js
+// popup is being reserved for future app functionality
 
 
 // let screenshotButton = document.getElementById('screenshotButton');
