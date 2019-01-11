@@ -6,9 +6,10 @@ import smtplib
 import json
 
 
-def test_mail():
+def test_mail(request):
     send_mail('hi', 'testing if this works', 'getJusticereport@gmail.com', [
-        'tiana.horn@gmail.com', 'dacs2010@gmail.com'], fail_silently=False)
+        'sowmya.aji@gmail.com', 'rebecca@momentum.com'], fail_silently=False)
+    return render(request, 'core/base.html')
 
 
 def index(request):
@@ -37,6 +38,3 @@ def terms(request):
 
 def privacy(request):
     return render(request, 'core/privacy.html')
-
-
-# def get_post(request):
