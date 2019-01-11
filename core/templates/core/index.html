@@ -2,6 +2,16 @@
 
 {% load static %}
 
+{% block content %}
+<div id="wrapper">
+  <form id="sumbit-screenshot" method="POST">
+    {% csrf_token %}
+    <input id="new-screenshot" type="image" src="#"></input>
+  </form>
+</div>
+{% endblock %}
+
+
 <br><br><br>
 
 <body>
