@@ -56,7 +56,7 @@ INSTALLED_APPS = [
     # thirdparty apps
     'rest_framework',
     'pwa',
-    'allauth',
+    # 'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.twitter',

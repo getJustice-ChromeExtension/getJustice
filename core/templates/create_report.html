@@ -1,12 +1,22 @@
 {% extends 'core/base.html' %}
 
 {% block title %}
-    Create A Report - {{ block.super }}
+      {{ block.super }}
 {% endblock title %}
 
+{% comment %} {% block content %}
 <form id="post-form" role='form' action='' method='post'>
         {% csrf_token %}
         {{ form.as_p }}
         <input type='submit' value="Submit" />
 </form>
+{% endblock content %} {% endcomment %}
 
+{% block content %}
+<h2> Create a Report </h2>
+<form role='form' action='' method='post'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type='submit' value="Submit" />
+</form>
+{% endblock content %}

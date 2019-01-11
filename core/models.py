@@ -21,6 +21,7 @@ class Report(models.Model):
         upload_to='videos/', null=True, verbose_name="")
     url = models.URLField(max_length=255, null=True)
 
+
     created_at = models.DateTimeField(auto_now_add=True)
 
     hate_crime = models.BooleanField(default=False)

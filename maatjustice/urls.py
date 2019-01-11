@@ -21,15 +21,18 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path('', include('pwa.urls')),
+    # path('', include('pwa.urls')),
     path('', views.index, name='home'),
     path('create-report/', views.create_report, name='report'),
-    path('report-draft/', views.report_detail, name='report_detail'),
-    path('edit-report/', views.edit_report, name='edit_report'),
+    # path('report-sent/', views.report_sent, name='sent'),
+    path('report-draft/<int:id>', views.report_detail, name='report_detail'),
+    path('edit-report/<int:id>', views.edit_report, name='edit_report'),
     path('accounts/', include('allauth.urls')),
     path('about/', views.about, name='about'),
     path('question/', views.questions, name="questions"),
     path('faq/', views.faq, name='faq'),
+    path('your-rights/', views.rights, name="rights"),
+    path('your-reps/', views.reps, name='reps'),
     path('privacy/', views.about, name='privacy'),
     path('terms/', views.about, name='terms'),
     path("api/", include("api.urls")),

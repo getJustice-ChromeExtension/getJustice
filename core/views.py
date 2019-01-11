@@ -12,6 +12,11 @@ from core.forms import ReportForm
 def index(request):
     return render(request, 'core/index.html')
 
+def report_detail(request, id):
+    report = Report.objects.get(id=id)
+    return render(request, 'report_detail.html', {
+        'report': report,
+    })
 
 def create_report(request):
     form_class = ReportForm
@@ -22,10 +27,10 @@ def create_report(request):
             report.save()
             return redirect('report_detail', id=report.id)
         
-        else:
-            form = form_class()
+    else:
+        form = form_class()
 
-        return render(request, 'core/create_report.html', {
+    return render(request, 'create_report.html', {
             'form': form,
         })
 
@@ -39,21 +44,17 @@ def edit_report(request, id):
             form.save()
             message = f"Your report was sent!"
             messages.add_message(request, messages.SUCCESS, message)
-            return redirect('core/index.html')
-        else:
-            form = form_class(instance=report)
-            message = f"For some reason your report didn't save. Please try again or contact us for assistance."
-            messages.add_message(request, messages.ERROR, message)
-            return render(request, 'core/edit_report.html', {
-                'report': report,
-                'form': form,
+            return render(request, 'core/index.html')
+    else:
+        form = form_class(instance=report)
+        message = f"For some reason your report didn't save. Please try again or contact us for assistance."
+        messages.add_message(request, messages.ERROR, message)
+        return render(request, 'edit_report.html', {
+            'report': report,
+            'form': form,
             })
 
-def report_detail(request, id):
-    report = Report.objects.get(id=id)
-    return render(request, 'core/report_detail.html', {
-        'report': report,
-    })
+
 
 def questions(request):
     return render(request, 'core/questions.html')
@@ -73,6 +74,13 @@ def faq(request):
 
 def terms(request):
     return render(request, 'core/terms.html')
+
+def reps(request):
+    return render(request, 'reps.html')
+
+
+def rights(request):
+    return render(request, 'rights.html')
 
 
 def privacy(request):
