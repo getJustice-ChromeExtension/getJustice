@@ -4,7 +4,7 @@
 
 {% block content %}
 <div id="wrapper">
-  <form method="POST">
+  <form id="sumbit-screenshot" method="POST">
     {% csrf_token %}
     <input id="new-screenshot" type="image" src="#"></input>
   </form>
