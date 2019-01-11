@@ -1,22 +1,56 @@
 {% extends 'core/base.html' %}
 
-{% block title %}
-      {{ block.super }}
-{% endblock title %}
-
-{% comment %} {% block content %}
-<form id="post-form" role='form' action='' method='post'>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type='submit' value="Submit" />
-</form>
-{% endblock content %} {% endcomment %}
+{% load static %}
 
 {% block content %}
-<h2> Create a Report </h2>
-<form role='form' action='' method='post'>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type='submit' value="Submit" />
-</form>
-{% endblock content %}
+<div id="wrapper">
+
+<div>
+// Report Title and Email Subject 
+<h2> What type of report would you like to file? </h2.>
+<input type="checkbox" isActive=true id="hateCrime"><p>Hate Crime Report</p>
+<input type="checkbox" isActive=true id="policeBrut"><p>Police Brutality Report</p>
+<input type="checkbox" isActive=true id="civilRights"><p>Civil Rights Violation Report</p>
+</div>
+
+<div>
+<h2> These are the groups that handle those reports </h2>
+<p>Optional: deselect any groups you would not like to include in your email</p>
+<input type="checkbox" isActive=false id="hateCrime"><p>Mayor of Durham</p>
+<input type="checkbox" isActive=false id="hateCrime"><p>Southern </p>
+
+<input type="checkbox" isActive=false id="policeBrut"><p>Civilian Police Board Review</p>
+<input type="checkbox" isActive=false id="policeBrut"><p>Southern Coalition for Social Justice</p>
+
+<input type="checkbox" isActive=false id="civilRights"><p>NAACP</p>
+<input type="checkbox" isActive=false id="civilRights"><p>ACLLU</p>
+</div>
+
+<div id="hateCrime" isActive=false>
+    {{ report.title }}
+    {{ email.address }}
+    {{ report.content }}
+</div>
+
+<div id="policeBrut" isActive=false>
+    {{ report.title }}
+    {{ email.address }}
+    {{ report.content }}
+</div> 
+
+<div id="civilRights" isActive=false>
+    {{ report.title }}
+    {{ email.address }}
+    {{ report.content }}
+</div>
+
+  <form id="sumbit-screenshot" method="POST">
+    {% csrf_token %}
+    <input id="new-screenshot" type="image" src="#"></input>
+  </form>
+  
+</div>
+{% endblock %}
+
+
+<br><br><br>

@@ -44,7 +44,7 @@ def edit_report(request, id):
             form.save()
             message = f"Your report was sent!"
             messages.add_message(request, messages.SUCCESS, message)
-            return render(request, 'core/index.html')
+            return render (redirect, 'core/index.html')
     else:
         form = form_class(instance=report)
         message = f"For some reason your report didn't save. Please try again or contact us for assistance."
