@@ -24,13 +24,12 @@ urlpatterns = [
     # path('', include('pwa.urls')),
     path('', views.index, name='home'),
     path('create-report/', views.create_report, name='report'),
-    # path('report-sent/', views.report_sent, name='sent'),
-    path('report-draft/<int:id>', views.report_detail, name='report_detail'),
-    path('edit-report/<int:id>', views.edit_report, name='edit_report'),
-    path('accounts/', include('allauth.urls')),
+
+
+
     path('about/', views.about, name='about'),
-    path('question/', views.questions, name="questions"),
-    path('email/', views.test_mail, name="test_mail"),
+
+
     path('faq/', views.faq, name='faq'),
     path('your-rights/', views.rights, name="rights"),
     path('your-reps/', views.reps, name='reps'),
