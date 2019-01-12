@@ -18,21 +18,25 @@
 {% block header %}
 
 <header>
-
-	<h1>getJustice</h1>	
+	<img src="/static/GetJusticeFist.jpg">
+	<br><br>
+	<h1><strong>getJustice</strong></h1>		
 	<h2 class="kicker">for a better tomorrow for all</h2>
-
+ 	<br><br>	
 	 <nav>
-				<a href="{% url 'home' %}" class="topbar">Home </a>
-			    <a href="{% url 'about' %}" >About us</a>      		
-			    <a href="{% url 'faq' %}" class="topbar">FAQs</a>
-			
-				<a href="{% url 'report' %}" class="topbar">Report</a>	
-				<a href="{% url 'rights' %}" >Know Your Rights</a>
-				<a href="{% url 'reps' %}" class="topbar">Know Your Reps</a>	
+
+		<a href="{% url 'home' %}" class="topbar">Home  </a>
+		<a href="{% url 'about' %}"class="other">About us </a>      		
+		<a href="{% url 'faq' %}" class="topbar">FAQs </a>
+		
+		<a href="{% url 'report' %}" class="other">Report </a>	
+		<a href="{% url 'rights' %}" class="topbar">Know Your Rights </a>
+		<a href="{% url 'reps' %}" class="other">Know Your Reps</a>	
+
+
 		  	
 	</nav>
-
+   
 </header>
 {% endblock header %}
 
