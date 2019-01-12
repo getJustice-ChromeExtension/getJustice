@@ -1,11 +1,6 @@
-from django.forms import ModelForm
-from core.models import Report
+from django.forms import Form
 
 
-class ReportForm(ModelForm):
+class ReportForm(Form):
     class Meta:
-        model = Report
-        fields = ('title', 'content', 'picture', 'url', 'hate_crime', 'police_brutality', 'civil_rights_violation',)
-        # fields = ('hate_crime', 'police_brutality', 'civil_rights_violation', 'title', 'content', )
-
-        # def content_text
+        fields = ('send_to', 'subject', 'message', 'screenshot')
