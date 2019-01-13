@@ -37,11 +37,21 @@ h1 {
 
 }
 
+.box {
+
+    background-color: darkolivegreen;
+    padding: 2rem;
+
+
+}
+
 body {
 
     padding: 4rem;
 
 }
+
+
 
 
 
