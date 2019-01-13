@@ -1,23 +1,70 @@
 {% extends 'core/base.html' %}
 
-{% block title %}
-      {{ block.super }}
-{% endblock title %}
-
-{% comment %} {% block content %}
-<form id="post-form" role='form' action='' method='post'>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type='submit' value="Submit" />
-</form>
-{% endblock content %} {% endcomment %}
+{% load static %}
 
 {% block content %}
-<h2> Create a Report </h2>
-<form role='form' action='' method='post'>
-        {% csrf_token %}
-        {{ form.as_p }}
-        
-        <input type='submit' value="Submit" />
-</form>
-{% endblock content %}
+
+
+<div class="container">
+<div class="DivToScroll DivWithScroll">
+<div id="wrapper">
+<h4> What type of report would you like to file?</h4>
+<span><input type="radio" isActive=true id="hateCrime"><p isActive=true id="hateCrime">Hate Crime Report</p></span>
+<input type="radio" isActive=true id="policeBrut"><p isActive=true id="policeBrut">Police Brutality Report</p>
+<input type="radio" isActive=true id="civilRights"><p isActive=true id="civilRights" >Civil Rights Violation Report</p>
+</div>
+<br><br>
+<div>
+<h4> Who would you like to send your report to? </h4>
+<p>Optional: deselect any groups you would not like to include in your email</p>
+<input type="checkbox" isActive=false id="hateCrime" checked><p isActive=false id="hateCrime">Mayor of Durham</p>
+<input type="checkbox" isActive=false id="hateCrime" checked><p isActive=false id="hateCrime">Southern Poverty Law Center</p>
+
+<input type="checkbox" isActive=false id="policeBrut" checked><p isActive=false id="policeBrut">Civilian Police Board Review</p>
+<input type="checkbox" isActive=false id="policeBrut" checked><p isActive=false id="policeBrut">Southern Coalition for Social Justice</p>
+
+<input type="checkbox" isActive=false id="civilRights" checked><p isActive=false id="civilRights">NAACP</p>
+<input type="checkbox" isActive=false id="civilRights" checked><p isActive=false id="civilRights">ACLU</p>
+</div>
+
+
+<div id="hateCrime" isActive=false>
+    {{ report.title }}
+    {{ email.address }}
+    {{ report.content }}
+</div>
+
+<div id="policeBrut" isActive=false>
+    {{ report.title }}
+    {{ email.address }}
+    {{ report.content }}
+</div> 
+
+<div id="civilRights" isActive=false>
+    {{ report.title }}
+    {{ email.address }}
+    {{ report.content }}
+</div>
+
+  <form id="sumbit-screenshot" method="POST" class="form-group">
+                {% csrf_token %} 
+    <input type= "text" class="form-control" input type="hidden" id="emailRecipients" maxlength= "500" placeholder="Email Recipients">
+    <div class="form-group">
+    <input type= "text" class="form-control" input type="hidden" id="subject" maxlength= "500" placeholder="Subject">
+    <div class="form-group">
+    <textarea class="form-control" id="emailBody" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident(optional)"></textarea>
+        </div>
+   
+   <div class="form-group">
+    <label for="exampleFormControlFile1">Image/screenshot</label>
+    <input type="image" class="form-control-file" id="new-screenshot" src="#">
+          
+  </div>
+   <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+ </div> 
+</div>
+</div>
+{% endblock %}
+
+
