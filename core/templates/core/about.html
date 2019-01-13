@@ -1,27 +1,36 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-{% load static %}
+{% load static %} {% endcomment %}
 
 
 <body>
-
+<div class="container">
 <br>
 <br>
 <br>
 <br>
 
-<h1>About getJustice</h1>
-<h2>
-getJustice combines social media and social activism to 
-allow users to report cases of injustice they see online to 
-civil rights organizations and their local representatives quickly 
-and securely. Our goal is to increase police accountability, 
-decrease the length of time it takes for an instance of injustice 
-to be seen on social media before a suspect is charged with a crime, 
-and foster a new generation of political activists by providing millenials
-with easy access to activate their political power.
-<h2>
+{% comment %} <
+<p class="vision">
+
+<strong>getJustice<strong> 
+How often do we see an instance of injustice on social media and feel disturbed, angry and helpless?
+
+We are getJustice want to change that. We are combining social activism and social media to instantly allow users to report cases of hate crime, police brutality and injustice they see online to the elected representatives, the civilian police review board and civil rights groups.
+
+Our goal is to increase police accountability, decrease the length of time it takes between an instance of injustice being seen on social media and a suspect is charged with a crime, and foster a new generation of political activists by providing millenials
+with easy access to activate their political power. We wish to bring pressure by collective action on the police and other authorities to respond quickly and act proactively to end such instances of injustice.</p>
+
+<p class="vision">Join with us, report instances, click to send your reports and screenshots directly to the concerned authorities. </p>
+   
+<p class="vision">Click here to download our Chrome extension, which will allow you to activate your political power without leaving your social media page.</p>
+
+  <button type="submit" class="btn btn-primary">Download getJustice extension</button>
+<br>
+<br>                            
+                           <p class="vision">OR</p>
+
 
 <h2>
 Disclaimer:
@@ -35,6 +44,12 @@ although responses are encouraged. If you are in an emergency situation please
 contact 911. 
 </h2>
 </body>
+<p class="vision">Click here to report your instance from our website.</p>
+    <button type="submit" class="btn btn-primary">Submit report</button>
+ {% endcomment %}
+ </div>
+
+</body> 
 
 
 {% endblock %}

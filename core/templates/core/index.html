@@ -3,16 +3,64 @@
 {% load static %}
 
 {% block content %}
-<div id="wrapper">
-  <form id="sumbit-screenshot" method="POST">
-    {% csrf_token %}
-    <input id="new-screenshot" type="image" src="#"></input>
-  </form>
+
+<body>
+<div class="container-fluid">
+<iframe width=100% height=100% src="https://www.youtube.com/embed/bCTsG_Urtec" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<div class="scroll-left">
+<p class="goal">How often do we see an instance of injustice on social media and feel disturbed, angry and helpless? Act now. getJustice.</p>
 </div>
+
+
+<div class="jumbotron two">
+<div class ="row"> 
+
+
+{% comment %} <h2 class="head"><strong>getJustice</strong></h2>  {% endcomment %}
+<br>
+<br>
+<div class="col-lg-9 col-md-9 col-sm-6 col-xs-12">
+
+
+<p class="vision">We, at getJustice, want to change that. We are not helpless.</p>
+
+<p class="vision"> We want action.</p>
+
+<p class="vision">We are combining social activism and social media to instantly allow users to report cases of hate crime, police brutality and injustice that they see online to the elected representatives, the civilian police review board and civil rights groups.</p>
+<br>
+
+<p class="vision">We want action.</p>
+<p class="goal">
+Our goal is to increase police accountability, repair officer relations with their communities and decrease the length of time it takes between an instance of injustice beign seen on social media and a suspect is charged with a crime. We wish to bring pressure by collective action on the police and other authorities to respond quickly and act proactively to end such instances.</p>
+
+<p class="vision">We want action.</p>
+<p class="vision">Join with us, report instances. Just click to send your reports and screenshots directly to the concerned authorities. You can name yourself, if you want to. You can be anonymous, if you fear for yourself. But act, for a better tomorrow, now. </p>
+
+</div>
+
+<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"
+<div class="links">   
+  <button type="submit" class="btn btn-warning">Download getJustice extension</button>
+<p class="vision">Click to download our Chrome extensionow to report injustice without leaving your social media page.</p>
+
+                         
+                  <p class="vision">Or</p>
+ <a href="{% url 'report' %}" class="btn btn-danger other">Report </a>
+<p class="vision">Click here to report your instance from our website.</p>
+    
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+
 {% endblock %}
 
 
-<br><br><br>
+
+
 
 
 
