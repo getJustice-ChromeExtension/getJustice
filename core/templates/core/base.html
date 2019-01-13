@@ -8,51 +8,81 @@
 <head>
 {% comment %} {% progressive_web_app_meta %} {% endcomment %}
 	<title>getJustice</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 	<link rel="stylesheet"href="{% static 'css/style.css' %}">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+</head>   
 {% block header %}
 
-<header>
-	<img src="https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/4221929/910/910/m1/fpnw/wm1/cartoon-black-hand-in-fist-gesture-isolated-on-white-.jpg?1522599485&s=d2e5c135c830e7cd6cf5f2f1195c1797">
-	<br><br>
-	<h1><strong>getJustice</strong></h1>		
-	<h2 class="kicker">for a better tomorrow for all</h2>
- 	<br><br>	
-	 <nav>
+<div class="container-fluid">
 
-		<a href="{% url 'home' %}" class="topbar">Home  </a>
-		<a href="{% url 'about' %}"class="other">About us </a>      		
-		<a href="{% url 'faq' %}" class="topbar">FAQs </a>
+<div class="page-header">
+	<img src="/static/logo.png" id="fistLogo" class="img-responsive img-thumbnail pull-right" alt="Responsive image" style="max-width: 18%; max-height: 75%;">	
+	<h1>getJustice</h1>	
+	<h2 class="kicker"> ... and a better tomorrow for all</h2>	
+</div>
+ <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{% url 'home' %}" class="btn btn-default">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="{% url 'report' %}" class="btn btn-danger other">Report</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Other links  <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{% url 'rights' %}" class="btn btn-info">Your rights</a></li>
+            <li><a href="{% url 'reps' %}" class="btn btn-warning other">Your reps</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="{% url 'faq' %}" class="btn btn-info">FAQs</a></li>
+          </ul>
+        </li>
+      </ul> 
+	
+	<li class="dropdown">
+         
+          <ul class="dropdown-menu">
+            <li><a href="#">Email</a></li>
+            <li><a href="#">Phone</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Set Appointment</a></li>
+          </ul>
+        </li>
+	
+	 {% comment %} <nav>
+		<div class="btn-group btn-group-small" role="group">
+		<a href="{% url 'home' %}" class="btn btn-default topbar">Home  </a>
+		<a href="{% url 'about' %}" class="btn btn-info other">About us </a>      		
+		<a href="{% url 'faq' %}" class="btn btn-warning topbar">FAQs </a>
 		
-		<a href="{% url 'report' %}" class="other">Report </a>	
-		<a href="{% url 'rights' %}" class="topbar">Know Your Rights </a>
-		<a href="{% url 'reps' %}" class="other">Know Your Reps</a>	
+		<a href="{% url 'report' %}" class="btn btn-danger other">Report </a>	
+		<a href="{% url 'rights' %}" class="btn btn-default topbar">Know Your Rights </a>
+		<a href="{% url 'reps' %}" class="btn btn-warning other">Know Your Reps</a>	
+	  	
+	</nav> {% endcomment %}
+	</div>   
+</div>
 
-
-		  	
-	</nav>
-   
-</header>
+</head>
 {% endblock header %}
 
-
+<body>
 
 		
 			{% block content %}
-<body>
+
 
 			{% endblock %}
-		
+<div class="container">		
 		<div> 
 			<p>&copy getJustice 2019</p>
 			<a href="{% url 'privacy' %}" class="green">Privacy policy</a>&nbsp
 			<a href="{% url 'terms' %}" class="green">Terms</a>
 		</div>
-	
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>	
 </body>
 </html>

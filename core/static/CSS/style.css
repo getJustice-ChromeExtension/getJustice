@@ -1,59 +1,180 @@
-nav {
-    float: right;
+
+.jumbotron{
+    background-color: darkolivegreen;
+    color:white;
 }
 
-header {
+.two{
 
+    background-color: indianred;
+    color: ivory;
+}
+.page-header{
+    background-color: black;
+    color: ivory;
+
+}
+body {
+    background-color: darkolivegreen;
+    color: gainsboro;
+}
+
+a {
+    color: black;
+    font-size: 18px;
+}
+ nav {
+    float: right;
+    background-color: black;
+}
+
+.page-header {
+    margin-top: 0;
+    width: 100%;
     background-color: black;
     padding: 2rem;
 
 
 }
-header img {
-    float: right;
-    width: 180px;
-    height: 190px;
-    background: black;
+
+.page-header img {
+    
+    background-color: black;
  
   }
-.topbar {
 
-    color:blanchedalmond
 
+h1 {
+    font-size: 8em;
+    font-family: 'Pacifico', cursive;
+    padding-left: 15px;
+    color:wheat;
+
+
+} 
+
+.kicker {
+    padding-left: 15rem; 
+    padding-top: 5rem;
+    color: indianred;
+     font-size: 20px;
+     font-style: italic;
 }
 
-.other {
+.head {
+      font-family: fantasy;
+      font-style:italic;
+}
+/* body {
 
+    
+    background-color: indianred;
+    color: ivory;
+
+}  */
+
+.vision {
+
+    font-size: 18px;   
+    font-family: Arial;  
+}
+
+.goal {
+    font-size: 19px;
+    font-family: Arial;
     color: whitesmoke;
 }
 
-.green {
+.scroll-left {
+    height: 50px; 
+    overflow: hidden;
+    position: relative;
+    }
+    .scroll-left p {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
+    /* Starting position */
+    -moz-transform:translateX(100%);
+    -webkit-transform:translateX(100%); 
+    transform:translateX(100%);
+    /* Apply animation to this element */ 
+    -moz-animation: scroll-left 15s linear infinite;
+    -webkit-animation: scroll-left 15s linear infinite;
+    animation: scroll-left 20s linear infinite;
+    }
+    /* Move it (define the animation) */
+    @-moz-keyframes scroll-left {
+    0% { -moz-transform: translateX(100%); }
+    100% { -moz-transform: translateX(-100%); }
+    }
+    @-webkit-keyframes scroll-left {
+    0% { -webkit-transform: translateX(100%); }
+    100% { -webkit-transform: translateX(-100%); }
+    }
+    @keyframes scroll-left {
+    0% { 
+    -moz-transform: translateX(100%); 
+    -webkit-transform: translateX(100%); 
+    transform: translateX(100%); 
+    }
+    100% { 
+    -moz-transform: translateX(-100%); 
+    -webkit-transform: translateX(-100%); 
+    transform: translateX(-100%); 
+    }
+    }
 
-    color: darkolivegreen;
 
+ 
+div.slide-left {
+  width:100%;
+  overflow:hidden;
 }
-h1 {
-
-    font-family: Arial;
-
-    color:wheat;
-    font-size: 5rem;
-
+div.slide-left p {
+  animation: slide-left 10s;
 }
 
-.kicker {
+@keyframes slide-left {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
 
-    font-style: Italic;
-    color: moccasin;
-    font-size: 1.5rem;
-
-}
-
-body {
-
-    padding: 4rem;
-
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
 
 
 
+
+/* .links {
+    background-color: gainsboro;
+    color: indianred;
+    border:solid;
+    border-width: 2px;
+    border-color: blue;
+    padding: 2rem;
+}   */
+.DivToScroll{   
+    background-color: #F5F5F5;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px 0 4px 0;
+    padding: 2rem;
+    color: black;
+    font-size: 16px;
+    
+    /* font-weight: bold; */
+    left: -1px;
+    padding: 20px 7px 5px;
+}
+.DivWithScroll{
+    height:500px;
+    overflow:scroll;
+    overflow-x:hidden;
+}

@@ -3,18 +3,19 @@
 {% load static %}
 
 {% block content %}
+
+
+<div class="container">
+<div class="DivToScroll DivWithScroll">
 <div id="wrapper">
-
-{% comment %} <div select class="custom-select" multiple> {% endcomment %}
-
-<h2> What type of report would you like to file?</h2>
+<h4> What type of report would you like to file?</h4>
 <span><input type="radio" isActive=true id="hateCrime"><p isActive=true id="hateCrime">Hate Crime Report</p></span>
 <input type="radio" isActive=true id="policeBrut"><p isActive=true id="policeBrut">Police Brutality Report</p>
 <input type="radio" isActive=true id="civilRights"><p isActive=true id="civilRights" >Civil Rights Violation Report</p>
 </div>
-
+<br><br>
 <div>
-<h2> Who would you like to send your report to? </h2>
+<h4> Who would you like to send your report to? </h4>
 <p>Optional: deselect any groups you would not like to include in your email</p>
 <input type="checkbox" isActive=false id="hateCrime" checked><p isActive=false id="hateCrime">Mayor of Durham</p>
 <input type="checkbox" isActive=false id="hateCrime" checked><p isActive=false id="hateCrime">Southern Poverty Law Center</p>
@@ -49,6 +50,8 @@
                 {% csrf_token %} 
     <input type= "text" class="form-control" input type="hidden" id="emailRecipients" maxlength= "500" placeholder="Email Recipients">
     <div class="form-group">
+    <input type= "text" class="form-control" input type="hidden" id="subject" maxlength= "500" placeholder="Subject">
+    <div class="form-group">
     <textarea class="form-control" id="emailBody" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident(optional)"></textarea>
         </div>
    
@@ -59,9 +62,9 @@
   </div>
    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
-  
+ </div> 
+</div>
 </div>
 {% endblock %}
 
 
-<br><br><br>
