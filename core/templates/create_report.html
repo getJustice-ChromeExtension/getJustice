@@ -4,27 +4,27 @@
 
 {% block content %}
 
-
 <div class="container">
 <div class="DivToScroll DivWithScroll">
 <div id="wrapper">
-<h4> What type of report would you like to file?</h4>
-<span><input type="radio" isActive=true id="hateCrime"><p isActive=true id="hateCrime">Hate Crime Report</p></span>
-<input type="radio" isActive=true id="policeBrut"><p isActive=true id="policeBrut">Police Brutality Report</p>
-<input type="radio" isActive=true id="civilRights"><p isActive=true id="civilRights" >Civil Rights Violation Report</p>
+    <h4> What type of report would you like to file?</h4>
+    <input type="radio" id="hateCrime"><p>Hate Crime Report</p>
+    <input type="radio" id="policeBrut"><p>Police Brutality Report</p>
+    <input type="radio" id="civilRights"><p>Civil Rights Violation Report</p>
 </div>
+
 <br><br>
 <div>
-<h4> Who would you like to send your report to? </h4>
-<p>Optional: deselect any groups you would not like to include in your email</p>
-<input type="checkbox" isActive=false id="hateCrime" checked><p isActive=false id="hateCrime">Mayor of Durham</p>
-<input type="checkbox" isActive=false id="hateCrime" checked><p isActive=false id="hateCrime">Southern Poverty Law Center</p>
+    <h4> Who would you like to send your report to? </h4>
+    <p>Optional: deselect any groups you would not like to include in your email</p>
+    <input type="checkbox" isActive=false id="hateCrime" checked><p isActive=false id="hateCrime">Mayor of Durham</p>
+    <input type="checkbox" isActive=false id="hateCrime" checked><p isActive=false id="hateCrime">Southern Poverty Law Center</p>
 
-<input type="checkbox" isActive=false id="policeBrut" checked><p isActive=false id="policeBrut">Civilian Police Board Review</p>
-<input type="checkbox" isActive=false id="policeBrut" checked><p isActive=false id="policeBrut">Southern Coalition for Social Justice</p>
+    <input type="checkbox" isActive=false id="policeBrut" checked><p isActive=false id="policeBrut">Civilian Police Board Review</p>
+    <input type="checkbox" isActive=false id="policeBrut" checked><p isActive=false id="policeBrut">Southern Coalition for Social Justice</p>
 
-<input type="checkbox" isActive=false id="civilRights" checked><p isActive=false id="civilRights">NAACP</p>
-<input type="checkbox" isActive=false id="civilRights" checked><p isActive=false id="civilRights">ACLU</p>
+    <input type="checkbox" isActive=false id="civilRights" checked><p isActive=false id="civilRights">NAACP</p>
+    <input type="checkbox" isActive=false id="civilRights" checked><p isActive=false id="civilRights">ACLU</p>
 </div>
 
 
@@ -57,8 +57,7 @@
    
    <div class="form-group">
     <label for="exampleFormControlFile1">Image/screenshot</label>
-    <input type="image" class="form-control-file" id="new-screenshot" src="#">
-          
+    <input type="image" class="form-control-file" id="new-screenshot" src="#" disabled>
   </div>
    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
@@ -66,5 +65,3 @@
 </div>
 </div>
 {% endblock %}
-
-
