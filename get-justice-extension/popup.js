@@ -54,15 +54,3 @@
 
 // takeScreenshot()
 
-
-
-let NewWindowButton = document.getElementById('NewWindowButton');
-
-function openNewWindow(url,windowName) {
-    newwindow=window.open('https://fast-chamber-87303.herokuapp.com/', windowName,'height=200,width=150');
-    if (window.focus) {newwindow.focus()}
-    return false;
-  }
-  
-
-openNewWindow()

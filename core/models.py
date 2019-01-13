@@ -25,12 +25,23 @@ class Report(models.Model):
 
     def crime_categories(self):
         categories = []
+        recipients = []
+        self.content = "This "
         if self.hate_crime:
             categories.append("Hate Crime")
+            recipients.append("tiana.horn@gmail.com")
+            # self.content = self.content + "This is a Hate Crime"
         if self.police_brutality:
             categories.append("Police Brutality")
+            recipients.append("dacs2010@gmail.com")
+            # self.content = self.content + "This is Police Brutality"
         if self.civil_rights_violation:
             categories.append("Civil Rights Violation")
+            recipients.append("sowmya.aji@gmail.com")
+            # self.content = self.content + "This is a Hate Crime"
+
+
+            
 
     def __str__(self):
         return self.title

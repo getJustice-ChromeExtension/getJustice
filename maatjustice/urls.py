@@ -31,10 +31,10 @@ urlpatterns = [
 
 
     path('faq/', views.faq, name='faq'),
-    path('your_rights/', views.rights, name="rights"),
-    path('your_reps/', views.reps, name='reps'),
-    path('privacy/', views.about, name='privacy'),
-    path('terms/', views.about, name='terms'),
+    path('your-rights/', views.rights, name="rights"),
+    path('your-reps/', views.reps, name='reps'),
+    path('privacy/', views.privacy, name='privacy'),
+    path('terms/', views.terms, name='terms'),
     path("api/", include("api.urls")),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
