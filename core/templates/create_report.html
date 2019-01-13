@@ -4,27 +4,55 @@
 
 {% block content %}
 
-<div class="container">
-<div class="DivToScroll DivWithScroll">
-<div id="wrapper">
-    <h4> What type of report would you like to file?</h4>
-    <input type="radio" id="hateCrime"><p>Hate Crime Report</p>
-    <input type="radio" id="policeBrut"><p>Police Brutality Report</p>
-    <input type="radio" id="civilRights"><p>Civil Rights Violation Report</p>
+<div class="container" >
+<!-- <div class="DivToScroll DivWithScroll"> -->
+
+<div id=>
+    <h4> What would you like to report?</h4>
+    <div>
+        <input type="checkbox" id="scales">
+        <label for="scales">Hate Crime</label>
+    </div>
+    <div>
+        <input type="checkbox" id="hate-crime">
+        <label for="hate-crime">Police Brutality</label>
+    </div>
+    <div>
+        <input type="checkbox" id="civ-rights-violate">
+        <label for="civ-rights-violate">Civil Right Violation</label>
+    </div>
 </div>
 
 <br><br>
-<div>
+
+<div id="email-to-wrapper">
     <h4> Who would you like to send your report to? </h4>
     <p>Optional: deselect any groups you would not like to include in your email</p>
-    <input type="checkbox" isActive=false id="hateCrime" checked><p isActive=false id="hateCrime">Mayor of Durham</p>
-    <input type="checkbox" isActive=false id="hateCrime" checked><p isActive=false id="hateCrime">Southern Poverty Law Center</p>
-
-    <input type="checkbox" isActive=false id="policeBrut" checked><p isActive=false id="policeBrut">Civilian Police Board Review</p>
-    <input type="checkbox" isActive=false id="policeBrut" checked><p isActive=false id="policeBrut">Southern Coalition for Social Justice</p>
-
-    <input type="checkbox" isActive=false id="civilRights" checked><p isActive=false id="civilRights">NAACP</p>
-    <input type="checkbox" isActive=false id="civilRights" checked><p isActive=false id="civilRights">ACLU</p>
+    <div>
+        <input type="checkbox" id="mayor" checked>
+        <label for="mayor">Mayor of Durham</label>
+    </div>
+    <div>
+        <input type="checkbox" id="splc" checked>
+        <label for="splc">Southern Poverty Law Center</label>
+        
+    </div>
+    <div>
+        <input type="checkbox" id="civ-police-board" checked>
+        <label for="civ-police-board">Civilian Police Board Review</label>
+    </div>
+    <div>
+        <input type="checkbox" id="scsj" checked>
+        <label for="scsj">Southern Coalition for Social Justice</label>
+    </div>
+    <div>
+        <input type="checkbox" id="naacp" checked>
+        <label for="naacp">NAACP</label>
+    </div>
+    <div>
+        <input type="checkbox" id="aclu" checked>
+        <label for="aclu">ACLU</label>
+    </div>
 </div>
 
 
