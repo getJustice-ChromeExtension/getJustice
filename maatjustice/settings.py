@@ -186,15 +186,15 @@ REST_FRAMEWORK = {
 # Activate django_heroku
 django_heroku.settings(locals())
 
-# EMAIL_HOST = 'smtp.sendgrid.net'
-# EMAIL_HOST_USER = 'apikey'
-# EMAIL_HOST_PASSWORD = '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'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
-EMAIL_HOST = 'smtp.mailgun.org'
-EMAIL_HOST_USER = 'postmaster@sandbox4edfacbb1d754aa69d01d3943ff88476.mailgun.org'
-EMAIL_HOST_PASSWORD = '694ed47ce132f8699c89b567d4029fc6-060550c6-678be20a'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_API_KEY")
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# EMAIL_HOST = 'smtp.mailgun.org'
+# EMAIL_HOST_USER = 'getJustice@sandbox4edfacbb1d754aa69d01d3943ff88476.mailgun.org'
+# EMAIL_HOST_PASSWORD = os.getenv('MAILGUN_PASS')
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True

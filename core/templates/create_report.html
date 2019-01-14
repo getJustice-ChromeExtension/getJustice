@@ -5,17 +5,28 @@
 {% block content %}
 
 
-<div class="container">
-<div class="DivToScroll DivWithScroll">
+<div class="container text-center">
+    <p><button type="submit" class="btn btn-success">Download getJustice extension</button></p>    
+    <a href="{% url 'rights' %}" class="btn btn-danger">Your rights</a>
+    <a href="{% url 'reps' %}" class="btn btn-warning other">Your reps</a>
+<br>
+<br>
+<hr>
+</div>
+<div class="container ">
 <div id="wrapper">
-<h4> What type of report would you like to file?</h4>
+<div class="row">
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 redbg">
+<h4 class="right"> Type of crime</h4>
 <span><input type="radio" isActive=true id="hateCrime"><p isActive=true id="hateCrime">Hate Crime Report</p></span>
 <input type="radio" isActive=true id="policeBrut"><p isActive=true id="policeBrut">Police Brutality Report</p>
 <input type="radio" isActive=true id="civilRights"><p isActive=true id="civilRights" >Civil Rights Violation Report</p>
 </div>
-<br><br>
-<div>
-<h4> Who would you like to send your report to? </h4>
+
+
+<div class="container">
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 redbg">
+<h4 class="right"> Who would you like to send your report to? </h4>
 <p>Optional: deselect any groups you would not like to include in your email</p>
 <input type="checkbox" isActive=false id="hateCrime" checked><p isActive=false id="hateCrime">Mayor of Durham</p>
 <input type="checkbox" isActive=false id="hateCrime" checked><p isActive=false id="hateCrime">Southern Poverty Law Center</p>
@@ -26,7 +37,7 @@
 <input type="checkbox" isActive=false id="civilRights" checked><p isActive=false id="civilRights">NAACP</p>
 <input type="checkbox" isActive=false id="civilRights" checked><p isActive=false id="civilRights">ACLU</p>
 </div>
-
+</div>
 
 <div id="hateCrime" isActive=false>
     {{ report.title }}
@@ -45,8 +56,10 @@
     {{ email.address }}
     {{ report.content }}
 </div>
-
-  <form id="sumbit-screenshot" method="POST" class="form-group">
+<div class="container redbg">
+<br>
+<br>
+  <form id="submit-screenshot" method="POST" class="form-group">
                 {% csrf_token %} 
     <input type= "text" class="form-control" input type="hidden" id="emailRecipients" maxlength= "500" placeholder="Email Recipients">
     <div class="form-group">
@@ -60,9 +73,11 @@
     <input type="image" class="form-control-file" id="new-screenshot" src="#">
           
   </div>
-   <button type="submit" class="btn btn-primary">Submit</button>
+   <button type="submit" class="btn btn-success">Submit</button>
   </form>
+  </div>
  </div> 
+</div>
 </div>
 </div>
 {% endblock %}
