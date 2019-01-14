@@ -7,19 +7,41 @@ function get(id) {
 }
 
 
-function fillEmailFields() {
+function fillmayorEmail() {
     button = get('mayorButton')
-    button.addEventListener('click', event => {
+    button.addEventListener('click', () => {
         newAddress = get('mayorButton').getAttribute("data-type")
         addressField = get('emailAddress')
-        if (addressField.value.includes(newAddress)) {
-            console.log('changing address')
+        if (addressField.value.includes(`${newAddress},`)) {
+            console.log(`removing ${newAddress}`)
             current = addressField.value
-            edited = addressField.value.replace(newAddress, '')
+            console.log(`${current} current`)
+            edited = addressField.value.replace(`${newAddress},`, '')
+            console.log(`${edited} edited`)
             addressField.value = edited
         } else {
-            console.log('adding address')
-            addressField.value = newAddress
+            current = addressField.value
+            addressField.value =`${newAddress}, ${current}`
+            console.log(`adding ${newAddress}`)
+        }
+    })
+}
+
+
+function fillsplcEmail() {
+    button = get('spclButton')
+    button.addEventListener('click', () => {
+        newAddress = get('spclButton').getAttribute("data-type")
+        addressField = get('emailAddress')
+        if (addressField.value.includes(`${newAddress},`)) {
+            console.log('changing address')
+            current = addressField.value
+            edited = addressField.value.replace(`${newAddress},`, '')
+            addressField.value = edited
+        } else {
+            current = addressField.value
+            addressField.value = `${newAddress}, ${current}`
+            console.log(`adding ${newAddress}`)
         }
     })
 }
@@ -33,4 +55,5 @@ function fillEmailFields() {
 
 
 get()
-fillEmailFields()
+fillmayorEmail()
+fillsplcEmail()
