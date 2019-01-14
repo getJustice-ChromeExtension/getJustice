@@ -10,20 +10,17 @@ function get(id) {
 function fillEmailFields() {
     button = get('mayorButton')
     button.addEventListener('click', event => {
-        console.log('clicked')
         newAddress = get('mayorButton').getAttribute("data-type")
-        addressField = get('emailAddress').value
-        console.log(addressField)
-        if (addressField.includes(newAddress)) {
-            addressField.replace(newAddress, '')
-            console.log(`${addressField} adress field `)
+        addressField = get('emailAddress')
+        if (addressField.value.includes(newAddress)) {
+            console.log('changing address')
+            current = addressField.value
+            edited = addressField.value.replace(newAddress, '')
+            addressField.value = edited
         } else {
-            addressField = newAddress
-            console.log(`${newAddress} new address `)
+            console.log('adding address')
+            addressField.value = newAddress
         }
-        // do not store functions in variables
-        // fix this in the morning
-        // it seems like there's a strange bug going on
     })
 }
 

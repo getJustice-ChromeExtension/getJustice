@@ -6,7 +6,6 @@ chrome.browserAction.onClicked.addListener(function (tab) {
                 code:`
                     let input = document.getElementById("new-screenshot")
                     input.src = '${dataUrl}'
-                    console.log('${dataUrl}')
                 `
             })
         })
