@@ -11,7 +11,8 @@ function fillEmailFields() {
     mayorButton = get('mayorButton')
     mayorButton.addEventListener('click', function() {
         console.log("clicked")
-        get('emailAddress').value = "hey buddy"
+        address = get('mayorButton').getAttribute("data-type")
+        get('emailAddress').value = address
     })
 }
 
