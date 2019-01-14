@@ -8,7 +8,7 @@ from django.db.models import Count
 from django.contrib import messages
 from core.forms import ReportForm
 from django.core.mail import EmailMessage
-
+import base64
 
 # def test_mail(request):
 #     send_mail('hi', 'testing if this works', 'getJusticereport@gmail.com', [
@@ -34,6 +34,12 @@ def index(request):
 # form_data = {'subject': 'hi', 'message': 'one more test', 'send_to': [
 #     'sowmya.aji@gmail.com', 'rebecca@momentumlearn.com'], 'screenshot': encoded_string}
 
+def screenshot_attachment(dataUrl):
+    ext, image_data = dataUrl.split(";base64,")
+    binary_pad = (3-(len(image_data) % 3)) * "="
+    png = base64.b64decode(image_data + binary_pad)
+    return png
+
 
 def create_report(request):
     form_class = ReportForm
@@ -47,13 +53,13 @@ def create_report(request):
             msg = EmailMessage(
                 subject, message, 'getJusticereport@gmail.com', [send_to])
             msg.content_subtype = "html"
-            msg.attach('dataUrl', screenshot, 'image/png')
+            msg.attach('screenshot.png', screenshot, 'image/png')
             msg.send()
             message = f"Your report was sent!"
             messages.add_message(request, messages.SUCCESS, message)
             return render(request, 'core/index.html')
-    # report = form.save(commit=False)
-    # report.save()
+        # report = form.save(commit=False)
+        # report.save()
     else:
         form = form_class()
         message = f"For some reason your report didn't save. Please try again or contact us for assistance."
