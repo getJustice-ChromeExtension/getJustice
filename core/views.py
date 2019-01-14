@@ -16,6 +16,14 @@ import base64
 #     return render(request, 'core/base.html')
 
 
+def screenshotAttachment(dataUrl):
+    import base64
+    
+    ext, image_data = dataUrl.split(";base64,")
+    # might need ContentFile
+    png = base64.b64decode(image_data + "==")
+    return png
+
 def index(request):
     return render(request, 'core/index.html')
 
