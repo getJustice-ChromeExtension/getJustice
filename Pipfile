@@ -14,6 +14,7 @@ pillow = "*"
 gunicorn = "*"
 django-heroku = "*"
 sendgrid = "*"
+django-messages = "*"
 
 [dev-packages]
 "autopep8" = "*"
