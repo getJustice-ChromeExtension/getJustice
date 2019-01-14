@@ -2,17 +2,29 @@
 {% load static %}
 
 {% block content %}
-<h1>Know Your Rights: </h1>
 
-<div class="box">
-    <h2>If You Are Arrested</h2>
-        <h3>Remain Silent</h3>
-             <h4>You have the right to remain silent. The police can use what you say against you. 
-             Let them know that you will use your right to remain silent</h4>
+
+<div class="container text-center">
+<h3>Know Your Rights: </h3>
+<p><button type="submit" class="btn btn-success">Download getJustice extension</button></p>
+<a href="{% url 'report' %}" class="btn btn-danger">Report </a>     
+			
+      <a href="{% url 'reps' %}" class="btn btn-warning other">Your reps</a>
+<br>
+<br>
+<hr>
+<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 redbg">
+    <h3>If You Are Arrested</h3>
+        <h4 class="right">Remain Silent</h4>
+             <h4 class="right">You have the right to remain silent. The police can use what you say against you. Let them know that you will use your right to remain silent</h4>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 redbg">
         <h3>Stay Calm and Do Not Run</h3>
-            <h4>Use your phone to take photos and notes about the stop, but stay calm and do not run.</h4>
+            <h4 class="right">Use your phone to take photos and notes about the stop, but stay calm and do not run.</h4>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 redbg">
         <h3>Ask to speak with and attorney and think twice before you sign anything </h3>
-            <h4>Don’t sign forms you don’t understand or don’t want to sign. You have the right to speak with an attorney.</h4>
+            <h4 class="right">Don’t sign forms you don’t understand or don’t want to sign. You have the right to speak with an attorney.</h4>
 </div>
 
 

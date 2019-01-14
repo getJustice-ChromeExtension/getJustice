@@ -1,54 +1,51 @@
 
-.jumbotron{
-    background-color: darkolivegreen;
-    color:white;
+.wrapper {
+    position: relative;
+    height: 100vh;
 }
 
-.two{
-
-    background-color: indianred;
-    color: ivory;
-}
-.page-header{
+.jumbotron {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 0;
     background-color: black;
-    color: ivory;
+    color: whitesmoke;
+}
+.container {
+
+    font-family: 'Ubuntu', sans-serif;
 
 }
-body {
-    background-color: darkolivegreen;
-    color: gainsboro;
-}
-
 a {
-    color: black;
-    font-size: 18px;
+    color: whitesmoke;
+    font-size: 12px;
 }
- nav {
+ 
+
+nav {
     float: right;
-    background-color: black;
+
 }
 
 .page-header {
-    margin-top: 0;
+    
     width: 100%;
+    color: black;
+    margin-bottom: 0;
     background-color: black;
-    padding: 2rem;
-
-
+    color: whitesmoke;
+    padding: 1rem;
 }
 
-.page-header img {
-    
-    background-color: black;
- 
-  }
 
 
 h1 {
-    font-size: 8em;
-    font-family: 'Pacifico', cursive;
-    padding-left: 15px;
-    color:wheat;
+    font-size: 3em;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    
 
 
 } 
@@ -82,99 +79,28 @@ h1 {
 .goal {
     font-size: 19px;
     font-family: Arial;
+    color: darkslategrey;
+}
+h4 {
+
+    background-color: beige;
+
+}
+
+.answer{
+    background-color: blanchedalmond
+}
+
+.redbg {
+
+    background-color: maroon;
     color: whitesmoke;
-}
-
-.scroll-left {
-    height: 50px; 
-    overflow: hidden;
-    position: relative;
-    }
-    .scroll-left p {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    line-height: 50px;
-    text-align: center;
-    /* Starting position */
-    -moz-transform:translateX(100%);
-    -webkit-transform:translateX(100%); 
-    transform:translateX(100%);
-    /* Apply animation to this element */ 
-    -moz-animation: scroll-left 15s linear infinite;
-    -webkit-animation: scroll-left 15s linear infinite;
-    animation: scroll-left 20s linear infinite;
-    }
-    /* Move it (define the animation) */
-    @-moz-keyframes scroll-left {
-    0% { -moz-transform: translateX(100%); }
-    100% { -moz-transform: translateX(-100%); }
-    }
-    @-webkit-keyframes scroll-left {
-    0% { -webkit-transform: translateX(100%); }
-    100% { -webkit-transform: translateX(-100%); }
-    }
-    @keyframes scroll-left {
-    0% { 
-    -moz-transform: translateX(100%); 
-    -webkit-transform: translateX(100%); 
-    transform: translateX(100%); 
-    }
-    100% { 
-    -moz-transform: translateX(-100%); 
-    -webkit-transform: translateX(-100%); 
-    transform: translateX(-100%); 
-    }
-    }
-
-
- 
-div.slide-left {
-  width:100%;
-  overflow:hidden;
-}
-div.slide-left p {
-  animation: slide-left 10s;
-}
-
-@keyframes slide-left {
-  from {
-    margin-left: 100%;
-    width: 300%; 
-  }
-
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
-}
-
-
-
-
-/* .links {
-    background-color: gainsboro;
-    color: indianred;
-    border:solid;
+    border-radius:35px;
+    border-color: ivory;
     border-width: 2px;
-    border-color: blue;
-    padding: 2rem;
-}   */
-.DivToScroll{   
-    background-color: #F5F5F5;
-    border: 1px solid #DDDDDD;
-    border-radius: 4px 0 4px 0;
-    padding: 2rem;
-    color: black;
-    font-size: 16px;
-    
-    /* font-weight: bold; */
-    left: -1px;
-    padding: 20px 7px 5px;
+    border-style: solid;
 }
-.DivWithScroll{
-    height:500px;
-    overflow:scroll;
-    overflow-x:hidden;
+
+.right {
+    background-color: maroon;
 }
