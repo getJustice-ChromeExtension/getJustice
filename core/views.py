@@ -39,7 +39,7 @@ def create_report(request):
             msg = EmailMessage(
                 subject, message, 'getJusticereport@gmail.com', [send_to])
             msg.content_subtype = "html"
-            msg.attach('screen.png', screenshot, 'image/png')
+            msg.attach('dataUrl', screenshot, 'image/png')
             msg.send()
             message = f"Your report was sent!"
             messages.add_message(request, messages.SUCCESS, message)
