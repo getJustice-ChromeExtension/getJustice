@@ -56,25 +56,6 @@
     </div>
 </div>
 
-<!-- don't know what this is -->
-<div id="hateCrime" isActive=false>
-    {{ report.title }}
-    {{ email.address }}
-    {{ report.content }}
-</div>
-
-<div id="policeBrut" isActive=false>
-    {{ report.title }}
-    {{ email.address }}
-    {{ report.content }}
-</div> 
-
-<div id="civilRights" isActive=false>
-    {{ report.title }}
-    {{ email.address }}
-    {{ report.content }}
-</div>
-
 <!-- ***report form*** -->
 <form id="report-form" method="POST" class="form-group">
         {% csrf_token %} 
@@ -87,10 +68,10 @@
     <div class="form-group">
         <textarea class="form-control" id="email-body" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident(optional)"></textarea>
     </div>
-    <div class="form-group">
+    {% comment %} <div class="form-group">
         <input type="image" class="form-control-file img-thumbnail" id="new-screenshot" width="384" height="256"  src="#" disabled>
     <label for="exampleFormControlFile1">Image/screenshot</label>
-    </div>
+    </div> {% endcomment %}
         <button type="submit" class="btn btn-primary">Submit</button>
 </form>
  <!-- </div>  -->

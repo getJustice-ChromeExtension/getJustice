@@ -1,6 +1,8 @@
-from django.forms import Form
+from django import forms
 
 
-class ReportForm(Form):
-    class Meta:
-        fields = ('send_to', 'subject', 'message', 'screenshot')
+class ReportForm(forms.Form):
+    send_to = forms.EmailField()
+    subject = forms.CharField(max_length=255)
+    message = forms.CharField(max_length=5000)
+    screenshot = forms.CharField(required=False)
