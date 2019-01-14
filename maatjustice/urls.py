@@ -23,7 +23,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     # path('', include('pwa.urls')),
     path('', views.index, name='home'),
-    path('create_report/', views.create_report, name='report'),
+    path('create-report/', views.create_report, name='report'),
 
 
 

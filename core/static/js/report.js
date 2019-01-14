@@ -7,72 +7,43 @@ function get(id) {
 }
 
 
-function addRemoveEmailAddress(id) {
-    buttons = document.querySelectorAll('.email-button')
-    console.log(buttons)
+function addRemoveSubject() {
+    buttons = document.querySelectorAll('.subject-button')
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             newAddress = event.target.getAttribute("data-type")
-            addressField = get('email-address')
-            if (addressField.value.includes(`${newAddress},`)) {
-                console.log(`removing ${newAddress}`)
+            addressField = get('subject')
+            if (addressField.value.includes(`${newAddress}, `)) {
                 current = addressField.value
-                console.log(`${current} current`)
-                edited = addressField.value.replace(`${newAddress},`, '')
-                console.log(`${edited} edited`)
+                edited = addressField.value.replace(`${newAddress}, `, '')
                 addressField.value = edited
             } else {
                 current = addressField.value
                 addressField.value = `${newAddress}, ${current}`
-                console.log(`adding ${newAddress}`)
             }
         })
     })
 }
 
 
-// // make this function work for all buttons
-// function fillmayorEmail() {
-//     button = get('mayor-button')
-//     button.addEventListener('click', () => {
-//         newAddress = get('mayor-button').getAttribute("data-type")
-//         addressField = get('email-address')
-//         if (addressField.value.includes(`${newAddress},`)) {
-//             console.log(`removing ${newAddress}`)
-//             current = addressField.value
-//             console.log(`${current} current`)
-//             edited = addressField.value.replace(`${newAddress},`, '')
-//             console.log(`${edited} edited`)
-//             addressField.value = edited
-//         } else {
-//             current = addressField.value
-//             addressField.value =`${newAddress}, ${current}`
-//             console.log(`adding ${newAddress}`)
-//         }
-//     })
-// }
-
-
-// function fillsplcEmail() {
-//     button = get('spclButton')
-//     button.addEventListener('click', () => {
-//         newAddress = get('spclButton').getAttribute("data-type")
-//         addressField = get('email-address')
-//         if (addressField.value.includes(`${newAddress},`)) {
-//             console.log('changing address')
-//             current = addressField.value
-//             edited = addressField.value.replace(`${newAddress},`, '')
-//             addressField.value = edited
-//         } else {
-//             current = addressField.value
-//             addressField.value = `${newAddress}, ${current}`
-//             console.log(`adding ${newAddress}`)
-//         }
-//     })
-// }
+function addRemoveEmailAddress() {
+    buttons = document.querySelectorAll('.email-button')
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            newAddress = event.target.getAttribute("data-type")
+            addressField = get('email-address')
+            if (addressField.value.includes(`${newAddress}, `)) {
+                current = addressField.value
+                edited = addressField.value.replace(`${newAddress}, `, '')
+                addressField.value = edited
+            } else {
+                current = addressField.value
+                addressField.value = `${newAddress}, ${current}`
+            }
+        })
+    })
+}
 
 
 get()
-// fillmayorEmail()
-// fillsplcEmail()
 addRemoveEmailAddress()
