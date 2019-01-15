@@ -53,13 +53,13 @@ def create_report(request):
             send_to = [f.strip()
                        for f in form.cleaned_data['send_to'].split(',') if f.strip()]
 
-            # screenshot = form.cleaned_data['screenshot']
-            # screenshot_png = screenshot_decoder(screenshot)
+            screenshot = form.cleaned_data['screenshot']
+            screenshot_png = screenshot_decoder(screenshot)
             msg = EmailMessage(
                 subject, message, 'getJusticereport@gmail.com', send_to)
             msg.content_subtype = "html"
 
-            # msg.attach('screenshot.png', screenshot_png, 'image/png')
+            msg.attach('screenshot.png', screenshot_png, 'image/png')
             msg.send()
             return render(request, 'core/index.html', {form: form, })
         else:
