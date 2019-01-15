@@ -29,7 +29,7 @@ PWA_SERVICE_WORKER_PATH = os.path.join(
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("MAATJUSTICE_KEY")
+SECRET_KEY = os.getenv("GETJUSTICE_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
