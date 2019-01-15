@@ -1,8 +1,27 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+
+{% block title %}
+
+{% endblock title %}
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="{% static 'js/bootstrap.js' %}" defer></script>
+
+{% block header %}
+
+{% endblock header %}
+
 {% block content %}
 
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
 
 <div class="container text-center">
 <h3>Know Your Rights: </h3>
@@ -13,6 +32,8 @@
 <br>
 <br>
 <hr>
+
+ <div class="carousel-item active">
 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 redbg">
     <h3>If You Are Arrested</h3>
         <h4 class="right">Remain Silent</h4>
@@ -26,6 +47,9 @@
         <h3>Ask to speak with and attorney and think twice before you sign anything </h3>
             <h4 class="right">Don’t sign forms you don’t understand or don’t want to sign. You have the right to speak with an attorney.</h4>
 </div>
+</div>
+
+<div class="carousel-item">
 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 redbg">
     <h3>If you have experienced police misconduct</h3>
         <h4 class="right">Keep Evidence</h4>
@@ -39,6 +63,9 @@
         <h3> Contact the Depart of Justice</h3>
             <h4 class="right">If the problem remains unresolved you can file a complaint with the Department of Justice via mail.</h4>
 </div>
+</div>
+
+<div class="carousel-item">
 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 redbg">
     <h3>Your Civil Rights</h3>
         <h4 class="right">Where they come from</h4>
@@ -52,7 +79,28 @@
         <h3> Some laws that created our civil rights</h3>
             <h4 class="right">Age Discrimination Act of 1975, Age Discrimination in Employment Act (ADEA), Americans with Disabilities Act (ADA), Civil Rights Act of 1964, Fair Housing Act (FHA), Section 504 of the Rehabilitation Act of 1973, Voting Rights Act of 1965, Civil rights also come from federal court decisions (such as those handed down by the U.S. Supreme Court, including the landmark Brown v. Board of Education decision).</h4>
 </div>
+</div>
+
+</div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a> 
+</div>
+
+{% endblock content %}
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
 
 
-{% endblock %}
+{% block footer %}
+
+{% endblock footer %}
 </div>
