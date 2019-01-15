@@ -61,7 +61,7 @@
 
 <!-- ***report form*** -->
 <div class="container text-center">
-    <form action={% url 'report' %} id="report-form" method="POST" class="form-group">
+    <form action="{% url 'report' %}" id="report-form" method="POST" class="form-group">
             {% csrf_token %} 
         
         <div class="form-group">
@@ -75,12 +75,17 @@
         <div class="form-group">
             
             <textarea class="form-control" name="message" id="email-body" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident(optional)" required></textarea>
+        </div>  
+        <div>
+            <input type="hidden" id="screenshot-data" data-type="">
         </div>
-         {% comment %} <div class="form-group">
-            <input type="image" class="form-control-file img-thumbnail" id="new-screenshot" width="384" height="256"  src="#" disabled>
-        <label for="exampleFormControlFile1">Image/screenshot</label>
-        </div>  {% endcomment %}
             <button type="submit" class="btn btn-danger">Submit</button>
     </form>
+
+    <div class="form-group">
+        <input type="image" class="form-control-file img-thumbnail" id="new-screenshot" width="384" height="256" src="#"
+            disabled>
+        <label for="exampleFormControlFile1">Image/screenshot</label>
+    </div>
 </div>
 {% endblock %}
