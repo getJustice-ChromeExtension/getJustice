@@ -11,15 +11,15 @@ function addRemoveSubject() {
     buttons = document.querySelectorAll('.subject-button')
     buttons.forEach(button => {
         button.addEventListener('click', () => {
-            newAddress = event.target.getAttribute("data-type")
-            addressField = get('subject')
-            if (addressField.value.includes(`${newAddress}, `)) {
-                current = addressField.value
-                edited = addressField.value.replace(`${newAddress}, `, '')
-                addressField.value = edited
+            subject = event.target.getAttribute("data-type")
+            subjectField = get('subject')
+            if (subjectField.value.includes(`${subject}, `)) {
+                current = subjectField.value
+                edited = subjectField.value.replace(`${subject}, `, '')
+                subjectField.value = edited
             } else {
-                current = addressField.value
-                addressField.value = `${newAddress}, ${current}`
+                current = subjectField.value
+                subjectField.value = `${subject}, ${current}`
             }
         })
     })
@@ -47,3 +47,4 @@ function addRemoveEmailAddress() {
 
 get()
 addRemoveEmailAddress()
+addRemoveSubject()

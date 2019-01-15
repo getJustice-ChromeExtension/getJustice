@@ -46,7 +46,7 @@ def screenshot_decoder(dataUrl):
 def create_report(request):
     form_class = ReportForm
     if request.method == "POST":
-        form = form_class(request.POST)
+        form = ReportForm(request.POST)
         if form.is_valid():
 
             subject = form.cleaned_data['subject']
@@ -71,7 +71,7 @@ def create_report(request):
     #     # report = form.save(commit=False)
     #     # report.save()
     else:
-        form = form_class()
+        form = ReportForm()
         message = f"For some reason your report didn't save. Please try again or contact us for assistance."
         messages.add_message(request, messages.ERROR, message)
     return render(request, 'create_report.html', {
