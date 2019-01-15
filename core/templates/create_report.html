@@ -61,7 +61,7 @@
 
 <!-- ***report form*** -->
 <div class="container text-center">
-    <form action={% url 'report' %} id="report-form" method="POST" class="form-group">
+    <form action="{% url 'report' %}" id="report-form" method="POST" class="form-group">
             {% csrf_token %} 
         
         <div class="form-group">
