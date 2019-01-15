@@ -1,0 +1,47 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+{% load static %} 
+
+
+<body>
+<div class="container text-center">
+<p><button type="submit" class="btn btn-success">Download getJustice extension</button></p>
+<a href="{% url 'report' %}" class="btn btn-success">Report </a>     
+			<a href="{% url 'rights' %}" class="btn btn-danger">Your rights</a>
+      <a href="{% url 'reps' %}" class="btn btn-warning other">Your reps</a>
+<br>
+<br>
+<br>
+<br>
+
+
+<p class="vision">
+How often do we see an instance of injustice on social media and feel disturbed, angry and helpless?</p>
+
+<p class="vision">We, at getJustice, want to change that. We are combining social activism and social media to instantly allow users to report cases of hate crime, police brutality and injustice they see online to the elected representatives, the civilian police review board and civil rights groups.</p>
+
+<p class="goal">Our goal is to increase police accountability, decrease the length of time it takes between an instance of injustice being seen on social media and a suspect is charged with a crime, and foster a new generation of political activists by providing millenials with easy access to activate their political power. We wish to bring pressure by collective action on the police and other authorities to respond quickly and act proactively to end such instances of injustice.</p>
+
+<p class="vision">Join with us, report instances, click to send your reports and screenshots directly to the concerned authorities. </p>
+   
+
+<h3>Disclaimer:
+</h3>
+<p class="vision">
+Any reports to any government entities made using getJustice are the 
+responsibility of the user who created them and are in no way associated with
+getJustice. Users who file false reports will be removed from the service. We can 
+not guarantee that users will receive a response to their report although responses are encouraged. If you are in an emergency situation please
+contact 911. 
+</p>
+</body>
+
+ </div>
+
+</body> 
+
+
+{% endblock %}
+
+

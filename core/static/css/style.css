@@ -1,0 +1,120 @@
+
+.wrapper {
+    position: relative;
+    height: 100vh;
+}
+
+.jumbotron {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 0;
+    background-color: black;
+    color: whitesmoke;
+}
+.container {
+
+    font-family: 'Ubuntu', sans-serif;
+
+}
+a {
+    color: whitesmoke;
+    font-size: 12px;
+}
+ 
+
+nav {
+    float: right;
+
+}
+
+.page-header {
+    
+    width: 100%;
+    color: black;
+    margin-bottom: 0;
+    background-color: black;
+    color: whitesmoke;
+    padding: 1rem;
+}
+
+
+
+h1 {
+    font-size: 3em;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    
+
+
+} 
+
+.kicker {
+    padding-left: 15rem; 
+    padding-top: 5rem;
+    color: indianred;
+     font-size: 20px;
+     font-style: italic;
+}
+
+.head {
+      font-family: fantasy;
+      font-style:italic;
+}
+/* body {
+
+    
+    background-color: indianred;
+    color: ivory;
+
+}  */
+
+.vision {
+
+    font-size: 18px;   
+    font-family: Arial;  
+}
+
+.goal {
+    font-size: 19px;
+    font-family: Arial;
+    color: darkslategrey;
+}
+h4 {
+
+    background-color: beige;
+
+}
+
+.answer{
+    background-color: blanchedalmond
+}
+
+.redbg {
+
+    background-color: maroon;
+    color: whitesmoke;
+    border-radius:35px;
+    border-color: ivory;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.right {
+    background-color: maroon;
+}
+.redbg {
+
+    border-radius: 35;
+    background-color: indianred;
+    color: whitesmoke;
+}
+
+.rights {
+    background-color: indianred;
+}
+
+.name {
+    color: black;
+}
