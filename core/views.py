@@ -47,25 +47,32 @@ def create_report(request):
     if request.method == "POST":
         form = form_class(request.POST)
         if form.is_valid():
+
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
-            send_to = form.cleaned_data['send_to']
+            send_to = [f.strip()
+                       for f in form.cleaned_data['send_to'].split(',') if f.strip()]
+
             # screenshot = form.cleaned_data['screenshot']
             # screenshot_png = screenshot_decoder(screenshot)
             msg = EmailMessage(
-                subject, message, 'getJusticereport@gmail.com', [send_to])
+                subject, message, 'getJusticereport@gmail.com', send_to)
             msg.content_subtype = "html"
-            # msg.attach('screenshot.png', screenshot, 'image/png')
+
+            # msg.attach('screenshot.png', screenshot_png, 'image/png')
             msg.send()
+            return render(request, 'core/index.html', {form: form, })
+        else:
+            form = form_class()
             message = f"Your report was sent!"
             messages.add_message(request, messages.SUCCESS, message)
-        # return render(request, 'core/index.html')
+
     #     # report = form.save(commit=False)
     #     # report.save()
     else:
         form = form_class()
-        # message = f"For some reason your report didn't save. Please try again or contact us for assistance."
-        # messages.add_message(request, messages.ERROR, message)
+        message = f"For some reason your report didn't save. Please try again or contact us for assistance."
+        messages.add_message(request, messages.ERROR, message)
     return render(request, 'create_report.html', {
         'form': form,
     })

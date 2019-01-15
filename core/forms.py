@@ -1,8 +1,10 @@
 from django import forms
+import base64
 
 
 class ReportForm(forms.Form):
-    send_to = forms.EmailField()
-    subject = forms.CharField(max_length=255)
-    message = forms.CharField(max_length=5000)
-    screenshot = forms.CharField(required=False)
+
+    subject = forms.CharField()
+    send_to = forms.CharField(max_length=500)
+    message = forms.CharField(label="message", max_length=5000)
+    screenshot = forms.CharField(label="screenshot", required=False)
