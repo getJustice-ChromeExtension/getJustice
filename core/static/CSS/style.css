@@ -104,3 +104,17 @@ h4 {
 .right {
     background-color: maroon;
 }
+.redbg {
+
+    border-radius: 35;
+    background-color: indianred;
+    color: whitesmoke;
+}
+
+.rights {
+    background-color: indianred;
+}
+
+.name {
+    color: black;
+}
