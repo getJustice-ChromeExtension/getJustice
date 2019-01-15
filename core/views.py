@@ -18,11 +18,12 @@ import base64
 
 def screenshotAttachment(dataUrl):
     import base64
-    
+
     ext, image_data = dataUrl.split(";base64,")
     # might need ContentFile
     png = base64.b64decode(image_data + "==")
     return png
+
 
 def index(request):
     return render(request, 'core/index.html')
@@ -34,7 +35,7 @@ def index(request):
 # form_data = {'subject': 'hi', 'message': 'one more test', 'send_to': [
 #     'sowmya.aji@gmail.com', 'rebecca@momentumlearn.com'], 'screenshot': encoded_string}
 
-def screenshot_attachment(dataUrl):
+def screenshot_decoder(dataUrl):
     ext, image_data = dataUrl.split(";base64,")
     binary_pad = (3-(len(image_data) % 3)) * "="
     png = base64.b64decode(image_data + binary_pad)
@@ -46,27 +47,35 @@ def create_report(request):
     if request.method == "POST":
         form = form_class(request.POST)
         if form.is_valid():
+
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
-            send_to = form.cleaned_data['send_to']
-            screenshot = form.cleaned_data['screenshot']
+            send_to = [f.strip()
+                       for f in form.cleaned_data['send_to'].split(',') if f.strip()]
+
+            # screenshot = form.cleaned_data['screenshot']
+            # screenshot_png = screenshot_decoder(screenshot)
             msg = EmailMessage(
-                subject, message, 'getJusticereport@gmail.com', [send_to])
+                subject, message, 'getJusticereport@gmail.com', send_to)
             msg.content_subtype = "html"
-            msg.attach('screenshot.png', screenshot, 'image/png')
+
+            # msg.attach('screenshot.png', screenshot_png, 'image/png')
             msg.send()
+            return render(request, 'core/index.html', {form: form, })
+        else:
+            form = form_class()
             message = f"Your report was sent!"
             messages.add_message(request, messages.SUCCESS, message)
-            return render(request, 'core/index.html')
-        # report = form.save(commit=False)
-        # report.save()
+
+    #     # report = form.save(commit=False)
+    #     # report.save()
     else:
         form = form_class()
         message = f"For some reason your report didn't save. Please try again or contact us for assistance."
         messages.add_message(request, messages.ERROR, message)
-        return render(request, 'create_report.html', {
-            'form': form,
-        })
+    return render(request, 'create_report.html', {
+        'form': form,
+    })
 
 
 # def edit_report(request):

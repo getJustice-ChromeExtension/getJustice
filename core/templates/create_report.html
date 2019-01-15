@@ -4,97 +4,83 @@
 
 {% block content %}
 <script src="{% static 'js/report.js' %}" defer></script>
-<div class="container" >
-<!-- <div class="DivToScroll DivWithScroll"> -->
 
-<!-- ***list of subjects*** -->
-<div id=>
-    <h4> What would you like to report?</h4>
-    <div>
-        <input type="checkbox" id="hate-crime-check">
-        <button id="hate-crime-button" class="subject-button" data-type="Hate Crime">Hate Crime</button>
-    </div>
-    <div>
-        <input type="checkbox" id="police-brut-check">
-        <button id="police-brut-button" class="subject-button" data-type="Police Brutality">Police Brutality</button>
-    </div>
-    <div>
-        <input type="checkbox" id="civ-rights-violate-check">
-        <button id="civ-rights-violate-button" class="subject-button" data-type="Civil Right Violation">Civil Right Violation</button>
+
+<div class="container">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <h4> Type of Crime </h4>
+        <div>
+            <input type="checkbox" id="hate-crime-check">
+            <button id="hate-crime-button" class="subject-button" data-type="Hate Crime">Hate Crime</button>
+        </div>
+        <div>
+            <input type="checkbox" id="police-brut-check">
+            <button id="police-brut-button" class="subject-button" data-type="Police Brutality">Police Brutality</button>
+        </div>
+        <div>
+            <input type="checkbox" id="civ-rights-violate-check">
+            <button id="civ-rights-violate-button" class="subject-button" data-type="Civil Right Violation">Civil Rights Violation</button>
+        </div>
     </div>
 </div>
 
-<br><br>
 
 <!-- ***list of recipients*** -->
-<div id="address-wrapper">
-    <h4> Who would you like to send your report to? </h4>
-    <p>Optional: deselect any groups you would not like to include in your email</p>
-    <div>
-        <input type="checkbox" id="mayor-check" checked>
-        <button id="mayor-button" class="email-button" data-type="mayor@mayor.gov">Mayor of Durham</button>
+<div class="container">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div id="address-wrapper">
+            <h4> Who would you like to send your report to? </h4>
+                <p>Optional: deselect any groups you would not like to include in your email</p>
+            <div>
+                <input type="checkbox" id="mayor-check" checked>
+                <button id="mayor-button" class="email-button" data-type="mayor@mayor.gov">Mayor of Durham</button>
+            </div>
+            <div>
+                <input type="checkbox" id="splc-check" checked>
+                <button id="spcl-button" class="email-button" data-type="SPCL@SPLC.gov">Southern Poverty Law Center</button>
+            </div>
+            <div>
+                <input type="checkbox" id="cpbr-check" checked>
+                <button id="cpbr-button" class="email-button" data-type="cpbr@cpbr.gov">Civilian Police Board Review</button>
+            </div>
+            <div>
+                <input type="checkbox" id="scsj-check" checked>
+                <button id="scsj-button" class="email-button" data-type="scsj@scsj.gov">Southern Coalition for Social Justice</button>
+            </div>
+            <div>
+                <input type="checkbox" id="naacp-check" checked> 
+                <button id="naacp-button" class="email-button " data-type="naacp@naacp.gov">NAACP</button>
+            </div>
+            <div>
+                <input type="checkbox" id="aclu-check" checked>
+                <button id="aclu-button" class="email-button " data-type="aclu@aclu.gov">ACLU</button>
+            </div>
+        </div>
     </div>
-    <div>
-        <input type="checkbox" id="splc-check" checked>
-        <button id="spcl-button" class="email-button" data-type="SPCL@SPLC.gov">Southern Poverty Law Center</button>
-    </div>
-    <div>
-        <input type="checkbox" id="cpbr-check" checked>
-        <button id="cpbr-button" class="email-button" data-type="cpbr@cpbr.gov">Civilian Police Board Review</button>
-    </div>
-    <div>
-        <input type="checkbox" id="scsj-check" checked>
-        <button id="scsj-button" class="email-button" data-type="scsj@scsj.gov">Southern Coalition for Social Justice</button>
-    </div>
-    <div>
-        <input type="checkbox" id="naacp-check" checked>
-        <button id="naacp-button" class="email-button" data-type="naacp@naacp.gov">NAACP</button>
-    </div>
-    <div>
-        <input type="checkbox" id="aclu-check" checked> 
-        <button id="aclu-button" class="email-button" data-type="aclu@aclu.gov">ACLU</button>
-    </div>
-</div>
-
-<!-- don't know what this is -->
-<div id="hateCrime" isActive=false>
-    {{ report.title }}
-    {{ email.address }}
-    {{ report.content }}
-</div>
-
-<div id="policeBrut" isActive=false>
-    {{ report.title }}
-    {{ email.address }}
-    {{ report.content }}
-</div> 
-
-<div id="civilRights" isActive=false>
-    {{ report.title }}
-    {{ email.address }}
-    {{ report.content }}
 </div>
 
 <!-- ***report form*** -->
-<form id="report-form" method="POST" class="form-group">
-        {% csrf_token %} 
-    <div class="form-group">
-        <input type="text" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients">
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control" id="subject" maxlength="500" placeholder="Subject">
-    </div>
-    <div class="form-group">
-        <textarea class="form-control" id="email-body" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident(optional)"></textarea>
-    </div>
-    <div class="form-group">
-        <input type="image" class="form-control-file img-thumbnail" id="new-screenshot" width="384" height="256"  src="#" disabled>
-    <label for="exampleFormControlFile1">Image/screenshot</label>
-    </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-</form>
- <!-- </div>  -->
-</div>  
-</div>
+<div class="container text-center">
+    <form action={% url 'report' %} id="report-form" method="POST" class="form-group">
+            {% csrf_token %} 
+        
+        <div class="form-group">
+           
+            <input type="text" name="send_to" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients" required>
+        </div>
+        <div class="form-group">
+            
+            <input type="text" name="subject" class="form-control" id="subject" maxlength="500" placeholder="Subject" required>
+        </div>
+        <div class="form-group">
+            
+            <textarea class="form-control" name="message" id="email-body" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident(optional)" required></textarea>
+        </div>
+         {% comment %} <div class="form-group">
+            <input type="image" class="form-control-file img-thumbnail" id="new-screenshot" width="384" height="256"  src="#" disabled>
+        <label for="exampleFormControlFile1">Image/screenshot</label>
+        </div>  {% endcomment %}
+            <button type="submit" class="btn btn-danger">Submit</button>
+    </form>
 </div>
 {% endblock %}
