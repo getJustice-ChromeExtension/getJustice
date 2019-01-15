@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+{% load static %}
+<br><br><br>
+
+<body>
+<div class="container text-center">
+<p><button type="submit" class="btn btn-success">Download getJustice extension</button></p>
+<a href="{% url 'report' %}" class="btn btn-success">Report </a>     
+			<a href="{% url 'rights' %}" class="btn btn-danger">Your rights</a>
+      <a href="{% url 'reps' %}" class="btn btn-warning other">Your reps</a>
+<br>
+<h4> Find Privacy Policy from similar site and copy wording.
+Replace their name with ours. Look into any copyright protection 
+</h4>
+</div>
+</body>
+
+
+{% endblock %}
+
