@@ -7,7 +7,7 @@ chrome.browserAction.onClicked.addListener(function (tab) {
                     let input = document.getElementById("new-screenshot")
                     input.src = '${dataUrl}'
                     let imgData = document.getElementById("screenshot-data")
-                    imgData.setAttribute("data-type", "${dataUrl}")
+                    imgData.setAttribute("value", "${dataUrl}")
                 `
             })
         })
