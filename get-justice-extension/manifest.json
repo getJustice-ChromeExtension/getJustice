@@ -7,14 +7,23 @@
         "scripts": ["background.js"],
         "persistent": false
     },
-    "browser_action": {
+    "content_scripts": [
+        {
+            "matches": [
+                "https://twitter.com/*", "http://facebook.com/*"
+            ],
+            "js": ["popup.js"]
+        }
+    ]
+    "page_action": {
         "default_icon": {
             "16": "images/GetJusticeFist16.png",   
             "32": "images/GetJusticeFist32.png",
             "48": "images/GetJusticeFist48.png",
             "128": "images/GetJusticeFist128.png"
-        }
-    },
+        },
+        "default_popup": "popup.html"
+    
     "icons": {
         "16": "images/GetJusticeFist16.png",   
         "32": "images/GetJusticeFist32.png",
