@@ -16,11 +16,9 @@ function addRemoveHateCrimeAdresses() {
     button = get('hate-crime-button')
     button.addEventListener('click', () => {
         emails = document.querySelectorAll('.email-button')
-        console.log(emails)
         emails.forEach(email => {
             if (email.classList.contains('hate-crime')) {
                 newEmail = email.getAttribute('data-type')
-                console.log(newEmail)
                 addressField = get('email-address')
                 if (addressField.value.includes(`${newEmail}, `)) {
                     current = addressField.value
@@ -36,12 +34,55 @@ function addRemoveHateCrimeAdresses() {
 }
 
 
+function addRemovePoliceBrutailityAdresses() {
+    button = get('police-brut-button')
+    button.addEventListener('click', () => {
+        emails = document.querySelectorAll('.email-button')
+        emails.forEach(email => {
+            if (email.classList.contains('police-brut')) {
+                newEmail = email.getAttribute('data-type')
+                addressField = get('email-address')
+                if (addressField.value.includes(`${newEmail}, `)) {
+                    current = addressField.value
+                    edited = addressField.value.replace(`${newEmail}, `, '')
+                    addressField.value = edited
+                } else {
+                    current = addressField.value
+                    addressField.value = `${newEmail}, ${current}`
+                }
+            }
+        })
+    })
+}
+
+
+function addRemoveCivilRightsAdresses() {
+    button = get('civ-rights-violate-button')
+    button.addEventListener('click', () => {
+        emails = document.querySelectorAll('.email-button')
+        emails.forEach(email => {
+            if (email.classList.contains('civ-rights')) {
+                newEmail = email.getAttribute('data-type')
+                addressField = get('email-address')
+                if (addressField.value.includes(`${newEmail}, `)) {
+                    current = addressField.value
+                    edited = addressField.value.replace(`${newEmail}, `, '')
+                    addressField.value = edited
+                } else {
+                    current = addressField.value
+                    addressField.value = `${newEmail}, ${current}`
+                }
+            }
+        })
+    })
+}
+
+
 function addRemoveSubject() {
     buttons = document.querySelectorAll('.subject-button')
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             subject = event.target.getAttribute("data-type")
-            console.log(event)
             subjectField = get('subject')
             if (subjectField.value.includes(`${subject}, `)) {
                 current = subjectField.value
@@ -77,5 +118,7 @@ function addRemoveEmailAddress() {
 
 get()
 addRemoveEmailAddress()
-// addRemoveSubject()
+addRemoveSubject()
 addRemoveHateCrimeAdresses()
+addRemovePoliceBrutailityAdresses()
+addRemoveCivilRightsAdresses()
