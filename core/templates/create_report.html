@@ -16,20 +16,17 @@
 {% block content %}
 <script src="{% static 'js/report.js' %}" defer></script>
 
-
+<!-- ***list of subjects*** -->
 <div class="container">
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
     <h4> Type of Crime </h4>
         <div>
-            <input type="checkbox" id="hate-crime-check">
-            <button id="hate-crime-button" class="subject-button" data-type="Hate Crime">Hate Crime</button>
+            <button id="hate-crime-button" class="subject-button hate-crime" data-type="Hate Crime">Hate Crime</button>
         </div>
         <div>
-            <input type="checkbox" id="police-brut-check">
             <button id="police-brut-button" class="subject-button" data-type="Police Brutality">Police Brutality</button>
         </div>
         <div>
-            <input type="checkbox" id="civ-rights-violate-check">
             <button id="civ-rights-violate-button" class="subject-button" data-type="Civil Right Violation">Civil Rights Violation</button>
         </div>
     </div>
@@ -43,28 +40,22 @@
             <h4> Who would you like to send your report to? </h4>
                 <p>Optional: deselect any groups you would not like to include in your email</p>
             <div>
-                <input type="checkbox" id="mayor-check" checked>
-                <button id="mayor-button" class="email-button" data-type="mayor@mayor.gov">Mayor of Durham</button>
+                <button id="mayor-button" class="email-button hate-crime" data-type="mayor@mayor.gov">Mayor of Durham</button>
             </div>
             <div>
-                <input type="checkbox" id="splc-check" checked>
-                <button id="spcl-button" class="email-button" data-type="SPCL@SPLC.gov">Southern Poverty Law Center</button>
+                <button id="spcl-button" class="email-button hate-crime" data-type="SPCL@SPLC.gov">Southern Poverty Law Center</button>
             </div>
             <div>
-                <input type="checkbox" id="cpbr-check" checked>
-                <button id="cpbr-button" class="email-button" data-type="cpbr@cpbr.gov">Civilian Police Board Review</button>
+                <button id="local-media-button" class="email-button police-brut" data-type="localMedia@localMedia.gov">Local Media</button>
             </div>
             <div>
-                <input type="checkbox" id="scsj-check" checked>
-                <button id="scsj-button" class="email-button" data-type="scsj@scsj.gov">Southern Coalition for Social Justice</button>
+                <button id="scsj-button" class="email-button police-brut" data-type="scsj@scsj.gov">Southern Coalition for Social Justice</button>
             </div>
             <div>
-                <input type="checkbox" id="naacp-check" checked> 
-                <button id="naacp-button" class="email-button " data-type="naacp@naacp.gov">NAACP</button>
+                <button id="naacp-button" class="email-button civ-rights" data-type="naacp@naacp.gov">NAACP</button>
             </div>
             <div>
-                <input type="checkbox" id="aclu-check" checked>
-                <button id="aclu-button" class="email-button " data-type="aclu@aclu.gov">ACLU</button>
+                <button id="aclu-button" class="email-button civ-rights" data-type="aclu@aclu.gov">ACLU</button>
             </div>
         </div>
     </div>
@@ -76,15 +67,12 @@
             {% csrf_token %} 
         
         <div class="form-group">
-           
             <input type="text" name="send_to" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients" required>
         </div>
         <div class="form-group">
-            
             <input type="text" name="subject" class="form-control" id="subject" maxlength="500" placeholder="Subject" required>
         </div>
         <div class="form-group">
-            
             <textarea class="form-control" name="message" id="email-body" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident(optional)" required></textarea>
         </div>  
         <div>
