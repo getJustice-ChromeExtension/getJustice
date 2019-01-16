@@ -56,7 +56,7 @@ def create_report(request):
             screenshot = form.cleaned_data['screenshot']
             screenshot_png = screenshot_decoder(screenshot)
             msg = EmailMessage(
-                subject, message, 'getJusticereport@gmail.com', send_to)
+                subject, message, 'getJustice.act@gmail.com', send_to)
             msg.content_subtype = "html"
 
             msg.attach('screenshot.png', screenshot_png, 'image/png')
