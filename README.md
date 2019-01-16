@@ -1,4 +1,2 @@
-# MaatJusticeApp
+# getJustice
 
-installed postgresql
-installed psycopg2
