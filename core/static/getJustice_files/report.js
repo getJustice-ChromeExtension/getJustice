@@ -3,12 +3,8 @@
 
 //* tooltip function */
 $(function () {
-    $('[data-toggle="tooltip"], .tooltip').tooltip();
-    $('[data-toggle="tooltip"], .tooltip').tooltip("show");
-    $("button").click(function () {
-        $('[data-toggle="tooltip"],.tooltip').tooltip("hide");
-    });
-});
+    $('[data-toggle="tooltip"]').tooltip()
+})
 
 function get(id) {
     object = document.getElementById(id)
