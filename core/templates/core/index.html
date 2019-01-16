@@ -2,7 +2,19 @@
 
 {% load static %}
 
+{% block header %}
+
+
+
+{% endblock header %}
+
 {% block content %}
+
+{% if messages %}
+  {% for message in messages %}
+       <div {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+  {% endfor %}
+{% endif %}
 
 <body>
 <div class="container">
