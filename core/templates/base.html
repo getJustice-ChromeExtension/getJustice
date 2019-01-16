@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+{% comment %} {% load pwa %} {% endcomment %}
+{% load static %}
+{% block title %}
+{% endblock title %}
+
+<head>
+	{% comment %} {% progressive_web_app_meta %} {% endcomment %}
+	<title>getJustice</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet"href="{% static 'css/style.css' %}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" defer></script>
+</head> 
+
+<body>
+{% block header %}
+{% endblock header %}
+	<header>
+		<img src="/static/GetJusticeFist32.png" id="fistLogo" class="img-responsive img-thumbnail pull-left" alt="Responsive image">
+			<nav>
+				<ul>
+					<li><a href="{% url 'rights' %}">Your Rights</a></li>
+					<li><a href="{% url 'faq' %}">FAQs</a></li>
+					<li><a href="{% url 'reps' %}">Your Reps</a></li>
+				</ul> 
+			</nav>	
+					<a href="{% url 'home' %}"><h1>getJustice</h1></a> 				
+	</header>		
+							 
+{% block content %}
+{% endblock content %}
+
+{% block footer %}
+{% endblock footer %}
+
+	<div class="container footer navbar-fixed-bottom">		
+		<div> 
+			<p>&copy getJustice 2019</p>
+			<a href="{% url 'privacy' %}" class="green">Privacy policy</a>&nbsp
+			<a href="{% url 'terms' %}" class="green">Terms</a>
+		</div>
+
+	</div>
+</body>
+</html>
