@@ -12,7 +12,7 @@ import base64
 
 
 def index(request):
-    return render(request, 'core/index.html')
+    return render(request, 'index.html')
 
 def screenshot_decoder(dataUrl):
     ext, image_data = dataUrl.split(";base64,")
@@ -42,7 +42,7 @@ def create_report(request):
             msg.send()
             django_message = f"Your report was sent!"
             messages.add_message(request, messages.SUCCESS, django_message)
-            return render(request, 'core/index.html', {form: form, })
+            return render(request, 'index.html', {form: form, })
         else:
             form = form_class()
 
@@ -53,24 +53,16 @@ def create_report(request):
     })
 
 
-def questions(request):
-    return render(request, 'core/questions.html')
-
-
-def base_layout(request):
-    return render(request, 'core/base.html')
-
-
 def about(request):
-    return render(request, 'core/about.html')
+    return render(request, 'about.html')
 
 
 def faq(request):
-    return render(request, 'core/faq.html')
+    return render(request, 'faq.html')
 
 
 def terms(request):
-    return render(request, 'core/terms.html')
+    return render(request, 'terms.html')
 
 
 def reps(request):
@@ -82,4 +74,4 @@ def rights(request):
 
 
 def privacy(request):
-    return render(request, 'core/privacy.html')
+    return render(request, 'privacy.html')

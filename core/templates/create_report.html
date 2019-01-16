@@ -1,4 +1,4 @@
-{% extends 'core/base.html' %}
+{% extends 'base.html' %}
 
 {% load static %}
 
@@ -11,7 +11,6 @@
 {% endif %} {% endcomment %}
 
 {% endblock header %}
-
 
 {% block content %}
 <script src="{% static 'js/report.js' %}" defer></script>
@@ -61,9 +60,11 @@
 <div class="container text-center">
     <form action="{% url 'report' %}" id="report-form" method="POST" class="form-group">
             {% csrf_token %} 
-        
         <div class="form-group">
-            <input type="text" name="send_to" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients" required>
+            <input type="text" name="send_to" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients" required readonly>
+        </div>
+        <div class="form-group">
+            <input type="text" name="reply_to" class="form-control" id="cc-address" maxlength="500" placeholder="CC">
         </div>
         <div class="form-group">
             <input type="text" name="subject" class="form-control" id="subject" maxlength="500" placeholder="Subject" required>
