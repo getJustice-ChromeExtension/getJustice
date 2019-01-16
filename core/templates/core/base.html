@@ -25,9 +25,7 @@
 	<div class="row">
 		<div class="col-xs-12">
 			<div class="page-header">
-		{% for message in messages %}
-        <div>{{ message }}</div>
-    	{% endfor %}
+
 				<nav>
 						<a href="{% url 'faq' %}">FAQs</a>
 		 				<a href="{% url 'about' %}">About</a>
@@ -45,6 +43,9 @@
 {% endblock header %}
 <body>
 			{% block content %}
+		{% for message in messages %}
+		<div>{{ message }}</div>
+		{% endfor %}
 	<div class="container">
 			
 	</div>
