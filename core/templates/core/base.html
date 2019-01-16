@@ -13,35 +13,91 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link rel="stylesheet"href="{% static 'css/style.css' %}">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	
 
 </head>   
 {% block header %}
+<body>
 
-<div class="container">
+    <header>
+		<img src="/static/GetJusticeFist32.png" id="fistLogo" class="img-responsive img-thumbnail pull-left" alt="Responsive image">
+			<nav>
+                <ul>
+                    {% comment %} <li><Home</a></li>  {% endcomment %}
+                    <li><a href="{% url 'about' %}">About</a></li>
+                 <li><a href="{% url 'faq' %}">FAQs</a></li>
+                    <li><a href="{% url 'reps' %}">Your Reps</a></li>
+                    {% comment %} {% if user.is_authenticated %}
+                     <li>
+                        <a href="{% url 'auth_logout' %}">Logout</a></li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'auth_login' %}">Login</a> </li>
+                    <li>
+                        <a href="{% url 'registration_register' %}">Register</a></li> {% endcomment %} 
+                    {% comment %} {% endif %} {% endcomment %}
+                </ul> 
+			</nav>	
+					 <a href="{% url 'home' %}"><h1>getJustice</h1></a> 
+			            
+    </header>
+
+
+	
+
+
+{% comment %} <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+	
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="{% url 'faq' %}">FAQs</a></li>
+      <li><a href="{% url 'rights' %">Your Rights</a></li>
+      <li><a href="{% url 'reps' %}">Your Reps</a></li>
+      <li><a href="{% url 'about' %}">About</a></li>
+	  
+				
+				 							
+				 
+				
+    </ul>
+  </div>
+</nav>
+ {% endcomment %}
+
+ {% comment %} <div class="container text-center">
 	<div class="row">
 		<div class="col-xs-12">
 			<div class="page-header">
+			 <nav>
+					<ul>
+						<li><a href="{% url 'faq' %}">FAQs</a></li>
+		 				<li><a href="{% url 'about' %}">About</a></li>		     
+						<li><a href="{% url 'rights' %}">Your rights</a></li>
+      					<li><a href="{% url 'reps' %}">Your reps</a></li> 
+       
+		 			</ul>	
+					
+						{% comment %} <div class="container middle">	 {% endcomment %}
+			 			{% comment %} <img src="/static/Flag_of_the_UNIA.svg.png" class="center-block img-responsive"/> {% endcomment %}
+						<a href="{% url 'home' %}"><hi>getJustice</hi></a>
+						
+						</div>
+   					 </div>
+					 			{% comment %} <a href="{% url 'sign-up' %}">Sign In</a> {% endcomment %}
+				{% comment %} </nav>
 
-				<nav>
-						<a href="{% url 'faq' %}">FAQs</a>
-		 				<a href="{% url 'about' %}">About</a>
-						<a href="{% url 'home' %}">Home</a>
-		 						{% comment %} <a href="{% url 'sign-up' %}">Sign In</a> {% endcomment %}
-				</nav>
-				<img src="/static/GetJusticeFist32.png" id="fistLogo" class="img-responsive img-thumbnail pull-left" alt="Responsive image">	
-														<h1>getJustice</h1>	
-			</div>	
-			           					
-    </div>
+				
+			{% comment %} </div>	 {% endcomment %}
+		    					
+    	</div>
 	</div>
-</div>       
-</head>
+     				 
 {% endblock header %}
-<body>
+
 			{% block content %}
 		{% for message in messages %}
 		<div>{{ message }}</div>
