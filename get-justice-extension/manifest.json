@@ -1,7 +1,7 @@
 {
-    "name": "Getting Started Example",
+    "name": "getJustice",
     "version": "1.0",
-    "description": "Build an Extension!",
+    "description": "Report hate crimes, civil rights violations, and police brutality to civil rights organizations right from your social media page",
     "permissions": ["activeTab", "declarativeContent", "downloads", "storage", "tabs", "file:///*", "http://localhost:8000/*", "http://127.0.0.1:8000/*", "https://dashboard.heroku.com/*", "http://14c39926.ngrok.io/*"],
     "background": {
         "scripts": ["background.js"],
