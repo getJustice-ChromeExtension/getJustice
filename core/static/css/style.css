@@ -118,3 +118,33 @@ h4 {
 .name {
     color: black;
 }
+
+.greenbg {
+
+    background-color: green;
+    color: whitesmoke;
+    border-radius:35px;
+    border-color: ivory;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.yellowbg {
+
+    background-color: lightyellow;
+    color: black;
+    border-radius:35px;
+    border-color: ivory;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.graybg {
+
+    background-color: gray;
+    color: whitesmoke;
+    border-radius:35px;
+    border-color: ivory;
+    border-width: 2px;
+    border-style: solid;
+}
