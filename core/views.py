@@ -10,30 +10,9 @@ from core.forms import ReportForm
 from django.core.mail import EmailMessage
 import base64
 
-# def test_mail(request):
-#     send_mail('hi', 'testing if this works', 'getJusticereport@gmail.com', [
-#         'sowmya.aji@gmail.com', 'rebecca@momentum.com'], fail_silently=False)
-#     return render(request, 'core/base.html')
-
-
-def screenshotAttachment(dataUrl):
-    import base64
-
-    ext, image_data = dataUrl.split(";base64,")
-    # might need ContentFile
-    png = base64.b64decode(image_data + "==")
-    return png
-
 
 def index(request):
     return render(request, 'core/index.html')
-
-
-# with open("media/images/screen.png", "rb") as image_file:
-#     encoded_string = base64.b64encode(image_file.read())
-
-# form_data = {'subject': 'hi', 'message': 'one more test', 'send_to': [
-#     'sowmya.aji@gmail.com', 'rebecca@momentumlearn.com'], 'screenshot': encoded_string}
 
 def screenshot_decoder(dataUrl):
     ext, image_data = dataUrl.split(";base64,")
@@ -61,42 +40,17 @@ def create_report(request):
 
             msg.attach('screenshot.png', screenshot_png, 'image/png')
             msg.send()
+            django_message = f"Your report was sent!"
+            messages.add_message(request, messages.SUCCESS, django_message)
             return render(request, 'core/index.html', {form: form, })
         else:
             form = form_class()
-            message = f"Your report was sent!"
-            messages.add_message(request, messages.SUCCESS, message)
 
-    #     # report = form.save(commit=False)
-    #     # report.save()
     else:
         form = ReportForm()
-        message = f"For some reason your report didn't save. Please try again or contact us for assistance."
-        messages.add_message(request, messages.ERROR, message)
     return render(request, 'create_report.html', {
         'form': form,
     })
-
-
-# def edit_report(request):
-#     report = Report.objects.all()
-#     form_class = ReportForm
-
-#     if request.method == 'POST':
-#         form = form_class(data=request.POST, instance=report)
-#         if form.is_valid():
-#             form.save()
-#             message = f"Your report was sent!"
-#             messages.add_message(request, messages.SUCCESS, message)
-#             return render(request, 'core/index.html')
-#     else:
-#         form = form_class(instance=report)
-#         message = f"For some reason your report didn't save. Please try again or contact us for assistance."
-#         messages.add_message(request, messages.ERROR, message)
-#         return render(request, '  create_report.html', {
-#             'report': report,
-#             'form': form,
-#         })
 
 
 def questions(request):

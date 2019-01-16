@@ -2,6 +2,17 @@
 
 {% load static %}
 
+{% block header %}
+
+{% if messages %}
+  {% for message in messages %}
+      {{ message }}
+  {% endfor %}
+{% endif %}
+
+{% endblock header %}
+
+
 {% block content %}
 <script src="{% static 'js/report.js' %}" defer></script>
 
