@@ -6,12 +6,42 @@ function get(id) {
     return object
 }
 
+// if i click a subject then
+// the subject should have a class that is also on
+// the email fields
+// and should then fill the email fields
+
+
+function addRemoveHateCrimeAdresses() {
+    button = get('hate-crime-button')
+    button.addEventListener('click', () => {
+        emails = document.querySelectorAll('.email-button')
+        console.log(emails)
+        emails.forEach(email => {
+            if (email.classList.contains('hate-crime')) {
+                newEmail = email.getAttribute('data-type')
+                console.log(newEmail)
+                addressField = get('email-address')
+                if (addressField.value.includes(`${newEmail}, `)) {
+                    current = addressField.value
+                    edited = addressField.value.replace(`${newEmail}, `, '')
+                    addressField.value = edited
+                } else {
+                    current = addressField.value
+                    addressField.value = `${newEmail}, ${current}`
+                }
+            }      
+        })
+    })
+}
+
 
 function addRemoveSubject() {
     buttons = document.querySelectorAll('.subject-button')
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             subject = event.target.getAttribute("data-type")
+            console.log(event)
             subjectField = get('subject')
             if (subjectField.value.includes(`${subject}, `)) {
                 current = subjectField.value
@@ -47,4 +77,5 @@ function addRemoveEmailAddress() {
 
 get()
 addRemoveEmailAddress()
-addRemoveSubject()
+// addRemoveSubject()
+addRemoveHateCrimeAdresses()
