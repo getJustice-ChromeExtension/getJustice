@@ -73,7 +73,7 @@
 <div class="container text-center">
 <br>
 <br>
-    <form action="{% url 'report' %}" id="report-form" method="POST" class="form-group">
+    <form action="{% url 'report' %}" id="report-form" method="POST" class="form-group" enctype="multipart/form-data">
             {% csrf_token %} 
         <div class="form-group">
             <input type="text" name="send_to" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients" required>
@@ -86,18 +86,16 @@
         </div>
         <div class="form-group">
             <textarea class="form-control" name="message" id="email-body" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident(optional)" required>
-            I am a concerned citizen who wishes to raise this issue of civil injustice that I have become aware of. I request you to take up this matter seriously and hope that my concerns, as well as those of others involved in this matter of public importance, will be addressed by you at the earliest.  I have included a screenshot with more information about the crime below.
+            I am a concerned citizen who wishes to raise this issue of civil injustice that I have become aware of. I request you to take up this matter seriously and hope that my concerns, as well as those of others involved in this matter of public importance, will be addressed by you at the earliest.  I have included an image with more information about the crime below.
 
             sincerely,
+            getJUSTICE  user
             </textarea>
 
         </div>  
+       <div>
 
-
-
-        <div>
-
-    <input type="file" name="image" method="post" enctype="multipart/form-data"/>
+    <input type="file" name="image">
 
         </div>
             <button type="submit" class="btn btn-success">Submit</button>
