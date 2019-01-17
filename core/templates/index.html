@@ -7,17 +7,22 @@
 
 {% block content %}
 
+{% if messages %}
+  {% for message in messages %}
+     <div{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+  {% endfor %}
+{% endif %} 
 
 <body>
 <div class="line">
 </div>
 <div class="line-two">
 </div>
-<div class="wrapper>"
-  <div class="container text-center">      
+{% comment %} <div class="wrapper>" {% endcomment %}
+  <div class="container">      
     <div class= "row">
       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-        <div class="extension">
+        <div class="extension text-center">
         <br>
         <br>
         <br>
@@ -58,11 +63,13 @@
               <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                 <p class="goal">How often do we see an instance of injustice on social media and feel disturbed, angry and helpless?</p>
 
-                  <p class="goal">We, at getJustice, want to change that. We are combining social activism and social media to instantly allow users to report cases of hate crime, police brutality and injustice they see online to the elected representatives, the civilian police review board and civil rights groups.</p>
+                  <p class="goal">We, at getJustice, want to change that. We are combining social activism and social media to instantly allow users to report cases of hate crime, police brutality and civil rights violations they see online to elected representatives, civil rights groups and the police.</p>
                   </div>
                   <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                   <p class="vision">Our goal is to increase police accountability, decrease the length of time it takes between an instance of injustice being seen on social media and a suspect is charged with a crime, and foster a new generation of political activists by providing millenials with easy access to activate their political power. We wish to bring pressure by collective action on the police and other authorities to respond quickly and act proactively to end such instances of injustice.</p>
-
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                  <br><br><br><br><br><br>
                   <p class="goal">Join with us, report instances, click to send your reports and screenshots directly to the concerned authorities. </p>
                 </div>
               </div>
@@ -71,7 +78,7 @@
         </div>
       </div>
   </div>          
-</div>
+{% comment %} </div> {% endcomment %}
 {% endblock content %}
 {% block footer %}
 {% endblock footer %}
