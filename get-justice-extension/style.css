@@ -3,3 +3,148 @@ button {
           width: 45px;
           outline: none;
         }
+
+        .centered {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .middle {
+          position: relative;
+          text-align: center;
+          /* color: white; */
+        }
+      
+      
+      .wrapper {
+          position: relative;
+          height: 100vh;
+      }
+      /* 
+      .jumbotron {
+          position: absolute;
+          top: 10%;
+          left: 10%;
+          transform: translate(-50%, -50%);
+          
+          background-color: black;
+          color: whitesmoke;
+      } */
+      
+      .extension {
+          background-color: black;
+          float: left;
+          border: white;
+          border-style: solid;
+          border-width: 2px; 
+          padding: 10px;
+          font-weight: bold;    
+          /* height: 50%; */
+          margin-left: 2%;
+          color: whitesmoke;
+      
+      }
+      
+      .about {
+      
+        padding-left: 50%;
+        padding-top: 5%;
+          
+      
+      } 
+      .container {
+      
+          font-family: 'Opensans', sans-serif;
+      
+      }
+      a {
+          color: whitesmoke;
+          font-size: 12px;
+      }
+       
+      
+      nav {
+          float: right;
+          background-color: black;
+      
+      }
+      
+      header {
+          background-color: black;
+          color: whitesmoke;
+          padding: 1rem;
+      }
+      
+      
+      
+      h1 {
+          font-size: 3em;
+          font-family: 'Opensans,' sans-serif;
+          text-align: center;
+          font-style: italic;
+          
+      
+      
+      } 
+      .extn-button {
+          margin-left:12px;
+          margin-bottom: 0;
+      }
+      
+      .btn {
+          padding: 15px 25px;
+          font-size: 24px;
+          text-align: center;
+          cursor: pointer;
+          outline: none;
+          color: #fff;
+          background-color: #4CAF50;
+          border: none;
+          border-radius: 15px;
+          box-shadow: 0 9px #999;
+        }
+        
+        .btn:hover {background-color: #3e8e41}
+        
+        .btn:active {
+          background-color: #3e8e41;
+          box-shadow: 0 5px #666;
+          transform: translateY(4px);
+        }
+      body {
+      
+          
+          /* background-color:lightgrey; */
+          
+      
+      }  
+      .button-info {
+      
+          margin-top: o;
+          margin-left: 0;
+      
+      }
+      .vision {
+      
+          font-size: 16px;   
+          font-family: 'Opensans', sans-serif;  
+      }
+      
+      .goal {
+          font-size: 19px;
+          font-family: Arial;
+          color: darkslategrey;
+      }
+      h4 {
+      
+          background-color: beige;
+      
+      }
+      
+      
+      .name {
+          color: black;
+      }
+      
+     

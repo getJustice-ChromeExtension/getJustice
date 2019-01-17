@@ -1,67 +1,32 @@
-/****** not currently working ******/
-// the popup.js does not currently take screen shots
-// that functionality has been passed to the background.js
-// popup is being reserved for future app functionality
+// Copyright 2018 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+'use strict';
+
+let changeColor = document.getElementById('changeColor');
+
+chrome.storage.sync.get('color', function(data) {
+  changeColor.style.backgroundColor = data.color;
+  changeColor.setAttribute('value', data.color);
+});
+
+changeColor.onclick = function(element) {
+  let color = element.target.value;
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.executeScript(
+        tabs[0].id,
+        {code: 'document.body.style.backgroundColor = "' + color + '";'});
+  });
+};
 
 
-// let screenshotButton = document.getElementById('screenshotButton');
-// let postScreenshotButton = document.getElementById('sendButton')
+// let NewWindowButton = document.getElementById('NewWindowButton');
 
-chrome.browserAction.onClicked.addListener(function (tab) {
-    chrome.tabs.captureVisibleTab({format: "png"}, function (dataUrl) {
-        console.log(dataUrl)
-        chrome.tabs.create({ url: "http://127.0.0.1:8000/create-report"}, function (tab) {
-            chrome.tabs.executeScript(tab.id, {
-                code:`
-                    let input = document.getElementById("new-screenshot")
-                    input.src = '${dataUrl}'
-                    let imgData = document.getElementById("screenshot-data")
-                    imgData.setAttribute("value", "${dataUrl}")
+//  function openNewWindow(url,windowName) {
+//     newwindow=window.open("http://127.0.0.1:8000/create-report", windowName,'height=200,width=150');
+//     if (window.focus) {newwindow.focus()}
+//     return false;
+//  }
 
-
-// function takeScreenshot() {
-//     captureTab = function () {
-//         chrome.tabs.captureVisibleTab(function (dataUrl) {
-//             chrome.storage.local.set({ "captured": dataUrl }, function () {
-//                 console.log(dataUrl)
-
-                // chrome.tabs.create({ "url": chrome.runtime.getURL("post.html"), 'active': true }, function (tab) {
-                //     chrome.tabs.executeScript(tab.id, {
-                //         code: `console.log('hello')`
-                //     })
-            //     })
-            // })
-            // open form.html
-            // chrome.tabs.create({ "url": 'https://momentumlearn.com'}, function(tab){
-            //     alert(tab.id)
-            //     chrome.tabs.executeScript(tab.id, {
-            //         code: `console.log('hello')`
-            //     })
-
-            //     // change image src to data url
-            //     let newScreenshot = getElementById("new-screenshot")
-            //     let newDiv = document.createElement("h1")
-            //     newDiv.innerHTML= "hey"
-            //     newScreenshot.appendChild(newDiv)
-            // })
-
-            // chrome.tabs.create({ "url": chrome.runtime.getURL("post.html"), 'active': false }, function (tab) {
-            //     console.log(tab)
-            //     chrome.tabs.executeScript(tab.id, { runAt: 'document_end', code: 'window.alert("hi")' }, function (results) {
-            //         console.log(results)
-            //     })
-            //     chrome.tabs.executeScript(tab.id, { runAt: 'document_end', code: 'console.log("hi")' })
-            // })
-
-            
-
-
-            // submit form
-        
-//     }
-//     screenshotButton.addEventListener("click", captureTab)
-// }
-
-
-// takeScreenshot()
-
+// openNewWindow()
