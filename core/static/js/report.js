@@ -2,11 +2,13 @@
 // need a function for subjects
 
 //* tooltip function */
-$(function () {
-    $('[data-toggle="tooltip"], .tooltip').tooltip();
-    $('[data-toggle="tooltip"], .tooltip').tooltip("show");
-    $("button").click(function () {
-        $('[data-toggle="tooltip"],.tooltip').tooltip("hide");
+$(document).ready(function () {
+    $('button').on("hover", function () {
+        $('[data-toggle="tooltip"], .tooltip').tooltip();
+        $('[data-toggle="tooltip"], .tooltip').tooltip("show");
+        $("button").click(function () {
+            $('[data-toggle="tooltip"],.tooltip').tooltip("hide");
+        });
     });
 });
 

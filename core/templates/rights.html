@@ -3,31 +3,34 @@
 
 {% block content %}
 
-
+<div class="line">
+</div>
+<div class="line-two">
+</div>
 <div class="container text-center">
-<h3>Know Your Rights: </h3>
+    <h3>Know Your Rights: </h3>
 <p><button type="submit" class="btn btn-success">Download getJustice extension</button></p>
-<a href="{% url 'report' %}" class="btn btn-danger">Report </a>     
+<a href="{% url 'report' %}" class="btn btn-success">Report </a>     
 			
-      <a href="{% url 'reps' %}" class="btn btn-warning other">Your reps</a>
+    
 <br>
 <br>
 <hr>
-<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 redbg">
-    <h3>If You Are Arrested</h3>
-        <h4 class="right">Remain Silent</h4>
-             <h4 class="right">You have the right to remain silent. The police can use what you say against you. Let them know that you will use your right to remain silent</h4>
-</div>
-<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 redbg">
-        <h3>Stay Calm and Do Not Run</h3>
-            <h4 class="right">Use your phone to take photos and notes about the stop, but stay calm and do not run.</h4>
-</div>
-<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 redbg">
-        <h3>Ask to speak with and attorney and think twice before you sign anything </h3>
-            <h4 class="right">Don’t sign forms you don’t understand or don’t want to sign. You have the right to speak with an attorney.</h4>
-</div>
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 surround">
+            <h3>If You Are Arrested</h3>
+                <h4 class="vision">Remain Silent</h4>
+                <h4 class="vision">You have the right to remain silent. The police can use what you say against you. Let them know that you will use your right to remain silent</h4>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 surround">
+            <h3>Stay Calm and Do Not Run</h3>
+            <h4 class="vision">Use your phone to take photos and notes about the stop, but stay calm and do not run.</h4>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 surround">
+            <h3>Ask to speak with an attorney</h3> 
+            <h4 class="vision">It is your right. Don’t sign forms you don’t understand or don’t want to sign</h4>
+        </div>
 
-
-
+    </div>
+</div>
 {% endblock %}
-</div>

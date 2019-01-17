@@ -2,18 +2,26 @@
 {% load static %}
 
 {% block content %}
-
-<div class="container text-center">
-<h3>Know Your Reps</h3>
-<p><button type="submit" class="btn btn-success">Download getJustice extension</button></p>
-<a href="{% url 'report' %}" class="btn btn-warning">Report </a>     
-			<a href="{% url 'rights' %}" class="btn btn-danger">Your rights</a>
-      
-<br>
-<script async src="https://embed.joincampaignzero.org/widget.js" charset="utf-8"></script>
-
-<h3>Rock the vote</h3>
-<a href="https://www.rockthevote.org/register-to-vote/">Voter Registration</a>
+<div class="line">
 </div>
+<div class="line-two">
+</div>
+<div class="container text-center">
 
+	<p><button type="submit" class="btn btn-success">Download getJustice extension</button></p>
+	<a href="{% url 'report' %}" class="btn btn-success">Report</a>     
+	<br>
+	<br>
+	<br>
+	<div class="row">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 surround">
+			<h3>Know Your Reps</h3>
+			<script async src="https://embed.joincampaignzero.org/widget.js" charset="utf-8"></script>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 surround">
+			<h3>Rock the vote</h3>
+			<a href="https://www.rockthevote.org/register-to-vote/">Voter Registration</a>
+		</div>
+	</div>
+</div>
 {% endblock content %}
