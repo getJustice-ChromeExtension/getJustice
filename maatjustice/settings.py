@@ -1,3 +1,4 @@
+from django.contrib.messages import constants as messages
 """
 Django settings for maatjustice project.
 
@@ -167,7 +168,6 @@ STATICFILES_DIR = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-from django.contrib.messages import constants as messages
 
 MESSAGE_TAGS = {
     messages.SUCCESS: 'col-lg-4 col-md-4 col-sm-12 col-xs-12 greenbg',

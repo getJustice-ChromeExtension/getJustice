@@ -4,11 +4,11 @@
 
 {% block header %}
 
-{% if messages %}
+{% comment %} {% if messages %}
   {% for message in messages %}
       {{ message }}
   {% endfor %}
-{% endif %}
+{% endif %} {% endcomment %}
 
 {% endblock header %}
 
@@ -16,52 +16,62 @@
 <script src="{% static 'js/report.js' %}" defer></script>
 
 <!-- ***list of subjects*** -->
-<div class="container">
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+<div class="container text-center">
+<div class="line">
+</div>
+<div class="line-two">
+</div>
+    {% comment %} <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"> {% endcomment %}
+    <br>
+    
     <h4> Type of Crime </h4>
+    <br>
+   
         <div>
-            <button id="hate-crime-button" class="subject-button" data-type="Hate Crime">Hate Crime</button>
-        </div>
-        <div>
-            <button id="police-brut-button" class="subject-button" data-type="Police Brutality">Police Brutality</button>
-        </div>
-        <div>
-            <button id="civ-rights-violate-button" class="subject-button" data-type="Civil Right Violation">Civil Rights Violation</button>
-        </div>
+            <button id="hate-crime-button" class="subject-button form-btn btn-lg" data-type="Hate Crime" data-toggle ="tooltip" data-placement="bottom"  data-container="body" title="*Prejudice-motivated crime *Perpetrator targets a victim because of his or her membership in a certain social group or race">Hate Crime</button>
+        
+    
+            <button id="police-brut-button" class="subject-button form-btn btn-lg" data-type="Police Brutality" data-toggle="tooltip" data-placement="bottom"  data-container="body" title="*Wrongful arrests *Unjustified searches * Unlawful destruction of evidence *Excessive force *Unlawful police shootings.">Police Brutality</button>
+        
+        
+            <button id="civ-rights-violate-button" class="subject-button form-btn btn-lg" data-type="Civil Right Violation" data-toggle="tooltip" data-placement="bottom" data-container="body" title=" *Hate crimes *Migrant worker exploitation *Law enforcement misconduct *Religious interference or property damage *Health care access interference, such as phone threat or bombing *Slavery rings.">Civil Rights Violation</button>
+        
     </div>
 </div>
 
 
 <!-- ***list of recipients*** -->
-<div class="container">
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+<div class="container text-center">
+    {% comment %} <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"> {% endcomment %}
         <div id="address-wrapper">
+         <br>
             <h4> Who would you like to send your report to? </h4>
-                <p>Optional: deselect any groups you would not like to include in your email</p>
+            <br>
+
+                <p>Optional: deselect any you would not like to include in your email</p>
             <div>
-                <button id="mayor-button" class="email-button hate-crime" data-type="mayor@mayor.gov">Mayor of Durham</button>
-            </div>
-            <div>
-                <button id="spcl-button" class="email-button hate-crime" data-type="SPCL@SPLC.gov">Southern Poverty Law Center</button>
-            </div>
-            <div>
-                <button id="local-media-button" class="email-button police-brut" data-type="localMedia@localMedia.gov">Local Media</button>
-            </div>
-            <div>
-                <button id="scsj-button" class="email-button police-brut" data-type="scsj@scsj.gov">Southern Coalition for Social Justice</button>
-            </div>
-            <div>
-                <button id="naacp-button" class="email-button civ-rights" data-type="naacp@naacp.gov">NAACP</button>
-            </div>
-            <div>
-                <button id="aclu-button" class="email-button civ-rights" data-type="aclu@aclu.gov">ACLU</button>
-            </div>
+                
+                <button id="mayor-button" class="email-button hate-crime form-btn btn-sm" data-type="mayor@mayor.gov" data-toggle="tooltip" data-placement="right" title="the Mayor is the elected head of administration in Durham">Mayor of Durham</button>
+           
+            
+                <button id="spcl-button" class="email-button hate-crime form-btn btn-sm" data-type="SPCL@SPLC.gov" data-toggle="tooltip" data-placement="right" title="SPLC is a civil rights organization dealinag with ..">SPLCenter</button>
+           
+                <button id="local-media-button" class="email-button police-brut form-btn btn-sm" data-type="localMedia@localMedia.gov" data-toggle="tooltip" data-placement="right" title="newspapers and TV">Local Media</button>
+          
+                <button id="scsj-button" class="email-button police-brut form-btn btn-sm" data-type="scsj@scsj.gov" data-toggle="tooltip" data-placement="right" title="SCSJ is a civil rights organization dealing with ..">SCSJ</button>
+            
+                <button id="naacp-button" class="email-button civ-rights form-btn btn-sm" data-type="naacp@naacp.gov" data-toggle="tooltip" data-placement="right" title="NAACP is a civil rights organization dealing with .." >NAACP</button>
+           
+                <button id="aclu-button" class="email-button civ-rights form-btn btn-sm" data-type="aclu@aclu.gov" data-toggle="tooltip" data-placement="right" title="ACLU is a civil rights organization dealing with ..">ACLU</button>
+            
         </div>
     </div>
 </div>
 
 <!-- ***report form*** -->
 <div class="container text-center">
+<br>
+<br>
     <form action="{% url 'report' %}" id="report-form" method="POST" class="form-group">
             {% csrf_token %} 
         <div class="form-group">
@@ -84,13 +94,15 @@
         <div>
             <input type="hidden" id="screenshot-data" name="screenshot" value="">
         </div>
-            <button type="submit" class="btn btn-danger">Submit</button>
+            <button type="submit" class="btn btn-success">Submit</button>
     </form>
 
     <div class="form-group">
         <input type="image" class="form-control-file img-thumbnail" id="new-screenshot" width="384" height="256" src="#"
             disabled>
         <label for="exampleFormControlFile1">Image/screenshot</label>
-    </div>
+    </div> 
 </div>
+
+
 {% endblock %}
