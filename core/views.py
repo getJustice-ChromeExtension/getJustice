@@ -64,12 +64,13 @@ def create_report(request):
                        for f in form.cleaned_data['send_to'].split(',') if f.strip()]
 
             image = form.cleaned_data['image']
-        
+            
+
             msg = EmailMessage(
                 subject, message, 'getJustice.act@gmail.com', send_to)
             msg.content_subtype = "html"
 
-            msg.attach('image.png', image, 'image/png')
+            msg.attach('image.name', image.read(), image.content_type)
             msg.send()
             django_message = f"Your report was sent!"
             messages.add_message(request, messages.SUCCESS, django_message)
