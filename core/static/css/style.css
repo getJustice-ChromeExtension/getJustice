@@ -213,7 +213,7 @@ body {
     border-style: solid;
 }
 
-.tooltip {
+.tooltip-inner {
     background: rgb(177, 175, 175)
 }
 

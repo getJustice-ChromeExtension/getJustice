@@ -113,24 +113,6 @@ function addRemoveEmailAddress() {
 }
 
 
-
-// //***  tooltip functions ***/
-
-// $(document).ready(function () {
-//     $('button').on("hover", function () {
-//         $('[data-toggle="tooltip"], .tooltip').tooltip();
-//         $('[data-toggle="tooltip"], .tooltip').tooltip("show");
-//         $("button").click(function () {
-//             $('[data-toggle="tooltip"],.tooltip').tooltip("hide");
-//         });
-//     });
-// });
-
-
-// $(function () {
-//     $('[data-toggle="tooltip"]').tooltip()
-// })
-
 //*** called functions ***/
 get()
 addRemoveEmailAddress()
