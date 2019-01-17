@@ -213,19 +213,9 @@ body {
     border-style: solid;
 }
 
-
-
-
 .tooltip {
-    visibility: hidden;
-    width: 120px;
-    background-color: #555;
-    color: #fff;
-    font-size: 16px;
-    text-align: center;
-    padding: 5px 0;
+    background: rgb(177, 175, 175)
 }
-  
 
 .line {
     padding-top: 20px;
