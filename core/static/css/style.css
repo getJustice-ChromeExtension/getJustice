@@ -52,7 +52,7 @@
 
 
   padding-top: 5%;
-  padding-left:2rem;
+  padding-left:5rem;
   padding-right: 2rem;
   padding-bottom: 2rem;
   border-style: solid;
@@ -150,7 +150,7 @@ body {
 
 .goal {
     font-size: 19px;
-    font-family: Arial;
+    font-family: 'Opensans', sans-serif;
     color: darkslategrey;
 }
 
