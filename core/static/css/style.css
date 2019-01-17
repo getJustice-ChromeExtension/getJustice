@@ -118,15 +118,21 @@ h1 {
   
   }
   
-  .form-btn:hover {background-color: black;
+
+.form-btn.active{
+    background-color: black;
+    color: whitesmoke; 
+}
+
+
+  .form-btn:hover {
+    background-color: black;
     color: whitesmoke; 
 }
   
   .form-btn:focus {
     background-color:black;
     color: whitesmoke;
-   
-    
   }
  
 body {
@@ -213,9 +219,6 @@ body {
     border-style: solid;
 }
 
-.tooltip-inner {
-    background: rgb(177, 175, 175)
-}
 
 .line {
     padding-top: 20px;
