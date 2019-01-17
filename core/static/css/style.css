@@ -94,6 +94,8 @@ h1 {
     font-family: 'Opensans,' sans-serif;
     text-align: center;
     font-style: italic;
+    color: whitesmoke;
+
     
 
 
@@ -129,16 +131,10 @@ h1 {
     
   }
  
-body {
-
-/*     
-     background-color:ivory;  */
-    
-
-}  
+  
 .button-info {
 
-    margin-top: o;
+    margin-top: 0;
     margin-left: 0;
 
 }
