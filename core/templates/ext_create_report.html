@@ -1,31 +1,28 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <style>
-      button {
-        height: 30px;
-        width: 30px;
-        outline: none;
-      }
-    </style>
-  </head>
-  <body>
-    <button id="changeColor"></button>
-    <script src="popup.js"></script>
-    <link rel="stylesheet"href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% extends 'base.html' %}
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" defer></script>
-  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+{% load static %}
+
+{% block header %}
 
 
-<h1> getJustice </h1>
+
+{% endblock header %}
+
+{% block content %}
+{% if messages %}
+  {% for message in messages %}
+      {{ message }}
+  {% endfor %}
+{% endif %}
+<script src="{% static 'js/report.js' %}" defer></script>
+
+<!-- ***list of subjects*** -->
 <div class="container text-center">
 <div class="line">
 </div>
 <div class="line-two">
 </div>
+    {% comment %} <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"> {% endcomment %}
     <br>
     
     <h4> Type of Crime </h4>
@@ -46,6 +43,7 @@
 
 <!-- ***list of recipients*** -->
 <div class="container text-center">
+    {% comment %} <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"> {% endcomment %}
         <div id="address-wrapper">
          <br>
             <h4> Who would you like to send your report to? </h4>
@@ -78,7 +76,7 @@
     <form action="{% url 'report' %}" id="report-form" method="POST" class="form-group">
             {% csrf_token %} 
         <div class="form-group">
-            <input type="text" name="send_to" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients" required>
+            <input type="text" name="send_to" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients" required readonly>
         </div>
         <div class="form-group">
             <input type="text" name="reply_to" class="form-control" id="cc-address" maxlength="500" placeholder="CC" readonly>
@@ -108,8 +106,4 @@
 </div>
 
 
-
-
-  </body>
-</html>
-
+{% endblock %}
