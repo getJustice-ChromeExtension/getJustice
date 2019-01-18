@@ -20,61 +20,50 @@
     <div class= "row">
       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
         <div class="extension text-center">
-        
         <br>
-        <br>
-        <button type="submit"><img src="https://files.slack.com/files-pri/TA8C04VUN-FFHUJLEBG/getjusticeextension.png" height="120px" width="270px" background-color="black"></button>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <p class="vision">Use our extension to report police brutality, hate crimes and civil rights violations to civil rights groups, your elected representatives and the police without leaving Twitter or Face book in less than 15 seconds.</p>
-        <br>
-        <br>
-        <br>
-        <br>
+        <button type="submit" class="extn-button"><img src="/static/getJusticeExtension.png" height="100px" width="270px"></button>
+        <br>  
+        <p class="vision">Download our extension and with just three clicks, report injustice to civil rights groups, the police, and local media without leaving Twitter or Facebook.</p>
         <br>
         <a href="{% url 'website_report' %}" class="btn btn-success">Report </a>
         <br>
-        <br>
-        <p class="vision">You can also report and upload images from here.</p>
-       <br>
-        <br>
-        <br>
+        <p class="vision">Or report from our site.</p>
         </div>
-      </div>
-    
-    
-    
-    
+      </div>   
         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
           <div class="about">
             <div>
             
-              <h1 class="display-2">How do I getJustice</h1>                   
+              <h1 class="display-4">How do I getJustice</h1>                   
             </div>
           <br>
           <br>
             <div class="container main">
              <div class="row">
-              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <p class="goal">How often do we see an instance of injustice on social media and feel disturbed, angry and helpless?</p>
+              <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
+                {% comment %} <p class="goal">How often do we see an instance of injustice on social media and feel disturbed, angry and helpless?</p>
 
-                  <p class="goal">We, at getJustice, want to change that. We are combining social activism and social media to instantly allow users to report cases of hate crime, police brutality and civil rights violations they see online to elected representatives, civil rights groups and the police.</p>
-                  </div>
-                  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                  <p class="vision">Our goal is to increase police accountability, decrease the length of time it takes between an instance of injustice being seen on social media and a suspect is charged with a crime, and foster a new generation of political activists by providing millenials with easy access to activate their political power. We wish to bring pressure by collective action on the police and other authorities to respond quickly and act proactively to end such instances of injustice.</p>
-                  </div>
-                  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                  <br><br><br><br><br><br>
-                  <p class="goal">Join with us, report instances, click to send your reports and screenshots directly to the concerned authorities. </p>
-                </div>
+                  <p class="goal">We, at getJustice, instantly allow you, the user, to report <strong>
+                  cases of hate crime, police brutality and civil rights violations you see online to elected representatives, civil rights groups and the police.</strong>
+              
+                  <p class="goal">We want police accountability, decrease the time it takes between injustice  seen on social media</p> {% endcomment %}
+                  <p class="goal">Decrease the time from an act of injustice seen on social media to a suspect charged with the crime.</p>
+                  <p class="goal">We bring pressure through collective action on the police and other authorities to respond quickly and proactively to end such injustice.</p>
+              </div>
+               <div class="col-lg-5 col-md-45 col-sm-12 col-xs-12">
+               {% comment %} <p class="goal">and a suspect charged with crime. </p>
+                  
+                  <p class="goal"></p>
+                 
+                  <p class="goal">Join with us, report instances, click to send your reports and screenshots directly to the concerned authorities. </p> {% endcomment %} 
+                  <p class="goal" >Activate your political power. Know your reps and know your rights so you’re always informed.</p>
+                  <p class="goal">We will foster a new generation of political activists by providing millenials with easy access to their political power.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
   </div>          
 
 {% endblock content %}

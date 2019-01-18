@@ -1,30 +1,11 @@
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .middle {
-    position: relative;
-    text-align: center;
-    /* color: white; */
-  }
+
 
 
 .wrapper {
     position: relative;
     height: 100vh;
 }
-/* 
-.jumbotron {
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    transform: translate(-50%, -50%);
-    
-    background-color: black;
-    color: whitesmoke;
-} */
+
 
 .extension {
     background-color: black;
@@ -50,7 +31,6 @@
 
 .about {
 
-
   padding-top: 5%;
   padding-left:5rem;
   padding-right: 2rem;
@@ -64,15 +44,10 @@
 .container {
 
     font-family: 'Opensans', sans-serif;
-    /* border-style: solid;
-    
-    border-width:2px; */
 
 }
 .report {
-
     float: right;
-    
 }
 a {
     color: whitesmoke;
@@ -116,9 +91,9 @@ h1 {
     }
 
 
-/* .extn-button {
-    background-image: url("https://files.slack.com/files-pri/TA8C04VUN-FFHUJLEBG/getjusticeextension.png");
-} */
+.extn-button {
+    background-color: black;
+}
 
 .form-btn {
   
