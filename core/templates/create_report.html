@@ -4,15 +4,16 @@
 
 {% block header %}
 
-{% comment %} {% if messages %}
-  {% for message in messages %}
-      {{ message }}
-  {% endfor %}
-{% endif %} {% endcomment %}
+
 
 {% endblock header %}
 
 {% block content %}
+{% if messages %}
+  {% for message in messages %}
+      {{ message }}
+  {% endfor %}
+{% endif %}
 <script src="{% static 'js/report.js' %}" defer></script>
 <script src="{% static 'js/util.js' %}" defer></script>
 
@@ -22,28 +23,33 @@
 </div>
 <div class="line-two">
 </div>
-    {% comment %} <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"> {% endcomment %}
-    <br>
+ 
+
     
     <h4> Type of Crime </h4>
     <br>
    
         <div>
-            <button id="hate-crime-button" class="subject-button form-btn btn-lg" data-type="Hate Crime" data-toggle ="tooltip" data-placement="top"  data-container="body" title="*Prejudice-motivated crime *Perpetrator targets a victim because of his or her membership in a certain social group or race">Hate Crime</button>
-        
+            <button id="hate-crime-button" type="button" class="subject-button form-btn btn-lg" data-type="Hate Crime" data-toggle="collapse" data-target="#formcollapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="popover" data-trigger="focus" data-placement="bottom" title="*Prejudice-motivated crime *Perpetrator targets a victim because of his or her membership in a certain social group or race">Hate Crime</button>
+            
     
-            <button id="police-brut-button" class="subject-button form-btn btn-lg" data-type="Police Brutality" data-toggle="tooltip" data-placement="top"  data-container="body" title="*Wrongful arrests *Unjustified searches * Unlawful destruction of evidence *Excessive force *Unlawful police shootings.">Police Brutality</button>
-        
-        
-            <button id="civ-rights-violate-button" class="subject-button form-btn btn-lg" data-type="Civil Right Violation" data-toggle="tooltip" data-placement="top" data-container="body" title=" *Hate crimes *Migrant worker exploitation *Law enforcement misconduct *Religious interference or property damage *Health care access interference, such as phone threat or bombing *Slavery rings.">Civil Rights Violation</button>
-        
+            <button id="police-brut-button" class="subject-button form-btn btn-lg" data-type="Police Brutality" data-toggle="collapse" data-target="#formcollapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="popover" data-trigger="focus" data-placement="bottom" title="*Wrongful arrests *Unjustified searches * Unlawful destruction of evidence *Excessive force *Unlawful police shootings.">Police Brutality</span></button>
+            
+            
+            <button id="civ-rights-violate-button" class="subject-button form-btn btn-lg" data-type="Civil Right Violation" data-toggle="collapse" data-target="#formcollapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="popover" data-trigger="focus" data-placement="bottom" title="*Hate crimes *Migrant worker exploitation *Law enforcement misconduct *Religious interference or property damage *Health care access interference, such as phone threat or bombing *Slavery rings.">Civil Rights Violation</span></button>
+
     </div>
 </div>
+<br>
+<br>
+<br>
 
 
+<div class="collapse" id="formcollapseLink">
+        {% comment %} <div class="card card-body"> {% endcomment %}
 <!-- ***list of recipients*** -->
-<div class="container text-center">
-    {% comment %} <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"> {% endcomment %}
+    <div class="container text-center">
+    
         <div id="address-wrapper">
          <br>
             <h4> Who would you like to send your report to? </h4>
@@ -65,18 +71,19 @@
            
                 <button id="aclu-button" class="email-button civ-rights form-btn btn-sm" data-type="aclu@aclu.gov" data-toggle="tooltip" data-placement="top" title="ACLU is a civil rights organization dealing with ..">ACLU</button>
             
+            </div>
         </div>
     </div>
-</div>
 
-<!-- ***report form*** -->
-<div class="container text-center">
-<br>
-<br>
-    <form action="{% url 'report' %}" id="report-form" method="POST" class="form-group">
+    <!-- ***report form*** -->
+    <div class="container text-center">
+    <br>
+    <br>
+    
+    <form action="{% url 'report' %}" id="report-form" method="POST" class="form-group" enctype="multipart/form-data">
             {% csrf_token %} 
         <div class="form-group">
-            <input type="text" name="send_to" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients" required readonly>
+            <input type="text" name="send_to" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients" required>
         </div>
         <div class="form-group">
             <input type="text" name="reply_to" class="form-control" id="cc-address" maxlength="500" placeholder="CC" readonly>
@@ -86,28 +93,31 @@
         </div>
         <div class="form-group">
             <textarea class="form-control" name="message" id="email-body" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident(optional)" required>
-            I am a concerned citizen who wishes to raise this issue of civil injustice that I have become aware of. I request you to take up this matter seriously and hope that my concerns, as well as those of others involved in this matter of public importance, will be addressed by you at the earliest.  I have included a screenshot with more information about the crime below.
+            Dear madam/sir,
 
-            sincerely,
+            I am a concerned citizen who wishes to raise this issue of civil injustice that I have become aware of. I request you to take up this matter seriously and hope that my concerns, as well as those of others involved in this matter of public importance, will be addressed by you at the earliest.  I have included an image with more information about the crime below.
+
+            Sincerely,
+            getJUSTICE  user
             </textarea>
 
         </div>  
-        <div>
-            <input type="hidden" id="screenshot-data" name="screenshot" value="">
+       <div>
+
+    <input type="file" name="image">
+
         </div>
             <button type="submit" class="btn btn-success">Submit</button>
     </form>
 
-    <div>
-        <input type="image" class="form-control-file img-thumbnail" id="new-screenshot" width="255" height="255" src="#"
-            disabled>
-        <label for="exampleFormControlFile1">Image/screenshot</label>
-    </div> 
-</div>
-
 <div class="tooltip" role="tooltip">
     <div class="arrow"></div>
     <div class="tooltip-inner"></div>
+</div>
+
+            </div>
+        </div>
+    </div>
 </div>
 
 {% endblock %}

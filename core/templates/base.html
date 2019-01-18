@@ -24,18 +24,23 @@
 </head> 
 
 <body>
+          <div class="view" style="background-image: url('https://files.slack.com/files-pri/TA8C04VUN-FFGGHTK42/getjusticebackgroundhomeopaque.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+
 {% block header %}
 {% endblock header %}
 	<header>
-		<img src="/static/GetJusticeFist32.png" id="fistLogo" class="img-responsive pull-left" alt="Responsive image" height= "40"/>
+
+			<a href="{% url 'home' %}"><img src="/static/GetJusticeFist32.png" id="fistLogo" class="img-responsive pull-left" alt="Responsive image" height= "40"/></a>				
 			<nav>
 				<ul>
 					<li><a href="{% url 'rights' %}">Your Rights</a></li>
 					<li><a href="{% url 'faq' %}">FAQs</a></li>
 					<li><a href="{% url 'reps' %}">Your Reps</a></li>
+					
 				</ul> 
-			</nav>	
-					<a href="{% url 'home' %}"><h1>getJustice</h1></a> 				
+			</nav>
+			<a href="{% url 'home' %}"><h1><img src="https://files.slack.com/files-pri/TA8C04VUN-FFGG74L0J/getjusticelogo.png" height="100px" width="300px"></h1></a> 		
+		
 	</header>		
 							 
 {% block content %}

@@ -1,5 +1,22 @@
 
+<<<<<<< HEAD
 //*** globals ***/
+=======
+// * tooltip function*/
+// $(document).ready(function () {
+//     $('button').on("hover", function () {
+//         $('[data-toggle="tooltip"], .tooltip').tooltip();
+//         $('[data-toggle="tooltip"], .tooltip').tooltip("show");
+//         $("button").click(function () {
+//             $('[data-toggle="tooltip"],.tooltip').tooltip("hide");
+//         });
+//     });
+// });
+
+$('.popover-dismiss').popover({
+    trigger: 'focus', delay: { "show": 500, "hide": 10 }
+})
+>>>>>>> master
 
 function get(id) {
     object = document.getElementById(id)
