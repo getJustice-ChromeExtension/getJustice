@@ -22,28 +22,23 @@
 </div>
 <div class="line-two">
 </div>
-    {% comment %} <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"> {% endcomment %}
+    
     <br>
     
     <h4> Type of Crime </h4>
     <br>
    
         <div>
-            <button id="hate-crime-button" class="subject-button form-btn btn-lg" data-type="Hate Crime" data-toggle="collapse" data-target="#formcollapseLink" aria-expanded="false" aria-controls="formcollapseLink">Hate Crime</button>
+            <button id="hate-crime-button" class="subject-button form-btn btn-lg" data-type="Hate Crime" data-toggle="collapse" data-target="#formcollapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip" data-placement="bottom" title="*Prejudice-motivated crime *Perpetrator targets a victim because of his or her membership in a certain social group or race">Hate Crime</span></button>
             
-            {% comment %} data-toggle ="tooltip" data-placement="bottom"  data-container="body" title="*Prejudice-motivated crime *Perpetrator targets a victim because of his or her membership in a certain social group or race"
-         {% endcomment %}
-    
-            <button id="police-brut-button" class="subject-button form-btn btn-lg" data-type="Police Brutality" data-toggle="collapse" data-target="#formcollapseLink" aria-expanded="false" aria-controls="formcollapseLink">Police Brutality</button>
+         
+            <button id="police-brut-button" class="subject-button form-btn btn-lg" data-type="Police Brutality" data-toggle="collapse" data-target="#formcollapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="popover" data-trigger="focus" data-placement="bottom" title="*Wrongful arrests *Unjustified searches * Unlawful destruction of evidence *Excessive force *Unlawful police shootings.">Police Brutality</span></button>
             
-            
-            {% comment %} data-toggle="tooltip" data-placement="bottom"  data-container="body" title="*Wrongful arrests *Unjustified searches * Unlawful destruction of evidence *Excessive force *Unlawful police shootings."> {% endcomment %}
         
         
-            <button id="civ-rights-violate-button" class="subject-button form-btn btn-lg" data-type="Civil Right Violation" data-toggle="collapse" data-target="#formcollapseLink" aria-expanded="false" aria-controls="formcollapseLink">Civil Rights Violations</button>
+            <button id="civ-rights-violate-button" class="subject-button form-btn btn-lg" data-type="Civil Right Violation" data-toggle="collapse" data-target="#formcollapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="popover" data-trigger="focus" data-placement="bottom" title="*Hate crimes *Migrant worker exploitation *Law enforcement misconduct *Religious interference or property damage *Health care access interference, such as phone threat or bombing *Slavery rings.">Civil Rights Violations</span></button>
             
-            {% comment %} data-toggle="tooltip" data-placement="bottom" data-container="body" title=" *Hate crimes *Migrant worker exploitation *Law enforcement misconduct *Religious interference or property damage *Health care access interference, such as phone threat or bombing *Slavery rings.">Civil Rights Violation</button>
-         {% endcomment %}
+            
     </div>
 </div>
 <br>
@@ -52,7 +47,7 @@
 <div class="collapse" id="formcollapseLink">
 <!-- ***list of recipients*** -->
 <div class="container text-center">
-    {% comment %} <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"> {% endcomment %}
+   
         <div id="address-wrapper">
          <br>
             <h4> Who would you like to send your report to? </h4>
@@ -95,6 +90,8 @@
         </div>
         <div class="form-group">
             <textarea class="form-control" name="message" id="email-body" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident(optional)" required>
+            Dear madam/sir,
+            
             I am a concerned citizen who wishes to raise this issue of civil injustice that I have become aware of. I request you to take up this matter seriously and hope that my concerns, as well as those of others involved in this matter of public importance, will be addressed by you at the earliest.  I have included a screenshot with more information about the crime below.
 
             Sincerely,

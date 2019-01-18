@@ -1,16 +1,20 @@
 // need to write function that checks and unchecks boxes
 // need a function for subjects
 
-//* tooltip function */
-$(document).ready(function () {
-    $('button').on("hover", function () {
-        $('[data-toggle="tooltip"], .tooltip').tooltip();
-        $('[data-toggle="tooltip"], .tooltip').tooltip("show");
-        $("button").click(function () {
-            $('[data-toggle="tooltip"],.tooltip').tooltip("hide");
-        });
-    });
-});
+// * tooltip function*/
+// $(document).ready(function () {
+//     $('button').on("hover", function () {
+//         $('[data-toggle="tooltip"], .tooltip').tooltip();
+//         $('[data-toggle="tooltip"], .tooltip').tooltip("show");
+//         $("button").click(function () {
+//             $('[data-toggle="tooltip"],.tooltip').tooltip("hide");
+//         });
+//     });
+// });
+
+$('.popover-dismiss').popover({
+    trigger: 'focus', delay: { "show": 500, "hide": 10 }
+})
 
 function get(id) {
     object = document.getElementById(id)

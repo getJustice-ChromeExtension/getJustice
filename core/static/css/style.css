@@ -69,12 +69,26 @@
     border-width:2px; */
 
 }
+.report {
+
+    float: right;
+    
+}
 a {
     color: whitesmoke;
     font-size: 12px;
 }
- 
 
+a.hover{
+    color: green;
+    font-size: 16px;
+}
+
+a.active{
+    background-color: black;
+    color: white;
+
+}
 nav {
     float: right;
     background-color: black;
@@ -85,11 +99,13 @@ header {
     background-color: black;
     color: whitesmoke;
     padding: 1rem;
+    
 }
 
 
 
 h1 {
+    
     font-size: 3em;
     font-family: 'Opensans,' sans-serif;
     text-align: center;
@@ -97,12 +113,11 @@ h1 {
     color: whitesmoke;
 
     
+    }
 
 
-} 
 /* .extn-button {
-    margin-left:12px;
-    margin-bottom: 0;
+    background-image: url("https://files.slack.com/files-pri/TA8C04VUN-FFHUJLEBG/getjusticeextension.png");
 } */
 
 .form-btn {
@@ -119,18 +134,21 @@ h1 {
    
   
   }
-  
-  .form-btn:hover {background-color: black;
+     
+  .form-btn:hover {
+      background-color: black;
     color: whitesmoke; 
 }
-  
   .form-btn:focus {
     background-color:black;
     color: whitesmoke;
-   
+    
     
   }
- 
+  .popover {
+    background-color: red;
+    font-size: 16px;
+}
   
 .button-info {
 
@@ -185,7 +203,8 @@ h1 {
 
     background-color: green;
     color: whitesmoke;
-    
+    height: 200px;
+    width: 400px;
     border-color: ivory;
     border-width: 2px;
     border-style: solid;
@@ -196,6 +215,8 @@ h1 {
     background-color: lightyellow;
     color: black;
     border-color: ivory;
+    height: 200px;
+    width: 400px;
     border-width: 2px;
     border-style: solid;
 }
@@ -204,6 +225,8 @@ h1 {
 
     background-color: gray;
     color: whitesmoke;
+    height: 200px;
+    width: 400px;
     border-color: ivory;
     border-width: 2px;
     border-style: solid;
