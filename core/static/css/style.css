@@ -134,15 +134,37 @@ h1 {
    
   
   }
+<<<<<<< HEAD
+  
+
+.form-btn.active{
+    background-color: black;
+    color: whitesmoke; 
+}
+
+
+  .form-btn:hover {
+    background-color: black;
+=======
      
   .form-btn:hover {
       background-color: black;
+>>>>>>> master
     color: whitesmoke; 
 }
   .form-btn:focus {
     background-color:black;
     color: whitesmoke;
+<<<<<<< HEAD
+  }
+ 
+body {
+
+/*     
+     background-color:ivory;  */
+=======
     
+>>>>>>> master
     
   }
   .popover {
@@ -232,19 +254,6 @@ h1 {
     border-style: solid;
 }
 
-
-
-
-.tooltip {
-    visibility: hidden;
-    width: 120px;
-    background-color: #555;
-    color: #fff;
-    font-size: 16px;
-    text-align: center;
-    padding: 5px 0;
-}
-  
 
 .line {
     padding-top: 20px;

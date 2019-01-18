@@ -1,6 +1,7 @@
-// need to write function that checks and unchecks boxes
-// need a function for subjects
 
+<<<<<<< HEAD
+//*** globals ***/
+=======
 // * tooltip function*/
 // $(document).ready(function () {
 //     $('button').on("hover", function () {
@@ -15,17 +16,15 @@
 $('.popover-dismiss').popover({
     trigger: 'focus', delay: { "show": 500, "hide": 10 }
 })
+>>>>>>> master
 
 function get(id) {
     object = document.getElementById(id)
     return object
 }
 
-// if i click a subject then
-// the subject should have a class that is also on
-// the email fields
-// and should then fill the email fields
 
+//*** functions for the buttons ***/
 
 function addRemoveHateCrimeAdresses() {
     button = get('hate-crime-button')
@@ -131,7 +130,7 @@ function addRemoveEmailAddress() {
 }
 
 
-
+//*** called functions ***/
 get()
 addRemoveEmailAddress()
 addRemoveSubject()
