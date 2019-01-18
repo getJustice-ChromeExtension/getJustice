@@ -2,12 +2,14 @@
     "name": "getJustice",
     "version": "1.0",
     "description": "Report hate crimes, civil rights violations, and police brutality to civil rights organizations right from your social media page",
-    "permissions": ["activeTab", "declarativeContent", "downloads", "storage", "tabs", "file:///*", "http://localhost:8000/*", "http://127.0.0.1:8000/*", "https://dashboard.heroku.com/*", "http://14c39926.ngrok.io/*"],
+    "permissions": ["activeTab", "declarativeContent", "downloads", "storage", "tabs", "file:///*", "http://localhost:8000/*", "https://twitter.com/*", "http://127.0.0.1:8000/*", "https://dashboard.heroku.com/*", "https://twitter.com/*", "https://www.facebook.com/*", "http://14c39926.ngrok.io/*"],
     "background": {
         "scripts": ["background.js"],
         "persistent": false
     },
-    "browser_action": {
+ 
+    "page_action": {
+        "default_popup": "popup.html",
         "default_icon": {
             "16": "images/GetJusticeFist16.png",   
             "32": "images/GetJusticeFist32.png",
@@ -15,6 +17,8 @@
             "128": "images/GetJusticeFist128.png"
         }
     },
+        
+    
     "icons": {
         "16": "images/GetJusticeFist16.png",   
         "32": "images/GetJusticeFist32.png",

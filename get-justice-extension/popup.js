@@ -1,56 +1,171 @@
-/****** not currently working ******/
-// the popup.js does not currently take screen shots
-// that functionality has been passed to the background.js
-// popup is being reserved for future app functionality
+// Copyright 2018 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+'use strict';
+
+let changeColor = document.getElementById('changeColor');
+
+chrome.storage.sync.get('color', function(data) {
+  changeColor.style.backgroundColor = data.color;
+  changeColor.setAttribute('value', data.color);
+});
+
+changeColor.onclick = function(element) {
+  let color = element.target.value;
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.executeScript(
+        tabs[0].id,
+        {code: 'document.body.style.backgroundColor = "' + color + '";'});
+  });
+};
 
 
-// let screenshotButton = document.getElementById('screenshotButton');
-// let postScreenshotButton = document.getElementById('sendButton')
+// let NewWindowButton = document.getElementById('NewWindowButton');
+
+//  function openNewWindow(url,windowName) {
+//     newwindow=window.open("http://127.0.0.1:8000/create-report", windowName,'height=200,width=150');
+//     if (window.focus) {newwindow.focus()}
+//     return false;
+//  }
+
+// openNewWindow()
 
 
-// function takeScreenshot() {
-//     captureTab = function () {
-//         chrome.tabs.captureVisibleTab(function (dataUrl) {
-//             chrome.storage.local.set({ "captured": dataUrl }, function () {
-//                 console.log(dataUrl)
 
-                // chrome.tabs.create({ "url": chrome.runtime.getURL("post.html"), 'active': true }, function (tab) {
-                //     chrome.tabs.executeScript(tab.id, {
-                //         code: `console.log('hello')`
-                //     })
-            //     })
-            // })
-            // open form.html
-            // chrome.tabs.create({ "url": 'https://momentumlearn.com'}, function(tab){
-            //     alert(tab.id)
-            //     chrome.tabs.executeScript(tab.id, {
-            //         code: `console.log('hello')`
-            //     })
+// need to write function that checks and unchecks boxes
+// need a function for subjects
 
-            //     // change image src to data url
-            //     let newScreenshot = getElementById("new-screenshot")
-            //     let newDiv = document.createElement("h1")
-            //     newDiv.innerHTML= "hey"
-            //     newScreenshot.appendChild(newDiv)
-            // })
+//* tooltip function */
+$(document).ready(function () {
+  $('button').on("hover", function () {
+      $('[data-toggle="tooltip"], .tooltip').tooltip();
+      $('[data-toggle="tooltip"], .tooltip').tooltip("show");
+      $("button").click(function () {
+          $('[data-toggle="tooltip"],.tooltip').tooltip("hide");
+      });
+  });
+});
 
-            // chrome.tabs.create({ "url": chrome.runtime.getURL("post.html"), 'active': false }, function (tab) {
-            //     console.log(tab)
-            //     chrome.tabs.executeScript(tab.id, { runAt: 'document_end', code: 'window.alert("hi")' }, function (results) {
-            //         console.log(results)
-            //     })
-            //     chrome.tabs.executeScript(tab.id, { runAt: 'document_end', code: 'console.log("hi")' })
-            // })
+function get(id) {
+  object = document.getElementById(id)
+  return object
+}
 
-            
+// if i click a subject then
+// the subject should have a class that is also on
+// the email fields
+// and should then fill the email fields
 
 
-            // submit form
-        
-//     }
-//     screenshotButton.addEventListener("click", captureTab)
-// }
+function addRemoveHateCrimeAdresses() {
+  button = get('hate-crime-button')
+  button.addEventListener('click', () => {
+      emails = document.querySelectorAll('.email-button')
+      emails.forEach(email => {
+          if (email.classList.contains('hate-crime')) {
+              newEmail = email.getAttribute('data-type')
+              addressField = get('email-address')
+              if (addressField.value.includes(`${newEmail}, `)) {
+                  current = addressField.value
+                  edited = addressField.value.replace(`${newEmail}, `, '')
+                  addressField.value = edited
+              } else {
+                  current = addressField.value
+                  addressField.value = `${newEmail}, ${current}`
+              }
+          }
+      })
+  })
+}
 
 
-// takeScreenshot()
+function addRemovePoliceBrutailityAdresses() {
+  button = get('police-brut-button')
+  button.addEventListener('click', () => {
+      emails = document.querySelectorAll('.email-button')
+      emails.forEach(email => {
+          if (email.classList.contains('police-brut')) {
+              newEmail = email.getAttribute('data-type')
+              addressField = get('email-address')
+              if (addressField.value.includes(`${newEmail}, `)) {
+                  current = addressField.value
+                  edited = addressField.value.replace(`${newEmail}, `, '')
+                  addressField.value = edited
+              } else {
+                  current = addressField.value
+                  addressField.value = `${newEmail}, ${current}`
+              }
+          }
+      })
+  })
+}
 
+
+function addRemoveCivilRightsAdresses() {
+  button = get('civ-rights-violate-button')
+  button.addEventListener('click', () => {
+      emails = document.querySelectorAll('.email-button')
+      emails.forEach(email => {
+          if (email.classList.contains('civ-rights')) {
+              newEmail = email.getAttribute('data-type')
+              addressField = get('email-address')
+              if (addressField.value.includes(`${newEmail}, `)) {
+                  current = addressField.value
+                  edited = addressField.value.replace(`${newEmail}, `, '')
+                  addressField.value = edited
+              } else {
+                  current = addressField.value
+                  addressField.value = `${newEmail}, ${current}`
+              }
+          }
+      })
+  })
+}
+
+
+function addRemoveSubject() {
+  buttons = document.querySelectorAll('.subject-button')
+  buttons.forEach(button => {
+      button.addEventListener('click', () => {
+          subject = event.target.getAttribute("data-type")
+          subjectField = get('subject')
+          if (subjectField.value.includes(`${subject}, `)) {
+              current = subjectField.value
+              edited = subjectField.value.replace(`${subject}, `, '')
+              subjectField.value = edited
+          } else {
+              current = subjectField.value
+              subjectField.value = `${subject}, ${current}`
+          }
+      })
+  })
+}
+
+
+function addRemoveEmailAddress() {
+  buttons = document.querySelectorAll('.email-button')
+  buttons.forEach(button => {
+      button.addEventListener('click', () => {
+          newAddress = event.target.getAttribute("data-type")
+          addressField = get('email-address')
+          if (addressField.value.includes(`${newAddress}, `)) {
+              current = addressField.value
+              edited = addressField.value.replace(`${newAddress}, `, '')
+              addressField.value = edited
+          } else {
+              current = addressField.value
+              addressField.value = `${newAddress}, ${current}`
+          }
+      })
+  })
+}
+
+
+
+get()
+addRemoveEmailAddress()
+addRemoveSubject()
+addRemoveHateCrimeAdresses()
+addRemovePoliceBrutailityAdresses()
+addRemoveCivilRightsAdresses()
