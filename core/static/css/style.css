@@ -217,7 +217,11 @@ h1 {
 
 
 
+.card 
 
+{
+    background-color: bisque;
+}
 
 .tooltip {
     visibility: hidden;
