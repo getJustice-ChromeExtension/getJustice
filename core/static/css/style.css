@@ -5,7 +5,9 @@
     position: relative;
     height: 100vh;
 }
-
+.logo {
+    margin-left: 5%;
+}
 
 .extension {
     background-color: black;
@@ -64,31 +66,22 @@ a.active{
     color: white;
 
 }
-nav {
-    float: right;
-    background-color: black;
 
-}
-
-header {
-    background-color: black;
-    color: whitesmoke;
-    padding: 1rem;
+.navbar-brand {
+    margin-left: 35%;
+    margin-right: 30%;
     
+}
+.navbar {
+    background-color: black;
 }
 
 
-
-h1 {
+.move {
+    margin-left: 30%;
     
-    font-size: 3em;
-    font-family: 'Opensans,' sans-serif;
-    text-align: center;
-    font-style: italic;
-    color: whitesmoke;
+}
 
-    
-    }
 
 
 .extn-button {
@@ -121,10 +114,7 @@ h1 {
 
     
   }
-  .popover {
-    background-color: red;
-    font-size: 16px;
-}
+  
   
 .button-info {
 
@@ -217,21 +207,16 @@ h1 {
 
 
 
+
+
 .card 
 
 {
     background-color: bisque;
 }
 
-.tooltip {
-    visibility: hidden;
-    width: 120px;
-    background-color: #555;
-    color: #fff;
-    font-size: 16px;
-    text-align: center;
-    padding: 5px 0;
 }
+
 .bananas {
 
     border-style: solid;
