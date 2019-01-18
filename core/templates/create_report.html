@@ -11,6 +11,7 @@
 {% block content %}
 
 <script src="{% static 'js/report.js' %}" defer></script>
+<script src="{% static 'js/util.js' %}" defer></script>
 
 <!-- ***list of subjects*** -->
 <div class="container text-center">
@@ -53,18 +54,18 @@
                 <p>Optional: deselect any you would not like to include in your email</p>
             <div>
                 
-                <button id="mayor-button" class="email-button hate-crime form-btn btn-sm" data-type="mayor@mayor.gov" data-toggle="tooltip" data-placement="right" title="the Mayor is the elected head of administration in Durham">Mayor of Durham</button>
+                <button id="mayor-button" class="email-button hate-crime form-btn btn-sm" data-type="mayor@mayor.gov" data-toggle="tooltip" data-placement="top" title="the Mayor is the elected head of administration in Durham">Mayor of Durham</button>
            
             
-                <button id="spcl-button" class="email-button hate-crime form-btn btn-sm" data-type="SPCL@SPLC.gov" data-toggle="tooltip" data-placement="right" title="SPLC is a civil rights organization dealinag with ..">SPLCenter</button>
+                <button id="spcl-button" class="email-button hate-crime form-btn btn-sm" data-type="SPCL@SPLC.gov" data-toggle="tooltip" data-placement="top" title="SPLC is a civil rights organization dealinag with ..">SPLCenter</button>
            
-                <button id="local-media-button" class="email-button police-brut form-btn btn-sm" data-type="localMedia@localMedia.gov" data-toggle="tooltip" data-placement="right" title="newspapers and TV">Local Media</button>
+                <button id="local-media-button" class="email-button police-brut form-btn btn-sm" data-type="localMedia@localMedia.gov" data-toggle="tooltip" data-placement="top" title="newspapers and TV">Local Media</button>
           
-                <button id="scsj-button" class="email-button police-brut form-btn btn-sm" data-type="scsj@scsj.gov" data-toggle="tooltip" data-placement="right" title="SCSJ is a civil rights organization dealing with ..">SCSJ</button>
+                <button id="scsj-button" class="email-button police-brut form-btn btn-sm" data-type="scsj@scsj.gov" data-toggle="tooltip" data-placement="top" title="SCSJ is a civil rights organization dealing with ..">SCSJ</button>
             
-                <button id="naacp-button" class="email-button civ-rights form-btn btn-sm" data-type="naacp@naacp.gov" data-toggle="tooltip" data-placement="right" title="NAACP is a civil rights organization dealing with .." >NAACP</button>
+                <button id="naacp-button" class="email-button civ-rights form-btn btn-sm" data-type="naacp@naacp.gov" data-toggle="tooltip" data-placement="top" title="NAACP is a civil rights organization dealing with .." >NAACP</button>
            
-                <button id="aclu-button" class="email-button civ-rights form-btn btn-sm" data-type="aclu@aclu.gov" data-toggle="tooltip" data-placement="right" title="ACLU is a civil rights organization dealing with ..">ACLU</button>
+                <button id="aclu-button" class="email-button civ-rights form-btn btn-sm" data-type="aclu@aclu.gov" data-toggle="tooltip" data-placement="top" title="ACLU is a civil rights organization dealing with ..">ACLU</button>
             
             </div>
         </div>
@@ -104,6 +105,12 @@
         </div>
             <button type="submit" class="btn btn-success">Submit</button>
     </form>
+
+<div class="tooltip" role="tooltip">
+    <div class="arrow"></div>
+    <div class="tooltip-inner"></div>
+</div>
+
             </div>
         </div>
     </div>
