@@ -134,37 +134,16 @@ h1 {
    
   
   }
-<<<<<<< HEAD
-  
 
-.form-btn.active{
-    background-color: black;
-    color: whitesmoke; 
-}
-
-
-  .form-btn:hover {
-    background-color: black;
-=======
      
   .form-btn:hover {
       background-color: black;
->>>>>>> master
     color: whitesmoke; 
 }
   .form-btn:focus {
     background-color:black;
     color: whitesmoke;
-<<<<<<< HEAD
-  }
- 
-body {
 
-/*     
-     background-color:ivory;  */
-=======
-    
->>>>>>> master
     
   }
   .popover {
@@ -202,7 +181,8 @@ body {
 
     background-color: maroon;
     color: whitesmoke;
-    
+    padding-left: 40px;
+    padding-top: 30px;
     border-color: ivory;
     border-width: 2px;
     border-style: solid;
@@ -225,8 +205,10 @@ body {
 
     background-color: green;
     color: whitesmoke;
+    /* padding-left: 40px;
+    padding-top: 30px;
     height: 200px;
-    width: 400px;
+    width: 400px; */
     border-color: ivory;
     border-width: 2px;
     border-style: solid;
@@ -236,9 +218,11 @@ body {
 
     background-color: lightyellow;
     color: black;
+    /* padding-left: 40px;
+    padding-top: 30px; */
     border-color: ivory;
-    height: 200px;
-    width: 400px;
+    /* height: 200px;
+    width: 400px; */
     border-width: 2px;
     border-style: solid;
 }
@@ -247,11 +231,37 @@ body {
 
     background-color: gray;
     color: whitesmoke;
+    /* padding-left: 40px;
+    padding-top: 30px;
     height: 200px;
-    width: 400px;
+    width: 400px; */
     border-color: ivory;
     border-width: 2px;
     border-style: solid;
+}
+
+
+
+
+
+.tooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    padding: 5px 0;
+}
+.bananas {
+
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    margin: 10%;
+    max-width: 300px;
+    max-height: 500px;
+
 }
 
 

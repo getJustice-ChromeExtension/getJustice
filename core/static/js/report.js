@@ -1,22 +1,8 @@
 
-<<<<<<< HEAD
-//*** globals ***/
-=======
-// * tooltip function*/
-// $(document).ready(function () {
-//     $('button').on("hover", function () {
-//         $('[data-toggle="tooltip"], .tooltip').tooltip();
-//         $('[data-toggle="tooltip"], .tooltip').tooltip("show");
-//         $("button").click(function () {
-//             $('[data-toggle="tooltip"],.tooltip').tooltip("hide");
-//         });
-//     });
-// });
 
-$('.popover-dismiss').popover({
-    trigger: 'focus', delay: { "show": 500, "hide": 10 }
-})
->>>>>>> master
+//*** globals ***/
+
+
 
 function get(id) {
     object = document.getElementById(id)
@@ -119,7 +105,7 @@ function addRemoveEmailAddress() {
             addressField = get('email-address')
             if (addressField.value.includes(`${newAddress}, `)) {
                 current = addressField.value
-                edited = addressField.value.replace(`${newAddress}, `, '')
+                edited = add2ressField.value.replace(`${newAddress}, `, '')
                 addressField.value = edited
             } else {
                 current = addressField.value

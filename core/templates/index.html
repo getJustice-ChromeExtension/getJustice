@@ -7,17 +7,17 @@
 
 {% block content %}
 
-{% if messages %}
-  {% for message in messages %}
-     <div{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
-  {% endfor %}
-{% endif %} 
 
 <body>  
 <div class="line">
 </div>
 <div class="line-two">
 </div>
+
+<div class="container">
+        {% include 'messages.html' %}  
+      </div>
+
   <div class="container">      
     <div class= "row">
       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -37,7 +37,7 @@
         <br>
         <br>
         <br>
-        <a href="{% url 'report' %}" class="btn btn-success">Report </a>
+        <a href="{% url 'website_report' %}" class="btn btn-success">Report </a>
         <br>
         <br>
         <p class="vision">You can also report and upload images from here.</p>
@@ -54,7 +54,7 @@
           <div class="about">
             <div>
             
-              <h1 class="display-2">How do I getJustice</h1>}                    
+              <h1 class="display-2">How do I getJustice</h1>                   
             </div>
           <br>
           <br>

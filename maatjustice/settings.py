@@ -170,11 +170,18 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 MESSAGE_TAGS = {
-    messages.SUCCESS: 'col-lg-4 col-md-4 col-sm-12 col-xs-12 greenbg',
-    messages.INFO: 'col-lg-4 col-md-4 col-sm-12 col-xs-12 graybg',
-    messages.WARNING: 'col-lg-4 col-md-4 col-sm-12 col-xs-12 yellowbg',
-    messages.ERROR: 'col-lg-4 col-md-4 col-sm-12 col-xs-12 redbg',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+
 }
+
+#      messages.SUCCESS: 'col-lg-4 col-md-4 col-sm-12 col-xs-12 greenbg',
+#     messages.INFO: 'col-lg-4 col-md-4 col-sm-12 col-xs-12 graybg',
+#     messages.WARNING: 'col-lg-4 col-md-4 col-sm-12 col-xs-12 yellowbg',
+#     messages.ERROR: 'col-lg-4 col-md-4 col-sm-12 col-xs-12 redbg',
+# }
 
 
 REST_FRAMEWORK = {

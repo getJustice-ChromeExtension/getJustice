@@ -9,11 +9,7 @@
 {% endblock header %}
 
 {% block content %}
-{% if messages %}
-  {% for message in messages %}
-      {{ message }}
-  {% endfor %}
-{% endif %}
+
 <script src="{% static 'js/report.js' %}" defer></script>
 <script src="{% static 'js/util.js' %}" defer></script>
 
@@ -80,7 +76,7 @@
     <br>
     <br>
     
-    <form action="{% url 'report' %}" id="report-form" method="POST" class="form-group" enctype="multipart/form-data">
+    <form action="{% url 'website_report' %}" id="report-form" method="POST" class="form-group" enctype="multipart/form-data">
             {% csrf_token %} 
         <div class="form-group">
             <input type="text" name="send_to" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients" required>

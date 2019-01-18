@@ -62,7 +62,7 @@ def create_report(request):
         form = WebsiteReportForm(request.POST, files=request.FILES)
 
         if form.is_valid():
-            breakpoint()
+
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
             send_to = [f.strip()
