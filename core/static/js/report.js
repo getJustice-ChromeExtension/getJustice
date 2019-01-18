@@ -105,7 +105,7 @@ function addRemoveEmailAddress() {
             addressField = get('email-address')
             if (addressField.value.includes(`${newAddress}, `)) {
                 current = addressField.value
-                edited = add2ressField.value.replace(`${newAddress}, `, '')
+                edited = addressField.value.replace(`${newAddress}, `, '')
                 addressField.value = edited
             } else {
                 current = addressField.value
