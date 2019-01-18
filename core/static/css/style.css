@@ -180,7 +180,8 @@ h1 {
 
     background-color: maroon;
     color: whitesmoke;
-    
+    padding-left: 40px;
+    padding-top: 30px;
     border-color: ivory;
     border-width: 2px;
     border-style: solid;
@@ -203,8 +204,10 @@ h1 {
 
     background-color: green;
     color: whitesmoke;
+    /* padding-left: 40px;
+    padding-top: 30px;
     height: 200px;
-    width: 400px;
+    width: 400px; */
     border-color: ivory;
     border-width: 2px;
     border-style: solid;
@@ -214,9 +217,11 @@ h1 {
 
     background-color: lightyellow;
     color: black;
+    /* padding-left: 40px;
+    padding-top: 30px; */
     border-color: ivory;
-    height: 200px;
-    width: 400px;
+    /* height: 200px;
+    width: 400px; */
     border-width: 2px;
     border-style: solid;
 }
@@ -225,8 +230,10 @@ h1 {
 
     background-color: gray;
     color: whitesmoke;
+    /* padding-left: 40px;
+    padding-top: 30px;
     height: 200px;
-    width: 400px;
+    width: 400px; */
     border-color: ivory;
     border-width: 2px;
     border-style: solid;
@@ -244,7 +251,16 @@ h1 {
     text-align: center;
     padding: 5px 0;
 }
-  
+.bananas {
+
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    margin: 10%;
+    max-width: 300px;
+    max-height: 500px;
+
+}
 
 .line {
     padding-top: 20px;

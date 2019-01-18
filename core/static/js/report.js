@@ -12,9 +12,6 @@
 //     });
 // });
 
-$('.popover-dismiss').popover({
-    trigger: 'focus', delay: { "show": 500, "hide": 10 }
-})
 
 function get(id) {
     object = document.getElementById(id)
@@ -120,7 +117,7 @@ function addRemoveEmailAddress() {
             addressField = get('email-address')
             if (addressField.value.includes(`${newAddress}, `)) {
                 current = addressField.value
-                edited = addressField.value.replace(`${newAddress}, `, '')
+                edited = add2ressField.value.replace(`${newAddress}, `, '')
                 addressField.value = edited
             } else {
                 current = addressField.value
