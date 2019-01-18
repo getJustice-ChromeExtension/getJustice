@@ -67,18 +67,21 @@ def create_report(request):
             message = form.cleaned_data['message']
             send_to = [f.strip()
                        for f in form.cleaned_data['send_to'].split(',') if f.strip()]
-
             image = form.cleaned_data['image']
-
             msg = EmailMessage(
                 subject, message, 'getJustice.act@gmail.com', send_to)
             msg.content_subtype = "html"
-
-            msg.attach(image.name, image.read(), image.content_type)
-            msg.send()
-            django_message = f"Your report was sent!"
-            messages.add_message(request, messages.SUCCESS, django_message)
-            return render(request, 'index.html', {form: form, })
+            if image:
+                msg.attach(image.name, image.read(), image.content_type)
+                msg.send()
+                django_message = f"Your report was sent!"
+                messages.add_message(request, messages.SUCCESS, django_message)
+                return render(request, 'index.html', {form: form, })
+            else:
+                msg.send()
+                django_message = f"Your report was sent!"
+                messages.add_message(request, messages.SUCCESS, django_message)
+                return render(request, 'index.html', {form: form, })
         else:
             form = form_class()
 
