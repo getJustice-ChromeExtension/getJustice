@@ -51,7 +51,6 @@ function addRemoveHateCrimeAdresses() {
         emails = document.querySelectorAll('.email-button')
         emails.forEach(email => {
             if (email.classList.contains('hate-crime')) {
-                email.classList.add('active')
                 newEmail = email.getAttribute('data-type')
                 addressField = get('email-address')
                 if (addressField.value.includes(`${newEmail}, `)) {
