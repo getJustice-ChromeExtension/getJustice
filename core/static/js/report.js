@@ -10,7 +10,6 @@ function get(id) {
 
 //*** function to keep the buttons pressed down ***//
 
-console.log('connected')
 function buttonPress() {
     $(document).ready(function () {
         $(".form-btn").on({
