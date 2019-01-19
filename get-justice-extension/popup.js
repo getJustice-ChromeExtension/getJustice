@@ -35,18 +35,20 @@ changeColor.onclick = function (element) {
 
 // need to write function that checks and unchecks boxes
 // need a function for subjects
+//*** function to keep buttons pressed down  ***//
+function buttonPress() {
+    $(document).ready(function () {
+        $(".form-btn").on({
 
-//* tooltip function */
-$(document).ready(function () {
-    $('button').on("hover", function () {
-        $('[data-toggle="tooltip"], .tooltip').tooltip();
-        $('[data-toggle="tooltip"], .tooltip').tooltip("show");
-        $("button").click(function () {
-            $('[data-toggle="tooltip"],.tooltip').tooltip("hide");
+            click: function () {
+                $(this).css("background-color", "black");
+                $(this).css("font-size", "18px");
+                $(this).css("color", "white");
+                $(this).css("font-family", "Opensans, sans-serif");
+            }
         });
     });
-});
-
+}
 function get(id) {
     object = document.getElementById(id)
     return object
@@ -165,7 +167,7 @@ function addRemoveEmailAddress() {
 }
 
 
-
+buttonPress()
 get()
 addRemoveEmailAddress()
 addRemoveSubject()

@@ -2,8 +2,21 @@
 
 //*** globals ***/
 
+//*** function to keep the buttons pressed down ***//
 
+function buttonPress() {
+    $(document).ready(function () {
+        $(".form-btn").on({
 
+            click: function () {
+                $(this).css("background-color", "black");
+                $(this).css("font-size", "18px");
+                $(this).css("color", "white");
+                $(this).css("font-family", "Opensans, sans-serif");
+            }
+        });
+    });
+}
 function get(id) {
     object = document.getElementById(id)
     return object
@@ -123,6 +136,8 @@ function addRemoveEmailAddress() {
 
 
 //*** called functions ***/
+
+buttonPress()
 get()
 addRemoveEmailAddress()
 addRemoveSubject()
