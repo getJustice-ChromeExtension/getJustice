@@ -55,7 +55,6 @@ function addRemoveHateCrimeAdresses() {
                 newEmail = email.getAttribute('data-type')
                 addressField = get('email-address')
                 if (addressField.value.includes(`${newEmail}, `)) {
-                    email.classList.remove('active')
                     current = addressField.value
                     edited = addressField.value.replace(`${newEmail}, `, '')
                     addressField.value = edited
@@ -76,11 +75,9 @@ function addRemovePoliceBrutailityAdresses() {
         emails = document.querySelectorAll('.email-button')
         emails.forEach(email => {
             if (email.classList.contains('police-brut')) {
-                email.classList.add('active')
                 newEmail = email.getAttribute('data-type')
                 addressField = get('email-address')
                 if (addressField.value.includes(`${newEmail}, `)) {
-                    email.classList.remove('active')
                     current = addressField.value
                     edited = addressField.value.replace(`${newEmail}, `, '')
                     addressField.value = edited
@@ -101,11 +98,9 @@ function addRemoveCivilRightsAdresses() {
         emails = document.querySelectorAll('.email-button')
         emails.forEach(email => {
             if (email.classList.contains('civ-rights')) {
-                email.classList.add('active')
                 newEmail = email.getAttribute('data-type')
                 addressField = get('email-address')
                 if (addressField.value.includes(`${newEmail}, `)) {
-                    email.classList.remove('active')
                     current = addressField.value
                     edited = addressField.value.replace(`${newEmail}, `, '')
                     addressField.value = edited
@@ -125,13 +120,13 @@ function addRemoveSubject() {
         button.addEventListener('click', () => {
             subject = button.getAttribute("data-type")
             subjectField = get('subject')
-            if (subjectField.value.includes(`${subject}`)) {
+            if (subjectField.value.includes(`${subject}, `)) {
                 current = subjectField.value
-                edited = subjectField.value.replace(`${subject}`, '')
+                edited = subjectField.value.replace(`${subject}, `, '')
                 subjectField.value = edited
             } else {
                 current = subjectField.value
-                subjectField.value = `${subject}`
+                subjectField.value = `${subject}, ${current}`
             }
         })
     })
