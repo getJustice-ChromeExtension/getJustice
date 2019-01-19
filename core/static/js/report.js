@@ -84,11 +84,14 @@ function addRemoveSubject() {
         button.addEventListener('click', () => {
             subject = button.getAttribute("data-type")
             subjectField = get('subject')
+            console.log(subject)
             if (subjectField.value.includes(`${subject}, `)) {
+                console.log("remove")
                 current = subjectField.value
                 edited = subjectField.value.replace(`${subject}, `, '')
                 subjectField.value = edited
             } else {
+                console.log("add")
                 current = subjectField.value
                 subjectField.value = `${subject}, ${current}`
             }
