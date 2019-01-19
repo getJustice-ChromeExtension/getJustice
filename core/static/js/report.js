@@ -2,7 +2,14 @@
 
 //*** globals ***/
 
+function get(id) {
+    object = document.getElementById(id)
+    return object
+}
+
+
 //*** function to keep the buttons pressed down ***//
+
 console.log('connected')
 function buttonPress() {
     $(document).ready(function () {
@@ -17,10 +24,7 @@ function buttonPress() {
         });
     });
 }
-function get(id) {
-    object = document.getElementById(id)
-    return object
-}
+
 
 function toggelButtons(){
     buttons = document.querySelectorAll('.form-btn')
@@ -28,7 +32,7 @@ function toggelButtons(){
         button.addEventListener('click', ()=> {
             if (button.classList.contains('active')) {
                 button.classList.remove('active')
-            }else {
+            } else {
                 button.classList.add('active')
             }
 
@@ -36,6 +40,7 @@ function toggelButtons(){
        
     })
 }
+
 
 //*** functions for the buttons ***/
 
@@ -120,13 +125,13 @@ function addRemoveSubject() {
         button.addEventListener('click', () => {
             subject = button.getAttribute("data-type")
             subjectField = get('subject')
-            if (subjectField.value.includes(`${subject}, `)) {
+            if (subjectField.value.includes(`${subject}`)) {
                 current = subjectField.value
-                edited = subjectField.value.replace(`${subject}, `, '')
+                edited = subjectField.value.replace(`${subject}`, '')
                 subjectField.value = edited
             } else {
                 current = subjectField.value
-                subjectField.value = `${subject}, ${current}`
+                subjectField.value = `${subject}`
             }
         })
     })
