@@ -3,7 +3,7 @@
 //*** globals ***/
 
 //*** function to keep the buttons pressed down ***//
-
+console.log('connected')
 function buttonPress() {
     $(document).ready(function () {
         $(".form-btn").on({
@@ -22,6 +22,20 @@ function get(id) {
     return object
 }
 
+function toggelButtons(){
+    buttons = document.querySelectorAll('.form-btn')
+    buttons.forEach(button => {
+        button.addEventListener('click', ()=> {
+            if (button.classList.contains('active')) {
+                button.classList.remove('active')
+            }else {
+                button.classList.add('active')
+            }
+
+        })
+       
+    })
+}
 
 //*** functions for the buttons ***/
 
@@ -100,14 +114,11 @@ function addRemoveSubject() {
         button.addEventListener('click', () => {
             subject = button.getAttribute("data-type")
             subjectField = get('subject')
-            console.log(subject)
             if (subjectField.value.includes(`${subject}, `)) {
-                console.log("remove")
                 current = subjectField.value
                 edited = subjectField.value.replace(`${subject}, `, '')
                 subjectField.value = edited
             } else {
-                console.log("add")
                 current = subjectField.value
                 subjectField.value = `${subject}, ${current}`
             }
@@ -137,7 +148,8 @@ function addRemoveEmailAddress() {
 
 //*** called functions ***/
 
-buttonPress()
+toggelButtons()
+// buttonPress()
 get()
 addRemoveEmailAddress()
 addRemoveSubject()
