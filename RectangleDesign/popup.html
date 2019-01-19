@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      button {
+        height: 30px;
+        width: 30px;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+
+    <script src="popup.js"></script>
+    <link rel="stylesheet"href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" defer></script>
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+<h1> getJustice </h1>
+<div class="container text-center">
+<div class="line">
+</div>
+<div class="line-two">
+</div>
+    <br>
+    
+    <h4> Type of Crime </h4>
+    <br>
+   
+        <div>
+            <button id="hate-crime-button" class="subject-button form-btn btn-lg" data-type="Hate Crime" data-toggle ="tooltip" data-placement="bottom"  data-container="body" title="*Prejudice-motivated crime *Perpetrator targets a victim because of his or her membership in a certain social group or race">Hate Crime</button>
+        
+    
+            <button id="police-brut-button" class="subject-button form-btn btn-lg" data-type="Police Brutality" data-toggle="tooltip" data-placement="bottom"  data-container="body" title="*Wrongful arrests *Unjustified searches * Unlawful destruction of evidence *Excessive force *Unlawful police shootings.">Police Brutality</button>
+        
+        
+            <button id="civ-rights-violate-button" class="subject-button form-btn btn-lg" data-type="Civil Right Violation" data-toggle="tooltip" data-placement="bottom" data-container="body" title=" *Hate crimes *Migrant worker exploitation *Law enforcement misconduct *Religious interference or property damage *Health care access interference, such as phone threat or bombing *Slavery rings.">Civil Rights Violation</button>
+        
+    </div>
+</div>
+
+
+<!-- ***list of recipients*** -->
+<div class="container text-center">
+        <div id="address-wrapper">
+         <br>
+            <h4> Who would you like to send your report to? </h4>
+            <br>
+
+                <p>Optional: deselect any you would not like to include in your email</p>
+            <div>
+                
+                <button id="mayor-button" class="email-button hate-crime form-btn btn-sm" data-type="mayor@mayor.gov" data-toggle="tooltip" data-placement="right" title="the Mayor is the elected head of administration in Durham">Mayor of Durham</button>
+           
+            
+                <button id="spcl-button" class="email-button hate-crime form-btn btn-sm" data-type="SPCL@SPLC.gov" data-toggle="tooltip" data-placement="right" title="SPLC is a civil rights organization dealinag with ..">SPLCenter</button>
+           
+                <button id="local-media-button" class="email-button police-brut form-btn btn-sm" data-type="localMedia@localMedia.gov" data-toggle="tooltip" data-placement="right" title="newspapers and TV">Local Media</button>
+          
+                <button id="scsj-button" class="email-button police-brut form-btn btn-sm" data-type="scsj@scsj.gov" data-toggle="tooltip" data-placement="right" title="SCSJ is a civil rights organization dealing with ..">SCSJ</button>
+            
+                <button id="naacp-button" class="email-button civ-rights form-btn btn-sm" data-type="naacp@naacp.gov" data-toggle="tooltip" data-placement="right" title="NAACP is a civil rights organization dealing with .." >NAACP</button>
+           
+                <button id="aclu-button" class="email-button civ-rights form-btn btn-sm" data-type="aclu@aclu.gov" data-toggle="tooltip" data-placement="right" title="ACLU is a civil rights organization dealing with ..">ACLU</button>
+            
+        </div>
+    </div>
+</div>
+
+<!-- ***report form*** -->
+<div class="container text-center">
+<br>
+<br>
+    <form action="{% url 'report' %}" id="report-form" method="POST" class="form-group">
+            {% csrf_token %} 
+        <div class="form-group">
+            <input type="text" name="send_to" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="reply_to" class="form-control" id="cc-address" maxlength="500" placeholder="CC" readonly>
+        </div>
+        <div class="form-group">
+            <input type="text" name="subject" class="form-control" id="subject" maxlength="500" placeholder="Subject" required>
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" name="message" id="email-body" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident(optional)" required>
+            I am a concerned citizen who wishes to raise this issue of civil injustice that I have become aware of. I request you to take up this matter seriously and hope that my concerns, as well as those of others involved in this matter of public importance, will be addressed by you at the earliest.  I have included a screenshot with more information about the crime below.
+
+            sincerely,
+            </textarea>
+
+        </div>  
+        <div>
+            <input type="hidden" id="screenshot-data" name="screenshot" value="">
+        </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+
+    <div class="form-group">
+        <input type="image" class="form-control-file img-thumbnail" id="new-screenshot" width="384" height="256" src="#"
+            disabled>
+        <label for="exampleFormControlFile1">Image/screenshot</label>
+    </div> 
+</div>
+
+
+
+
+  </body>
+</html>
+
