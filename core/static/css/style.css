@@ -102,6 +102,11 @@ a.active{
    
   
   }
+
+.active { 
+    background-color: black;
+    color: whitesmoke;
+} 
 /* 
  .form-btn.active { 
         background-color: black;
