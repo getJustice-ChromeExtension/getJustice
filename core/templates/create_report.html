@@ -26,13 +26,13 @@
     <br>
    
         <div>
-            <button id="hate-crime-button" type="button" class="subject-button form-btn btn-lg" data-type="Hate Crime" data-toggle="collapse" data-target="#form-one-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="popover" data-trigger="focus" data-placement="bottom" title="*Prejudice-motivated crime *Perpetrator targets a victim because of his or her membership in a certain social group or race">Hate Crime</button>
+            <button id="hate-crime-button" type="button" class="subject-button form-btn btn-lg" data-type="Hate Crime" data-toggle="collapse" data-target="#form-one-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip"  data-placement="bottom" title=" **Prejudice-motivated crime   **Perpetrator targets a victim because of his or her membership in a certain social group or race">Hate Crime</button>
             
     
-            <button id="police-brut-button" class="subject-button form-btn btn-lg" data-type="Police Brutality" data-toggle="collapse" data-target="#form-two-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="popover" data-trigger="focus" data-placement="bottom" title="*Wrongful arrests *Unjustified searches * Unlawful destruction of evidence *Excessive force *Unlawful police shootings.">Police Brutality</span></button>
+            <button id="police-brut-button" class="subject-button form-btn btn-lg" data-type="Police Brutality" data-toggle="collapse" data-target="#form-two-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip"  data-placement="bottom" title="**Wrongful arrests   **Unjustified searches   **Unlawful destruction of evidence   **Excessive force  **Unlawful police shootings.">Police Brutality</span></button>
             
             
-            <button id="civ-rights-violate-button" class="subject-button form-btn btn-lg" data-type="Civil Right Violation" data-toggle="collapse" data-target="#form-three-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="popover" data-trigger="focus" data-placement="bottom" title="*Hate crimes *Migrant worker exploitation *Law enforcement misconduct *Religious interference or property damage *Health care access interference, such as phone threat or bombing *Slavery rings.">Civil Rights Violation</span></button>
+            <button id="civ-rights-violate-button" class="subject-button form-btn btn-lg" data-type="Civil Right Violation" data-toggle="collapse" data-target="#form-three-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip" d data-placement="bottom" title="**Hate crimes **Migrant worker exploitation **Law enforcement misconduct **Religious interference or property damage **Health care access interference, such as phone threat or bombing **Slavery rings.">Civil Rights Violation</span></button>
 
     </div>
 </div>
@@ -42,75 +42,69 @@
 
 
 <div class="collapse" id="formcollapseLink"> 
-  <div class="collapse" id="form-one-collapseLink">
-   <div class="collapse" id="form-two-collapseLink">
-        <div class="collapse" id="form-three-collapseLink">
-        {% comment %} <div class="card card-body"> {% endcomment %}
-<!-- ***list of recipients*** -->
-    <div class="container text-center">
-    
-        <div id="address-wrapper">
-         <br>
-            <h4> Who would you like to send your report to? </h4>
-            <br>
+    {% comment %} <div class="collapse" id="form-one-collapseLink">
+        <div class="collapse" id="form-two-collapseLink">
+            <div class="collapse" id="form-three-collapseLink">
+         {% endcomment %}
+            <!-- ***list of recipients*** -->
+                <div class="container text-center">
+            
+                    <div id="address-wrapper">
+                        <br>
+                        <h4> Who would you like to send your report to? </h4>
+                        <br>
 
-                <p>Optional: deselect any you would not like to include in your email</p>
-            <div>
-                
-                <button id="mayor-button" class="email-button hate-crime form-btn btn-sm" data-type="mayor@mayor.gov" data-toggle="tooltip" data-placement="top" title="the Mayor is the elected head of administration in Durham">Mayor of Durham</button>
-           
-            
-                <button id="spcl-button" class="email-button hate-crime form-btn btn-sm" data-type="SPCL@SPLC.gov" data-toggle="tooltip" data-placement="top" title="SPLC is a civil rights organization dealinag with ..">SPLCenter</button>
-           
-                <button id="local-media-button" class="email-button police-brut form-btn btn-sm" data-type="localMedia@localMedia.gov" data-toggle="tooltip" data-placement="top" title="newspapers and TV">Local Media</button>
-          
-                <button id="scsj-button" class="email-button police-brut form-btn btn-sm" data-type="scsj@scsj.gov" data-toggle="tooltip" data-placement="top" title="SCSJ is a civil rights organization dealing with ..">SCSJ</button>
-            
-                <button id="naacp-button" class="email-button civ-rights form-btn btn-sm" data-type="naacp@naacp.gov" data-toggle="tooltip" data-placement="top" title="NAACP is a civil rights organization dealing with .." >NAACP</button>
-           
-                <button id="aclu-button" class="email-button civ-rights form-btn btn-sm" data-type="aclu@aclu.gov" data-toggle="tooltip" data-placement="top" title="ACLU is a civil rights organization dealing with ..">ACLU</button>
+                            <p>Optional: deselect any you would not like to include in your email</p>
+                        <div>
+                            
+                            <button id="mayor-button" class="email-button hate-crime form-btn btn-sm" data-type="mayor@mayor.gov" data-toggle="tooltip" data-placement="top" title="the Mayor is the elected head of administration in Durham">Mayor of Durham</button>
+                    
+                        
+                            <button id="spcl-button" class="email-button hate-crime form-btn btn-sm" data-type="SPCL@SPLC.gov" data-toggle="tooltip" data-placement="top" title="SPLC is a civil rights organization dealinag with ..">SPLCenter</button>
+                    
+                            <button id="local-media-button" class="email-button police-brut form-btn btn-sm" data-type="localMedia@localMedia.gov" data-toggle="tooltip" data-placement="top" title="newspapers and TV">Local Media</button>
+                    
+                            <button id="scsj-button" class="email-button police-brut form-btn btn-sm" data-type="scsj@scsj.gov" data-toggle="tooltip" data-placement="top" title="SCSJ is a civil rights organization dealing with ..">SCSJ</button>
+                        
+                            <button id="naacp-button" class="email-button civ-rights form-btn btn-sm" data-type="naacp@naacp.gov" data-toggle="tooltip" data-placement="top" title="NAACP is a civil rights organization dealing with .." >NAACP</button>
+                    
+                            <button id="aclu-button" class="email-button civ-rights form-btn btn-sm" data-type="aclu@aclu.gov" data-toggle="tooltip" data-placement="top" title="ACLU is a civil rights organization dealing with ..">ACLU</button>
+                        </div>
+                    </div> 
                 </div>
-               </div> 
-            </div>        
-        </div>
-    </div>
-</div>
 
-    <!-- ***report form*** -->
-    <div class="container text-center">
-    <br>
-    <br>
-    
-    <form action="{% url 'website_report' %}" id="report-form" method="POST" class="form-group" enctype="multipart/form-data">
-            {% csrf_token %} 
-        <div class="form-group">
-            <input type="text" name="send_to" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients" required>
-        </div>
-        <div class="form-group">
-            <input type="text" name="reply_to" class="form-control" id="cc-address" maxlength="500" placeholder="CC" readonly>
-        </div>
-        <div class="form-group">
-            <input type="text" name="subject" class="form-control" id="subject" maxlength="500" placeholder="Subject" required>
-        </div>
-        <div class="form-group">
-            <textarea class="form-control" name="message" id="email-body" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident(optional)" required>
-            Dear madam/sir,
+            <!-- ***report form*** -->
+            <div class="container text-center">
+            <br>
+            <br>
+            
+            <form action="{% url 'website_report' %}" id="report-form" method="POST" class="form-group" enctype="multipart/form-data">
+                    {% csrf_token %} 
+                <div class="form-group">
+                    <input type="text" name="send_to" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="reply_to" class="form-control" id="cc-address" maxlength="500" placeholder="CC" readonly>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="subject" class="form-control" id="subject" maxlength="500" placeholder="Subject" required>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" name="message" id="email-body" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident(optional)" required>
+                    Dear madam/sir,
 
-            I am a concerned citizen who wishes to raise this issue of civil injustice that I have become aware of. I request you to take up this matter seriously and hope that my concerns, as well as those of others involved in this matter of public importance, will be addressed by you at the earliest.  I have included an image with more information about the crime below.
+                    I am a concerned citizen who wishes to raise this issue of civil injustice that I have become aware of. I request you to take up this matter seriously and hope that my concerns, as well as those of others involved in this matter of public importance, will be addressed by you at the earliest.  I have included an image with more information about the crime below.
 
-            Sincerely,
-            getJUSTICE  user
-            </textarea>
+                    Sincerely,
+                    getJUSTICE  user
+                    </textarea>
 
-        </div>  
-       <div>
-
-    <input type="file" name="image">
-
-        </div>
-            <button type="submit" class="btn btn-success">Submit</button>
-    </form>
-
+                </div>  
+            <div>
+            <input type="file" name="image">
+                    <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+            </form>     
             </div>
         </div>
     </div>

@@ -102,9 +102,13 @@ a.active{
    
   
   }
-
+/* 
+ .form-btn.active { 
+        background-color: black;
+        color: whitesmoke;
+    } 
      
-  .form-btn:hover {
+  .form-btn:active {
       background-color: black;
     color: whitesmoke; 
 }
@@ -113,7 +117,7 @@ a.active{
     color: whitesmoke;
 
     
-  }
+  } */
   
   
 .button-info {
