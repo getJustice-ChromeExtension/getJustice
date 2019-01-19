@@ -18,6 +18,7 @@ from django.conf import settings
 from django.urls import path, include
 from core import views
 from django.conf.urls.static import static
+from django.views.generic import RedirectView
 
 
 urlpatterns = [
@@ -29,7 +30,7 @@ urlpatterns = [
 
 
     path('about/', views.about, name='about'),
-
+    path('favicon', RedirectView.as_view(url='/static/favicon.ico')),
 
     path('faq/', views.faq, name='faq'),
     path('your-rights/', views.rights, name="rights"),

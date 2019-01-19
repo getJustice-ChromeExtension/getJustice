@@ -15,6 +15,7 @@ function get(id) {
 function addRemoveHateCrimeAdresses() {
     button = get('hate-crime-button')
     button.addEventListener('click', () => {
+        $("#formcollapseLink").collapse("show")
         emails = document.querySelectorAll('.email-button')
         emails.forEach(email => {
             if (email.classList.contains('hate-crime')) {
@@ -37,6 +38,7 @@ function addRemoveHateCrimeAdresses() {
 function addRemovePoliceBrutailityAdresses() {
     button = get('police-brut-button')
     button.addEventListener('click', () => {
+        $("#formcollapseLink").collapse("show")
         emails = document.querySelectorAll('.email-button')
         emails.forEach(email => {
             if (email.classList.contains('police-brut')) {
@@ -59,6 +61,7 @@ function addRemovePoliceBrutailityAdresses() {
 function addRemoveCivilRightsAdresses() {
     button = get('civ-rights-violate-button')
     button.addEventListener('click', () => {
+        $("#formcollapseLink").collapse("show")
         emails = document.querySelectorAll('.email-button')
         emails.forEach(email => {
             if (email.classList.contains('civ-rights')) {
