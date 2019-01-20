@@ -53,6 +53,7 @@
     
     
     <h5> I would like to report a: </h5>
+    <p>Hover over each type of crime for a definition</p>
     <br>
    
         <div>
@@ -62,7 +63,7 @@
             <button id="police-brut-button" class="subject-button form-btn btn-lg" data-type="Police Brutality" data-toggle="collapse" data-target="#form-two-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip"  data-placement="bottom" title="**Wrongful arrests **Unjustified searches **Unlawful destruction of evidence **Excessive force **Unlawful police shootings.">Police Brutality</span></button>
             
             
-            <button id="civ-rights-violate-button" class="subject-button form-btn btn-lg" data-type="Civil Right Violation" data-toggle="collapse" data-target="#form-three-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip"  data-placement="bottom" title="**Hate crimes **Migrant worker exploitation **Law enforcement misconduct **Religious interference or property damage **Health care access interference, such as phone threat or bombing **Slavery rings.">Civil Rights Violation</span></button>
+            <button id="civ-rights-violate-button" class="subject-button form-btn btn-lg" data-type="Civil Right Violation" data-toggle="collapse" data-target="#form-three-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip"  data-placement="bottom" title="**Migrant worker exploitation **Law enforcement misconduct **Religious interference or property damage **Health care access interference, such as phone threat or bombing **Slavery rings.">Civil Rights Violation</span></button>
 
     </div>
 </div>
@@ -84,6 +85,7 @@
                         <br>
 
                             <p>Optional: deselect any you would not like to include in your email</p>
+                            <p>Email reports sent using getJustice are anonymous. Edit the email text below if you would like to include contact info or more details. </p>
                         <div>
                             
                          
@@ -92,7 +94,7 @@
                         
                             <button id="spcl-button" class="email-button hate-crime form-btn btn-sm" data-type="SPCL@SPLC.gov" data-toggle="tooltip" data-placement="top" title="The Southern Poverty Law Center is dedicated to fighting hate and bigotry; to seeking justice for the most vulnerable members of our society. Using litigation, education, and other forms of advocacy, the SPLC works toward the day when the ideals of equal justice and equal opportunity will be a reality.">SPLCenter</button>
                     
-                            <button id="local-media-button" class="email-button police-brut form-btn btn-sm" data-type="localMedia@localMedia.gov" data-toggle="tooltip" data-placement="top" title="newspapers and TV">Local Media</button>
+                            <button id="local-media-button" class="email-button police-brut form-btn btn-sm" data-type="editors@indyweek.com, assignmentdesk@wral.com" data-toggle="tooltip" data-placement="top" title="Indy Week newspaper and Durham WRAL News Station">Local Media</button>
                     
                             <button id="scsj-button" class="email-button police-brut form-btn btn-sm" data-type="scsj@scsj.gov" data-toggle="tooltip" data-placement="top" title="The Southern Coalition for Social Justice partners with communities of color and economically disadvantaged communities in the south to defend and advance their political, social and economic rights through the combination of legal advocacy, research, organizing and communications.">SCSJ</button>
                         
@@ -103,6 +105,10 @@
                             <button id="sheriff-button" class="email-button civ-rights form-btn btn-sm" data-type="sheriff@sheriff.gov" data-toggle="tooltip" data-placement="top" title="The Sheriff is the elected head of the police department looking after Durham county">Durham county Sheriff</button>
 
                             <button id="police-button" class="email-button hate-crime form-btn btn-sm" data-type="chief@police.gov" data-toggle="tooltip" data-placement="top" title="The Durham police department is the law enforcement agency for the city of Durham">Durham police chief</button>
+
+                            <button id="police-button" class="email-button hate-crime form-btn btn-sm" data-type="chief@police.gov" data-toggle="tooltip" data-placement="top" title="The Durham police department is the law enforcement agency for the city of Durham">Durham police chief</button>
+
+                            <button id="getJustice-button" class="email-button hate-crime form-btn btn-sm" data-type="info@get-justice.org" data-toggle="tooltip" data-placement="top" title="getJustice testing email">getJustice</button>
 
                         </div>
                     </div> 
@@ -118,9 +124,9 @@
                 <div class="form-group">
                     <input type="text" name="send_to" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients" required>
                 </div>
-                <div class="form-group">
+                {% comment %} <div class="form-group">
                     <input type="text" name="reply_to" class="form-control" id="cc-address" maxlength="500" placeholder="CC" readonly>
-                </div>
+                </div> {% endcomment %}
                 <div class="form-group">
                     <input type="text" name="subject" class="form-control" id="subject" maxlength="500" placeholder="Subject" required>
                 </div>
@@ -145,7 +151,8 @@
 </div>          
     <div class="form-group">
         <input type="image" class="form-control-file image-fluid bananas" id="new-screenshot" src="#" disabled>
-         <label for="exampleFormControlFile1">Image/screenshot</label> 
+         <label for="exampleFormControlFile1">Image/screenshot of post describing crime</label> 
+         <p> If you would like to send an email report about this crime without including a screenshot, please click on the fist icon above to report from our website"
     </div> 
     
 {% endblock %}
