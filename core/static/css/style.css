@@ -103,17 +103,12 @@ a.active{
   
   }
 
-     
-  .form-btn:hover {
-      background-color: black;
-    color: whitesmoke; 
-}
-  .form-btn:focus {
-    background-color:black;
+.active { 
+    background-color: black;
     color: whitesmoke;
+} 
 
-    
-  }
+
   
   
 .button-info {
@@ -170,10 +165,7 @@ a.active{
 
     background-color: green;
     color: whitesmoke;
-    /* padding-left: 40px;
-    padding-top: 30px;
-    height: 200px;
-    width: 400px; */
+  
     border-color: ivory;
     border-width: 2px;
     border-style: solid;
@@ -183,11 +175,9 @@ a.active{
 
     background-color: lightyellow;
     color: black;
-    /* padding-left: 40px;
-    padding-top: 30px; */
+   
     border-color: ivory;
-    /* height: 200px;
-    width: 400px; */
+   
     border-width: 2px;
     border-style: solid;
 }
@@ -196,10 +186,7 @@ a.active{
 
     background-color: gray;
     color: whitesmoke;
-    /* padding-left: 40px;
-    padding-top: 30px;
-    height: 200px;
-    width: 400px; */
+   
     border-color: ivory;
     border-width: 2px;
     border-style: solid;
@@ -215,7 +202,7 @@ a.active{
     background-color: bisque;
 }
 
-}
+
 
 .bananas {
 

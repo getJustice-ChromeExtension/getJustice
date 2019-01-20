@@ -2,11 +2,42 @@
 
 //*** globals ***/
 
-
-
 function get(id) {
     object = document.getElementById(id)
     return object
+}
+
+
+//*** function to keep the buttons pressed down ***//
+
+function buttonPress() {
+    $(document).ready(function () {
+        $(".form-btn").on({
+
+            click: function () {
+                $(this).css("background-color", "black");
+                $(this).css("font-size", "18px");
+                $(this).css("color", "white");
+                $(this).css("font-family", "Opensans, sans-serif");
+            }
+        });
+    });
+}
+
+
+function toggelButtons(){
+    buttons = document.querySelectorAll('.form-btn')
+    buttons.forEach(button => {
+        button.addEventListener('click', ()=> {
+            if (button.classList.contains('active')) {
+                button.classList.remove('active')
+            } else {
+                button.classList.add('active')
+            }
+
+        })
+       
+    })
 }
 
 
@@ -19,9 +50,11 @@ function addRemoveHateCrimeAdresses() {
         emails = document.querySelectorAll('.email-button')
         emails.forEach(email => {
             if (email.classList.contains('hate-crime')) {
+                email.classList.add('active')
                 newEmail = email.getAttribute('data-type')
                 addressField = get('email-address')
                 if (addressField.value.includes(`${newEmail}, `)) {
+                    email.classList.remove('active')
                     current = addressField.value
                     edited = addressField.value.replace(`${newEmail}, `, '')
                     addressField.value = edited
@@ -42,9 +75,11 @@ function addRemovePoliceBrutailityAdresses() {
         emails = document.querySelectorAll('.email-button')
         emails.forEach(email => {
             if (email.classList.contains('police-brut')) {
+                email.classList.add('active')
                 newEmail = email.getAttribute('data-type')
                 addressField = get('email-address')
                 if (addressField.value.includes(`${newEmail}, `)) {
+                    email.classList.remove('active')
                     current = addressField.value
                     edited = addressField.value.replace(`${newEmail}, `, '')
                     addressField.value = edited
@@ -65,9 +100,11 @@ function addRemoveCivilRightsAdresses() {
         emails = document.querySelectorAll('.email-button')
         emails.forEach(email => {
             if (email.classList.contains('civ-rights')) {
+                email.classList.add('active')
                 newEmail = email.getAttribute('data-type')
                 addressField = get('email-address')
                 if (addressField.value.includes(`${newEmail}, `)) {
+                    email.classList.remove('active')
                     current = addressField.value
                     edited = addressField.value.replace(`${newEmail}, `, '')
                     addressField.value = edited
@@ -87,14 +124,11 @@ function addRemoveSubject() {
         button.addEventListener('click', () => {
             subject = button.getAttribute("data-type")
             subjectField = get('subject')
-            console.log(subject)
             if (subjectField.value.includes(`${subject}, `)) {
-                console.log("remove")
                 current = subjectField.value
                 edited = subjectField.value.replace(`${subject}, `, '')
                 subjectField.value = edited
             } else {
-                console.log("add")
                 current = subjectField.value
                 subjectField.value = `${subject}, ${current}`
             }
@@ -123,6 +157,9 @@ function addRemoveEmailAddress() {
 
 
 //*** called functions ***/
+
+toggelButtons()
+// buttonPress()
 get()
 addRemoveEmailAddress()
 addRemoveSubject()
