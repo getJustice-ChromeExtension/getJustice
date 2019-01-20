@@ -21,8 +21,7 @@ chrome.browserAction.onClicked.addListener(function (tab) {
 chrome.browserAction.onClicked.addListener(function(tab) {
     /* Get the `tab`'s window along with its containing tabs */
     chrome.windows.get(tab.windowId, { populate: true }, function(oldWin) {
-        /* Determine which tabs should be moved
-         * (i.e. are on the left of `tab` */
+        /* Determine which tabs should be moved */
         var tabs = oldWin.tabs;
         var tabsToMove = [];
         for (var i = 0; i < tabs.length; i++) {
@@ -52,7 +51,8 @@ chrome.browserAction.onClicked.addListener(function(tab) {
                     /* Move the tabs to the newly created window */
                     chrome.tabs.move(tabsToMove, {
                         windowId: newWin.id,
-                        index: -1
+                        index: -1,
+
                     }, function() {
                         /* Close any tabs that pre-existed (i.e. 1 empty tab)
                          * [Do not do this BEFORE moving the tabs,
@@ -62,6 +62,10 @@ chrome.browserAction.onClicked.addListener(function(tab) {
                             chrome.tabs.remove(t.id);
                             if (idx === lastIdx) {
                                 chrome.windows.update(oldWin.id, {
+                                    top: oldWin.top,
+                                    left: oldWin.left,
+                                    width: 200,
+                                    height: (oldWin.height)-105,
                                     focused: true
                                 });
                             }
