@@ -27,9 +27,10 @@ chrome.browserAction.onClicked.addListener(function(tab) {
         }
         if (tabsToMove.length > 0) {
             chrome.windows.create({
+                type: "popup",
                 top: 150-(oldWin.top),
                 left: (oldWin.width)-400,
-                width: 200,
+                width: 400,
                 height: 700,
                 focused: true
             }, function(newWin) {
@@ -39,12 +40,12 @@ chrome.browserAction.onClicked.addListener(function(tab) {
                     chrome.windows.update(newWin.id);
                     chrome.tabs.move(tabsToMove, {
                         windowId: newWin.id,
-                        index: -1,
+                        index: 0,
                         focused: false
                     }, function() {
                         var lastIdx = tabsToClose.length - 1;
                         tabsToClose.forEach(function(t, idx) {
-                            chrome.tabs.remove(t.id);
+                            chrome.tabs.remove(t[0].id);
                             if (idx === lastIdx) {
                                 chrome.windows.update(oldWin.id, {
                                     top: 150-(oldWin.top),
