@@ -39,15 +39,15 @@ def ext_create_report(request):
             msg = EmailMessage(
                 subject, message, 'getJustice.act@gmail.com', send_to)
             msg.content_subtype = "html"
-
             msg.attach('screenshot.png', screenshot_png, 'image/png')
             msg.send()
-            django_message = f"Your report was sent!"
+            django_message = f"Your report was sent! Thanks for doing your bit to fight injustice!"
             messages.add_message(request, messages.SUCCESS, django_message)
             return render(request, 'index.html', {form: form, })
         else:
             form = form_class()
-
+            django_message = f"For some reason, your report was not sent. Please try again."
+            messages.add_message(request, messages.ERROR, django_message)
     else:
         form = ReportForm()
     return render(request, 'ext_create_report.html', {
@@ -74,7 +74,7 @@ def create_report(request):
             if image:
                 msg.attach(image.name, image.read(), image.content_type)
                 msg.send()
-                django_message = f"Your report was sent!"
+                django_message = f"Your report was sent! Thanks for doing your bit to fight injustice!"
                 messages.add_message(request, messages.SUCCESS, django_message)
                 return render(request, 'index.html', {form: form, })
             else:
@@ -84,6 +84,8 @@ def create_report(request):
                 return render(request, 'index.html', {form: form, })
         else:
             form = form_class()
+            django_message = f"For some reason, your report was not sent. Please try again."
+            messages.add_message(request, messages.ERROR, django_message)
 
     else:
         form = WebsiteReportForm()
