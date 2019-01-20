@@ -31,17 +31,17 @@ chrome.browserAction.onClicked.addListener(function(tab) {
                 left: oldWin.left,
                 width: oldWin.width,
                 height: oldWin.height,
-                focused: false
+                focused: true
             }, function(newWin) {
                 chrome.tabs.query({
                     windowId: newWin.id
                 }, function(tabsToClose) {
-                    chrome.windows.update(newWin.id, { state: oldWin.state });
+                    chrome.windows.update(newWin.id, { top: 150-(newWin.top), left: (newWin.width)-400, width: 200, height: 700, });
                     chrome.tabs.move(tabsToMove, {
                         windowId: newWin.id,
                         index: -1,
+                        focused: false
                     }, function() {
-
                         var lastIdx = tabsToClose.length - 1;
                         tabsToClose.forEach(function(t, idx) {
                             chrome.tabs.remove(t.id);
