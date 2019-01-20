@@ -41,7 +41,7 @@ def ext_create_report(request):
             msg.content_subtype = "html"
             msg.attach('screenshot.png', screenshot_png, 'image/png')
             msg.send()
-            django_message = f"Your report was sent! Thanks for doing your bit to fight injustice!"
+            django_message = f"Your report was sent! Thank you for helping fight injustice!"
             messages.add_message(request, messages.SUCCESS, django_message)
             return render(request, 'index.html', {form: form, })
         else:
