@@ -10,6 +10,7 @@ function get(id) {
 
 //*** function to keep the buttons pressed down ***//
 
+
 function buttonPress() {
     $(document).ready(function () {
         $(".form-btn").on({
@@ -41,7 +42,55 @@ function toggelButtons(){
 }
 
 
+subjectEmails = [
+    {
+        subjectButton: 'hate-crime-button',
+        emailType: 'hate-crime'
+    },
+    {
+        subjectButton: 'police-brut-button',
+        emailType: 'police-brut'
+    },
+    {
+        subjectButton: 'civ-rights-violate-button',
+        emailType: 'civ-rights'
+    }
+]
+
+
+
+
 //*** functions for the buttons ***/
+
+
+function addRemoveSubjectAdresses(subjectEmails) {
+    for (i in subjectEmails) {
+        subject = subjectEmails[i].subjectButton
+        emailType = subjectEmails[i].emailType
+        button = get(subject)
+        email = document.querySelectorAll(emailType)
+        button.addEventListener('click', () => {
+            $("#formcollapseLink").collapse("show")
+            buttons = document.querySelectorAll('.subject-button')
+            emails = document.querySelectorAll('.email-button')
+            emails.forEach(email => {
+                if (email.classList.contains(emailType)) {
+                    newEmail = email.getAttribute('data-type')
+                    addressField = get('email-address')
+                    if (addressField.value.includes(`${newEmail}, `)) {
+                        current = addressField.value
+                        edited = addressField.value.replace(`${newEmail}, `, '')
+                        addressField.value = edited
+                    } else {
+                        current = addressField.value
+                        addressField.value = `${newEmail}, ${current}`
+                    }   
+                }
+            })
+        })     
+    }
+}
+
 
 function addRemoveHateCrimeAdresses() {
     button = get('hate-crime-button')
@@ -157,6 +206,7 @@ toggelButtons()
 get()
 addRemoveEmailAddress()
 addRemoveSubject()
+// addRemoveSubjectAdresses(subjectEmails)
 addRemoveHateCrimeAdresses()
 addRemovePoliceBrutailityAdresses()
 addRemoveCivilRightsAdresses()
