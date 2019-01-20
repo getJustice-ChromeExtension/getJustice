@@ -10,7 +10,6 @@ function get(id) {
 
 //*** function to keep the buttons pressed down ***//
 
-console.log('connected')
 function buttonPress() {
     $(document).ready(function () {
         $(".form-btn").on({
@@ -175,13 +174,13 @@ function addRemoveSubject() {
         button.addEventListener('click', () => {
             subject = button.getAttribute("data-type")
             subjectField = get('subject')
-            if (subjectField.value.includes(`${subject}`)) {
+            if (subjectField.value.includes(`${subject}, `)) {
                 current = subjectField.value
-                edited = subjectField.value.replace(`${subject}`, '')
+                edited = subjectField.value.replace(`${subject}, `, '')
                 subjectField.value = edited
             } else {
                 current = subjectField.value
-                subjectField.value = `${subject}`
+                subjectField.value = `${subject}, ${current}`
             }
         })
     })
@@ -214,6 +213,7 @@ toggelButtons()
 get()
 addRemoveEmailAddress()
 addRemoveSubject()
-addRemoveHateCrimeAdresses()
-addRemovePoliceBrutailityAdresses()
-addRemoveCivilRightsAdresses()
+addRemoveSubjectAdresses(subjectEmails)
+// addRemoveHateCrimeAdresses()
+// addRemovePoliceBrutailityAdresses()
+// addRemoveCivilRightsAdresses()
