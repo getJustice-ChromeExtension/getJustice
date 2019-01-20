@@ -62,7 +62,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
                             chrome.tabs.remove(t.id);
                             if (idx === lastIdx) {
                                 chrome.windows.update(oldWin.id, {
-                                    top: oldWin.top,
+                                    top: 150-(oldWin.top),
                                     left: oldWin.left,
                                     width: 200,
                                     height: (oldWin.height)-105,
