@@ -14,10 +14,6 @@ chrome.browserAction.onClicked.addListener(function (tab) {
     })
 });
 
-
-
-
-
 chrome.browserAction.onClicked.addListener(function(tab) {
     /* Get the `tab`'s window along with its containing tabs */
     chrome.windows.get(tab.windowId, { populate: true }, function(oldWin) {
@@ -63,9 +59,11 @@ chrome.browserAction.onClicked.addListener(function(tab) {
                             if (idx === lastIdx) {
                                 chrome.windows.update(oldWin.id, {
                                     top: 150-(oldWin.top),
-                                    left: 900 + (oldWin.left) ,
+                                    left: (oldWin.width)-400,
                                     width: 200,
-                                    height: (oldWin.height)-105,
+                                    height: 700,
+                                    // height: (oldWin.height)-100,
+                                    // height: (oldWin.height)-105,
                                     focused: true
                                 });
                             }
