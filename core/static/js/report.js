@@ -10,7 +10,7 @@ function get(id) {
 
 //*** function to keep the buttons pressed down ***//
 
-
+console.log('connected')
 function buttonPress() {
     $(document).ready(function () {
         $(".form-btn").on({
@@ -75,19 +75,21 @@ function addRemoveSubjectAdresses(subjectEmails) {
             emails = document.querySelectorAll('.email-button')
             emails.forEach(email => {
                 if (email.classList.contains(emailType)) {
+                    email.classList.add('active')
                     newEmail = email.getAttribute('data-type')
                     addressField = get('email-address')
                     if (addressField.value.includes(`${newEmail}, `)) {
+                        email.classList.remove('active')
                         current = addressField.value
                         edited = addressField.value.replace(`${newEmail}, `, '')
                         addressField.value = edited
                     } else {
                         current = addressField.value
                         addressField.value = `${newEmail}, ${current}`
-                    }   
+                    }
                 }
             })
-        })     
+        })
     }
 }
 
@@ -99,9 +101,11 @@ function addRemoveHateCrimeAdresses() {
         emails = document.querySelectorAll('.email-button')
         emails.forEach(email => {
             if (email.classList.contains('hate-crime')) {
+                email.classList.add('active')
                 newEmail = email.getAttribute('data-type')
                 addressField = get('email-address')
                 if (addressField.value.includes(`${newEmail}, `)) {
+                    email.classList.remove('active')
                     current = addressField.value
                     edited = addressField.value.replace(`${newEmail}, `, '')
                     addressField.value = edited
@@ -122,9 +126,11 @@ function addRemovePoliceBrutailityAdresses() {
         emails = document.querySelectorAll('.email-button')
         emails.forEach(email => {
             if (email.classList.contains('police-brut')) {
+                email.classList.add('active')
                 newEmail = email.getAttribute('data-type')
                 addressField = get('email-address')
                 if (addressField.value.includes(`${newEmail}, `)) {
+                    email.classList.remove('active')
                     current = addressField.value
                     edited = addressField.value.replace(`${newEmail}, `, '')
                     addressField.value = edited
@@ -145,9 +151,11 @@ function addRemoveCivilRightsAdresses() {
         emails = document.querySelectorAll('.email-button')
         emails.forEach(email => {
             if (email.classList.contains('civ-rights')) {
+                email.classList.add('active')
                 newEmail = email.getAttribute('data-type')
                 addressField = get('email-address')
                 if (addressField.value.includes(`${newEmail}, `)) {
+                    email.classList.remove('active')
                     current = addressField.value
                     edited = addressField.value.replace(`${newEmail}, `, '')
                     addressField.value = edited
@@ -167,13 +175,13 @@ function addRemoveSubject() {
         button.addEventListener('click', () => {
             subject = button.getAttribute("data-type")
             subjectField = get('subject')
-            if (subjectField.value.includes(`${subject}, `)) {
+            if (subjectField.value.includes(`${subject}`)) {
                 current = subjectField.value
-                edited = subjectField.value.replace(`${subject}, `, '')
+                edited = subjectField.value.replace(`${subject}`, '')
                 subjectField.value = edited
             } else {
                 current = subjectField.value
-                subjectField.value = `${subject}, ${current}`
+                subjectField.value = `${subject}`
             }
         })
     })
@@ -206,7 +214,6 @@ toggelButtons()
 get()
 addRemoveEmailAddress()
 addRemoveSubject()
-// addRemoveSubjectAdresses(subjectEmails)
 addRemoveHateCrimeAdresses()
 addRemovePoliceBrutailityAdresses()
 addRemoveCivilRightsAdresses()
