@@ -22,7 +22,8 @@
  
 
     
-    <h4> Type of Crime </h4>
+    <h4> I would like to report a:</h4>
+    <p>Hover over each type of crime for a definition</p>
     <br>
    
         <div>
@@ -32,7 +33,7 @@
             <button id="police-brut-button" class="subject-button form-btn btn-lg" data-type="Police Brutality" data-toggle="collapse" data-target="#form-two-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip"  data-placement="bottom" title="**Wrongful arrests   **Unjustified searches   **Unlawful destruction of evidence   **Excessive force  **Unlawful police shootings.">Police Brutality</span></button>
             
             
-            <button id="civ-rights-violate-button" class="subject-button form-btn btn-lg" data-type="Civil Right Violation" data-toggle="collapse" data-target="#form-three-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip" d data-placement="bottom" title="**Hate crimes **Migrant worker exploitation **Law enforcement misconduct **Religious interference or property damage **Health care access interference, such as phone threat or bombing **Slavery rings.">Civil Rights Violation</span></button>
+            <button id="civ-rights-violate-button" class="subject-button form-btn btn-lg" data-type="Civil Right Violation" data-toggle="collapse" data-target="#form-three-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip" d data-placement="bottom" title="**Migrant worker exploitation **Law enforcement misconduct **Religious interference or property damage **Health care access interference, such as phone threat or bombing **Slavery rings.">Civil Rights Violation</span></button>
 
     </div>
 </div>
@@ -88,9 +89,9 @@
                 <div class="form-group">
                     <input type="text" name="send_to" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients" required readonly>
                 </div>
-                <div class="form-group">
+                {% comment %} <div class="form-group">
                     <input type="text" name="reply_to" class="form-control" id="cc-address" maxlength="500" placeholder="CC" readonly>
-                </div>
+                </div> {% endcomment %}
                 <div class="form-group">
                     <input type="text" name="subject" class="form-control" id="subject" maxlength="500" placeholder="Subject" required>
                 </div>
