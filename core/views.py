@@ -28,6 +28,7 @@ def ext_create_report(request):
     if request.method == "POST":
         form = ReportForm(request.POST)
         if form.is_valid():
+            breakpoint()
 
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
@@ -39,7 +40,6 @@ def ext_create_report(request):
             msg = EmailMessage(
                 subject, message, 'getJustice.act@gmail.com', send_to)
             msg.content_subtype = "html"
-
             msg.attach('screenshot.png', screenshot_png, 'image/png')
             msg.send()
             django_message = f"Your report was sent!"
