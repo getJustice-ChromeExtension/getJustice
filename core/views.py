@@ -73,6 +73,7 @@ def create_report(request):
             message = form.cleaned_data['message']
             send_to = [f.strip()
                        for f in form.cleaned_data['send_to'].split(',') if f.strip()]
+
             image = form.cleaned_data['image']
             msg = EmailMessage(
                 subject, message, 'getJustice.act@gmail.com', send_to)
