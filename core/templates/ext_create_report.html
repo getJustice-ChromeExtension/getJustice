@@ -1,4 +1,4 @@
- {% extends 'base.html' %} 
+ {% comment %} {% extends 'base.html' %}  {% endcomment %}
 
 {% load static %}
 
@@ -33,12 +33,15 @@
 <body>
 		<div class="view" style="background-image: url('https://files.slack.com/files-pri/TA8C04VUN-FFGGHTK42/getjusticebackgroundhomeopaque.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
  
-		<nav class="navbar navbar-expand-lg navbar-dark"> 
+		{% comment %} <nav class="navbar navbar-expand-lg navbar-dark">  {% endcomment %}
 			<a href="{% url 'home' %}"><img src="/static/GetJusticeFist32.png" id="fistLogo" class="img-responsive pull-left logo" alt="logo" height= "40"/></a>
+
+          
             <div class="container text-center">
             <h1>getJustice</h1>	
             </div>
-		 <a class="navbar-brand" href="{% url 'home' %}"><h1><img src="/static/getjusticelogo.png" height="80px" width="300px"></h1></a> 	 
+            
+		 {% comment %} <a class="navbar-brand" href="{% url 'home' %}"><h1><img src="/static/getjusticelogo.png" height="80px" width="300px"></h1></a> 	  {% endcomment %}
 
 <script src="{% static 'js/report.js' %}" defer></script>
 <script src="{% static 'js/util.js' %}" defer></script>
@@ -48,8 +51,8 @@
 <div class="container text-center">
 <div class="line">
 </div>
- <div class="line-two"> 
- </div> 
+ {% comment %} <div class="line-two"> 
+ </div>  {% endcomment %}
     
 
     
@@ -87,7 +90,7 @@
                         <br>
 
                             <p>Optional: deselect any you would not like to include in your email</p>
-                            <p>Email reports sent using getJustice are anonymous. Edit the email text below if you would like to include contact info or more details. </p>
+                            <p>Email reports sent using getJustice are anonymous. Create an account or login if you would like to include your email as the "reply-to" email. Edit the email text below if you would like to include more details about the crime. </p>
                         <div>
                             
                          
@@ -124,10 +127,10 @@
             <form action="{% url 'ext_report' %}" id="report-form" method="POST" class="form-group" enctype="multipart/form-data">
                     {% csrf_token %} 
                 <div class="form-group">
-                    <input type="text" name="send_to" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients" required readonly>
+                    <input type="text" name="send_to" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients" required >
                 </div>
                 <div class="form-group">
-                    <input type="text" name="reply_to" class="form-control" id="cc-address" value="{{ request.user.email }}" maxlength="500" placeholder="our email id" readonly>
+                    <input type="text" name="reply_to" class="form-control" id="cc-address" value="{{ request.user.email }}" maxlength="500" placeholder="my email address" readonly>
                 </div>
                 <div class="form-group">
                     <input type="text" name="subject" class="form-control" id="subject" maxlength="500" placeholder="Subject" required>
@@ -159,14 +162,33 @@
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <input type="image" class="form-control-file image-fluid bananas" id="new-screenshot" src="#" disabled>
+            <div class="container register">    
+                {% if user.is_authenticated %}
+                   
+                        <a class="log" href="{% url 'auth_logout' %}">Logout</a>
+                    
+                {% else %}
+                  
+                    <a class="log" href="{% url 'auth_login' %}">Login</a>
+                   
+                   
+                    <a class="log" href="{% url 'registration_register' %}">Register</a>
+                {% endif %} 
+             </div> 
+            <label for="exampleFormControlFile1">Image/screenshot of post describing crime</label> 
+                 <p> If you would like to send an email report about this crime without including a screenshot, please click on the fist icon above to report from our website"
+                </div> 
+                
                 {% comment %} <label for="exampleFormControlFile1">screenshot</label>  {% endcomment %}
-                </div>            
+                          
             </div>
-        <div id="no-screenshot" class="form-group">
+        {% comment %} <div id="no-screenshot" class="form-group">
                 <label for="no-screenshot">Do you wish to remove the screenshot?</label>
                 <button id="remove-screenshot" type="submit" class="btn btn-danger btn-sm ">Yes</button>             
-            </div>      
+            </div>       {% endcomment %}
         </div>
     </div>
+    
+
     
 {% endblock %}
