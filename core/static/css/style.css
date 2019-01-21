@@ -48,6 +48,15 @@
     font-family: 'Opensans', sans-serif;
 
 }
+/* .register {
+    float: right;
+} */
+
+.log {
+    font-size: 14px;
+    color: green;
+
+}
 .report {
     float: right;
 }
@@ -69,7 +78,7 @@ a.active{
 
 .navbar-brand {
     margin-left: 35%;
-    margin-right: 30%;
+    /* margin-right: 30%; */
     
 }
 .navbar {
