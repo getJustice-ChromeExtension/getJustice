@@ -57,6 +57,8 @@ INSTALLED_APPS = [
     # thirdparty apps
     'rest_framework',
     'pwa',
+    'registration',
+
     # 'allauth',
     # 'allauth.account',
     # 'allauth.socialaccount',
@@ -209,3 +211,4 @@ if DEBUG:
 # EMAIL_HOST_PASSWORD = os.getenv('MAILGUN_PASS')
     # EMAIL_PORT = 587
     # EMAIL_USE_TLS = True
+ACCOUNT_ACTIVATION_DAYS = 7

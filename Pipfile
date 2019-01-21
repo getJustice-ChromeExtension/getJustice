@@ -15,6 +15,7 @@ gunicorn = "*"
 django-heroku = "*"
 sendgrid = "*"
 django-messages = "*"
+django-registration-redux = "*"
 
 [dev-packages]
 "autopep8" = "*"
