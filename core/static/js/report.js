@@ -10,7 +10,6 @@ function get(id) {
 //*** function to remove screenshot ***//
 function removeScreenshot() {
     $('#remove-screenshot').on('click', function () {
-        console.log("hi")
         $('#new-screenshot').remove()
         $('#no-screenshot').hide()
     });
