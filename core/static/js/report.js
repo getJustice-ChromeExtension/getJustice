@@ -7,7 +7,13 @@ function get(id) {
     return object
 }
 
-
+//*** function to remove screenshot ***//
+function removeScreenshot() {
+    $('#remove-screenshot').on('click', function () {
+        $('#new-screenshot').remove()
+        $('#no-screenshot').hide()
+    });
+};
 //*** function to keep the buttons pressed down ***//
 
 function buttonPress() {
@@ -25,10 +31,10 @@ function buttonPress() {
 }
 
 
-function toggelButtons(){
+function toggelButtons() {
     buttons = document.querySelectorAll('.form-btn')
     buttons.forEach(button => {
-        button.addEventListener('click', ()=> {
+        button.addEventListener('click', () => {
             if (button.classList.contains('active')) {
                 button.classList.remove('active')
             } else {
@@ -36,7 +42,7 @@ function toggelButtons(){
             }
 
         })
-       
+
     })
 }
 
@@ -157,7 +163,7 @@ function addRemoveEmailAddress() {
 
 
 //*** called functions ***/
-
+removeScreenshot()
 toggelButtons()
 // buttonPress()
 get()
