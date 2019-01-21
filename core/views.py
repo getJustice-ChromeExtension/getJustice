@@ -76,12 +76,12 @@ def create_report(request):
 
             image = form.cleaned_data['image']
             msg = EmailMessage(
-                subject, message, 'getJustice.act@gmail.com', send_to)
+                subject, message, 'info@get-justice.org', send_to)
             msg.content_subtype = "html"
             if image:
                 msg.attach(image.name, image.read(), image.content_type)
                 msg.send()
-                django_message = f"Your report was sent! Thanks for doing your bit to fight injustice!"
+                django_message = f"Your report was sent! Thanks for helping fight injustice!"
                 messages.add_message(request, messages.SUCCESS, django_message)
                 return render(request, 'index.html', {form: form, })
             else:

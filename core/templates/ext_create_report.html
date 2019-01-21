@@ -1,14 +1,44 @@
-{% extends 'base.html' %}
+ {% extends 'base.html' %} 
 
 {% load static %}
 
+<title>
+    getJustice 
+</title>
+
 {% block header %}
-
-
-
 {% endblock header %}
 
 {% block content %}
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+
+	<!-- bootstrap -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+	 crossorigin="anonymous" defer></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	 crossorigin="anonymous" defer></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+	 crossorigin="anonymous" defer></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+	 crossorigin="anonymous">
+	
+</head> 
+
+<body>
+		<div class="view" style="background-image: url('https://files.slack.com/files-pri/TA8C04VUN-FFGGHTK42/getjusticebackgroundhomeopaque.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+ 
+		<nav class="navbar navbar-expand-lg navbar-dark"> 
+			<a href="{% url 'home' %}"><img src="/static/GetJusticeFist32.png" id="fistLogo" class="img-responsive pull-left logo" alt="logo" height= "40"/></a>
+            <div class="container text-center">
+            <h1>getJustice</h1>	
+            </div>
+		 <a class="navbar-brand" href="{% url 'home' %}"><h1><img src="/static/getjusticelogo.png" height="80px" width="300px"></h1></a> 	 
 
 <script src="{% static 'js/report.js' %}" defer></script>
 <script src="{% static 'js/util.js' %}" defer></script>
@@ -18,13 +48,14 @@
 <div class="container text-center">
 <div class="line">
 </div>
-<div class="line-two">
-</div>
+ <div class="line-two"> 
+ </div> 
     
-    <br>
+
     
     
-    <h4> Type of Crime </h4>
+    <h5> I would like to report a: </h5>
+    <p>Hover over each type of crime for a definition</p>
     <br>
    
         <div>
@@ -38,9 +69,8 @@
 
     </div>
 </div>
-<br>
-<br>
-<br>
+
+
 
 
 <div class="collapse" id="formcollapseLink"> 
@@ -57,6 +87,7 @@
                         <br>
 
                             <p>Optional: deselect any you would not like to include in your email</p>
+                            <p>Email reports sent using getJustice are anonymous. Edit the email text below if you would like to include contact info or more details. </p>
                         <div>
                             
                          
@@ -65,7 +96,7 @@
                         
                             <button id="spcl-button" class="email-button hate-crime form-btn btn-sm" data-type="SPCL@SPLC.gov" data-toggle="tooltip" data-placement="top" title="The Southern Poverty Law Center is dedicated to fighting hate and bigotry; to seeking justice for the most vulnerable members of our society. Using litigation, education, and other forms of advocacy, the SPLC works toward the day when the ideals of equal justice and equal opportunity will be a reality.">SPLCenter</button>
                     
-                            <button id="local-media-button" class="email-button police-brut form-btn btn-sm" data-type="localMedia@localMedia.gov" data-toggle="tooltip" data-placement="top" title="newspapers and TV">Local Media</button>
+                            <button id="local-media-button" class="email-button police-brut form-btn btn-sm" data-type="editors@indyweek.com, assignmentdesk@wral.com" data-toggle="tooltip" data-placement="top" title="Indy Week newspaper and Durham WRAL News Station">Local Media</button>
                     
                             <button id="scsj-button" class="email-button police-brut form-btn btn-sm" data-type="scsj@scsj.gov" data-toggle="tooltip" data-placement="top" title="The Southern Coalition for Social Justice partners with communities of color and economically disadvantaged communities in the south to defend and advance their political, social and economic rights through the combination of legal advocacy, research, organizing and communications.">SCSJ</button>
                         
@@ -76,6 +107,10 @@
                             <button id="sheriff-button" class="email-button civ-rights form-btn btn-sm" data-type="sheriff@sheriff.gov" data-toggle="tooltip" data-placement="top" title="The Sheriff is the elected head of the police department looking after Durham county">Durham county Sheriff</button>
 
                             <button id="police-button" class="email-button hate-crime form-btn btn-sm" data-type="chief@police.gov" data-toggle="tooltip" data-placement="top" title="The Durham police department is the law enforcement agency for the city of Durham">Durham police chief</button>
+
+                            <button id="police-button" class="email-button hate-crime form-btn btn-sm" data-type="chief@police.gov" data-toggle="tooltip" data-placement="top" title="The Durham police department is the law enforcement agency for the city of Durham">Durham police chief</button>
+
+                            <button id="getJustice-button" class="email-button hate-crime form-btn btn-sm" data-type="info@get-justice.org" data-toggle="tooltip" data-placement="top" title="getJustice testing email">getJustice</button>
 
                         </div>
                     </div> 
@@ -99,8 +134,6 @@
                 </div>
                 <div class="form-group">
                     <textarea class="form-control" name="message" id="email-body" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident(optional)" required>
-                    Dear madam/sir,
-
                     I am a concerned citizen who wishes to raise this issue of civil injustice that I have become aware of. I request you to take up this matter seriously and hope that my concerns, as well as those of others involved in this matter of public importance, will be addressed by you at the earliest.  I have included an image with more information about the crime below.
 
                     Sincerely,
