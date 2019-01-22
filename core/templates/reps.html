@@ -1,5 +1,53 @@
-{% extends 'base.html' %}
+{% comment %} {% extends 'base.html' %} {% endcomment %}
 {% load static %}
+
+
+<head>
+	<title>getJustice</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+	<link rel="stylesheet" href="{% static 'css/reps.css' %}">
+	<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+
+	<!-- bootstrap -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+	 crossorigin="anonymous" defer></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	 crossorigin="anonymous" defer></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+	 crossorigin="anonymous" defer></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+	 crossorigin="anonymous">
+	
+</head> 
+
+<body>
+		<div class="view" style="background-image: url('https://files.slack.com/files-pri/TA8C04VUN-FFGGHTK42/getjusticebackgroundhomeopaque.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+
+		{% block header %}
+		{% endblock header %}
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<a href="{% url 'home' %}"><img src="/static/GetJusticeFist32.png" id="fistLogo" class="img-responsive pull-left logo" alt="logo" height= "40"/></a>	
+			<a class="navbar-brand" href="{% url 'home' %}"><h1><img src="/static/getjusticelogo.png" width="100%%"></h1></a> 							
+					<ul class="navbar-nav mr-auto move">
+						<li class="nav-item active"><a class="nav-link" href="{% url 'faq' %}">FAQs</a></li>
+						<li><a class="nav-link" href="{% url 'rights' %}">Rights</a></li>
+						<li><a class="nav-link" href="{% url 'reps' %}">Reps</a></li>		
+              </nav>   
+        <div class="container register">    {% if user.is_authenticated %}
+                   
+                        <a class="log" href="{% url 'auth_logout' %}">Logout</a>
+                    
+                    {% else %}
+                  
+                        <a class="log" href="{% url 'auth_login' %}">Login</a>
+                   
+                   
+                        <a class="log" href="{% url 'registration_register' %}">Register</a>
+        </div>
+            {% endif %} 
 
 {% block content %}
 <div class="line">
@@ -10,21 +58,67 @@
 <div class="container">
         <a href="https://chrome.google.com/webstore/detail/getjustice/hbhnlgincmfiodjahdbfhmkpmiaffpbb/related"><img src="/static/getJusticeExtension.png" height="50px" width="150px" background-color="black"></a>
     <div class ="report"><a href="{% url 'website_report' %}" class="btn btn-success">Report </a></div>
-	          
+	    
 	<br>
+        <div class="container text-center">
+<br>
+        <h3 class="display-4">Know Your Reps </h3>
+<br>
 	<br>
-	<br>
-	<div class="container text-center">
-		<div class="row">
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 surround">
-				<h3>Know Your Reps</h3>
+	{% comment %} <div class="container text-center"> {% endcomment %}
+    <div class="card-columns">
+  <div class="card">
+    <div class="card-body">
+	<h4>Know Your Representatives</h4>
+      <h5 class="card-title">Type in your Zip Code to find contact information for your state and federal representatives. 
+</h5>
 				<script async src="https://embed.joincampaignzero.org/widget.js" charset="utf-8"></script>
-			</div>
+          <footer class="blockquote-footer">
+
+      </footer>
+    </div>
+  </div>
+  <div class="card p-3">
+    <blockquote class="blockquote mb-0 card-body">
+					<h3>Rock The Vote</h3>
+
+				<a class=" btn-lg active" href="https://www.rockthevote.org/register-to-vote/">Voter Registration</a>
+
+    </blockquote>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% comment %} <div class="card-columns">
+  <div class="card">
+				<script async src="https://embed.joincampaignzero.org/widget.js" charset="utf-8"></script>
+
+
+    <div class="card-body">
+      <h5 class="card-title">Know Your Reps</h5>
+      <p class="card-text">It is a crime for one or more persons acting under color of law willfully to deprive or conspire to deprive another person of any right protected by the Constitution or laws of the United States. </p>
+          <footer class="blockquote-footer">
+        <small class="text-muted">(18 U.S.C. §§ 241, 242)
+        </small>
+      </footer>
+    </div>
+
+
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 surround">
 				<h3>Rock the vote</h3>
-				<a href="https://www.rockthevote.org/register-to-vote/">Voter Registration</a>
+				<a class=" btn-lg active" href="https://www.rockthevote.org/register-to-vote/">Voter Registration</a>
 			</div>
 		</div>
 	</div>
-</div>
+</div> {% endcomment %}
 {% endblock content %}

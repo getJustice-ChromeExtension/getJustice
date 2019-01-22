@@ -65,12 +65,12 @@ chrome.browserAction.onClicked.addListener(function(tab) {
     });
 });
 
-function removeScreenshot() {
-    $('#remove-screenshot').on('click', function () {
-        $('#new-screenshot').remove()
-        $('#no-screenshot').hide()
-    });
-};
+// function removeScreenshot() {
+//     $('#remove-screenshot').on('click', function () {
+//         $('#new-screenshot').remove()
+//         $('#no-screenshot').hide()
+//     });
+// };
 
 
 

@@ -158,10 +158,15 @@
         </div>
     </div>
 </div>
-    <div class="container">
+
+   <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <input type="image" class="form-control-file image-fluid bananas" id="new-screenshot" src="#" disabled>
+                {% comment %} <label for="exampleFormControlFile1">screenshot</label>  {% endcomment %}
+                </div>            
+            </div>
+
             <div class="container register">    
                 {% if user.is_authenticated %}
                    
@@ -175,19 +180,23 @@
                     <a class="log" href="{% url 'registration_register' %}">Register</a>
                 {% endif %} 
              </div> 
-            <label for="exampleFormControlFile1">Image/screenshot of post describing crime</label> 
-                 <p> If you would like to send an email report about this crime without including a screenshot, please click on the fist icon above to report from our website"
+                <label for="exampleFormControlFile1">Image/screenshot of post describing crime</label> 
+        <div id="no-screenshot" class="form-group">
+                <label for="no-screenshot">Do you wish to remove the screenshot?</label>
+                <button id="remove-screenshot" type="submit" class="btn btn-danger btn-sm ">Yes</button>             
+            </div>      
+        </div>
+    </div>
+
+
+        
+                 {% comment %} <p> If you would like to send an email report about this crime without including a screenshot, please click on the fist icon above to report from our website"</p> {% endcomment %}
                 </div> 
                 
                 {% comment %} <label for="exampleFormControlFile1">screenshot</label>  {% endcomment %}
                           
             </div>
-        {% comment %} <div id="no-screenshot" class="form-group">
-                <label for="no-screenshot">Do you wish to remove the screenshot?</label>
-                <button id="remove-screenshot" type="submit" class="btn btn-danger btn-sm ">Yes</button>             
-            </div>       {% endcomment %}
-        </div>
-    </div>
+
     
 
     

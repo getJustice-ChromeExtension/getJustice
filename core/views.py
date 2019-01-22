@@ -42,12 +42,12 @@ def ext_create_report(request):
             if screenshot:
                 msg.attach('screenshot.png', screenshot_png, 'image/png')
                 msg.send()
-                django_message = f"Your report was sent! Thanks for helping fight injustice!"
+                django_message = f"Your report was sent! Thanks for doing your bit to fight injustice!"
                 messages.add_message(request, messages.SUCCESS, django_message)
                 return render(request, 'index.html', {form: form, })
             else:
                 msg.send()
-                django_message = f"Your report was sent! Thanks for helping fight injustice!"
+                django_message = f"Your report was sent! Thanks for doing your bit to fight injustice!"
                 messages.add_message(request, messages.SUCCESS, django_message)
                 return render(request, 'index.html', {form: form, })
         else:
