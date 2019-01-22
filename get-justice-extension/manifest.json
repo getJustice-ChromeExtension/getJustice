@@ -1,6 +1,6 @@
 {
     "name": "getJustice",
-    "shortname": "getJustice",
+    "short_name": "getJustice",
     "version": "0.0.0.7",
     "description": "Report hate crimes, civil rights violations, and police brutality to civil rights organizations right from your social media page",
     "permissions": ["activeTab", "declarativeContent", "downloads", "storage", "tabs", "file:///*", "http://localhost:8000/*", "http://127.0.0.1:8000/*", "https://getjustice.herokuapp.com/*", "https://dashboard.heroku.com/*", "https://twitter.com/*",  "http://14c39926.ngrok.io/*"],
