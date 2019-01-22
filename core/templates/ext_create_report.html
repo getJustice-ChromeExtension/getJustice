@@ -15,8 +15,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/extstyle.css' %}">
 	<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+    
 
 	<!-- bootstrap -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
@@ -136,14 +137,14 @@
                     <input type="text" name="subject" class="form-control" id="subject" maxlength="500" placeholder="Subject" required>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" name="message" id="email-body" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident(optional)" required>
-                    I am a concerned citizen who wishes to raise this issue of civil injustice that I have become aware of. I request you to take up this matter seriously and hope that my concerns, as well as those of others involved in this matter of public importance, will be addressed by you at the earliest.  I have included an image with more information about the crime below.
+                    <textarea class="form-control" name="message" id="email-body" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident(optional)" required>I am a concerned citizen who wishes to raise this issue of civil injustice that I have become aware of. I request you to take up this matter seriously and hope that my concerns, as well as those of others involved in this matter of public importance, will be addressed by you at the earliest.  I have included an image with more information about the crime below.
 
                     Sincerely,
                     getJUSTICE  user
                     </textarea>
 
                 </div>  
+                
                <div class="form-group">
            
             <div>
@@ -185,7 +186,11 @@
 
                 <label for="no-screenshot">Do you wish to remove the screenshot?</label>
                 <button id="remove-screenshot" type="submit" class="btn btn-danger btn-sm ">Yes</button>             
-            </div>      
+            </div>  
+            <div>
+            <input type="file" name="image">
+                    
+            </div>        
         </div>
     </div>
 

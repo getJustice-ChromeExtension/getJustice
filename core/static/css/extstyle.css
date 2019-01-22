@@ -43,19 +43,6 @@
     
 
 } 
-
-.loginmsg {
-
-    background-color: green;
-    color: white;
-    font-size: 16px;
-    margin-top: 30px;
-    margin-right: 30%;
-    margin-left: 5%;
-    padding: 1rem;
-
-}
-
 .container {
 
     font-family: 'Opensans', sans-serif;
@@ -89,11 +76,11 @@ a.active{
 
 }
 
-.navbar-brand {
+/* .navbar-brand {
     margin-left: 35%;
     /* margin-right: 30%; */
     
-}
+ 
 .navbar {
     background-color: black;
 }
@@ -224,7 +211,13 @@ a.active{
     background-color: bisque;
 }
 
+.loginmsg {
 
+    background-color: green;
+    color: green;
+    font-size: 16px;
+
+}
 
 .bananas {
 
@@ -233,7 +226,7 @@ a.active{
     border-width: 2px;
     margin: 10%;
     max-width: 300px;
-    max-height: 500px;
+    max-height: 100px;
 
 }
 

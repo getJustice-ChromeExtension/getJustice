@@ -27,12 +27,14 @@ from django.contrib.auth.views import (
     PasswordResetConfirmView,
     PasswordResetCompleteView,
 )
+from core.backends import MyRegistrationView
 
 urlpatterns = [
     # path('', include('pwa.urls')),
     path('', views.index, name='home'),
     path('website-report/', views.create_report, name='website_report'),
     path('ext-report/', views.ext_create_report, name='ext_report'),
+    path('accounts/login-user/', views.login_user, name='user-login'),
     path('accounts/password/reset/', PasswordResetView.as_view(
         template_name='registration/password_reset_form.html'), name="password_reset"),
     path('accounts/password/change/', PasswordChangeView.as_view(
@@ -46,6 +48,9 @@ urlpatterns = [
     path('accounts/password/done/', PasswordResetCompleteView.as_view(
          template_name='registration/password_reset_complete.html'),
          name="password_reset_complete"),
+
+    path('accounts/register/', MyRegistrationView.as_view(),
+         name='registration_register'),
     path('accounts/', include('registration.backends.simple.urls')),
 
 

@@ -103,9 +103,10 @@ AUTHENTICATION_BACKENDS = (
 )
 
 SITE_ID = 1
-
 LOGIN_REDIRECT_URL = 'home'
-
+LOGOUT_REDIRECT_URL = 'home'
+# LOGIN_REDIRECT_URL = 'ext_report'
+# LOGOUT_REDIRECT_URL = 'ext_report'
 
 WSGI_APPLICATION = 'maatjustice.wsgi.application'
 
@@ -202,7 +203,7 @@ django_heroku.settings(locals())
 # EMAIL_USE_TLS = True
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-#MailDev Email Settings (Doesn't send email to real people)
+# MailDev Email Settings (Doesn't send email to real people)
 # if DEBUG:
 #     EMAIL_HOST = '127.0.0.1'
 #     EMAIL_HOST_USER = ""
@@ -211,7 +212,7 @@ django_heroku.settings(locals())
 #     EMAIL_USE_TLS = False
 #     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-#MailGun
+# MailGun
 
 EMAIL_HOST = 'smtp.mailgun.org'
 EMAIL_PORT = 587
@@ -231,6 +232,6 @@ EMAIL_USE_TLS = True
 # EMAIL_HOST = 'smtp.mailgun.org'
 # EMAIL_HOST_USER = 'getJustice@sandbox4edfacbb1d754aa69d01d3943ff88476.mailgun.org'
 # EMAIL_HOST_PASSWORD = os.getenv('MAILGUN_PASS')
-    # EMAIL_PORT = 587
-    # EMAIL_USE_TLS = True
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
 ACCOUNT_ACTIVATION_DAYS = 7
