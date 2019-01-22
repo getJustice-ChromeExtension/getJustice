@@ -51,7 +51,7 @@ urlpatterns = [
 
     path('about/', views.about, name='about'),
     path('favicon', RedirectView.as_view(url='/static/favicon.ico')),
-
+    path('success/', views.success, name="success"),
     path('faq/', views.faq, name='faq'),
     path('your-rights/', views.rights, name="rights"),
     path('your-reps/', views.reps, name='reps'),

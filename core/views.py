@@ -42,14 +42,14 @@ def ext_create_report(request):
             if screenshot:
                 msg.attach('screenshot.png', screenshot_png, 'image/png')
                 msg.send()
-                django_message = f"Your report was sent! Thanks for doing your bit to fight injustice!"
+                django_message = f"Your report was sent! Thanks for helping fight injustice!"
                 messages.add_message(request, messages.SUCCESS, django_message)
-                return render(request, 'index.html', {form: form, })
+                return render(request, 'success.html', {form: form, })
             else:
                 msg.send()
-                django_message = f"Your report was sent! Thanks for doing your bit to fight injustice!"
+                django_message = f"Your report was sent! Thanks for helping fight injustice!"
                 messages.add_message(request, messages.SUCCESS, django_message)
-                return render(request, 'index.html', {form: form, })
+                return render(request, 'success.html', {form: form, })
         else:
             form = form_class()
             django_message = f"For some reason, your report was not sent. Please try again."
@@ -83,12 +83,12 @@ def create_report(request):
                 msg.send()
                 django_message = f"Your report was sent! Thanks for helping fight injustice!"
                 messages.add_message(request, messages.SUCCESS, django_message)
-                return render(request, 'index.html', {form: form, })
+                return render(request, 'success.html', {form: form, })
             else:
                 msg.send()
                 django_message = f"Your report was sent!"
                 messages.add_message(request, messages.SUCCESS, django_message)
-                return render(request, 'index.html', {form: form, })
+                return render(request, 'success.html', {form: form, })
         else:
             form = form_class()
             django_message = f"For some reason, your report was not sent. Please try again."
@@ -123,3 +123,6 @@ def rights(request):
 
 def privacy(request):
     return render(request, 'privacy.html')
+
+def success(request):
+    return render(request, 'success.html')
