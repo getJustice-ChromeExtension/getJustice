@@ -3,7 +3,7 @@
 chrome.browserAction.onClicked.addListener(function (tab) {
     chrome.tabs.captureVisibleTab({ format: "png" }, function (dataUrl) {
         console.log(dataUrl)
-        chrome.tabs.create({ url: "http://localhost:8000/ext-report/" }, function (tab) {
+        chrome.tabs.create({ url: "https://getjustice.herokuapp.com/ext-report/" }, function (tab) {
             chrome.tabs.executeScript(tab.id, {
                 code: `
                     let input = document.getElementById("new-screenshot")

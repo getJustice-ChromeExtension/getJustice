@@ -102,7 +102,7 @@ AUTHENTICATION_BACKENDS = (
     "allauth.account.auth_backends.AuthenticationBackend",
 )
 
-SITE_ID = 1
+
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 # LOGIN_REDIRECT_URL = 'ext_report'
@@ -125,7 +125,7 @@ DATABASES = {
     }
 }
 
-
+SITE_ID=1
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 

@@ -1,7 +1,7 @@
 {
     "name": "getJustice",
     "short_name": "getJustice",
-    "version": "0.0.0.7",
+    "version": "0.0.0.8",
     "description": "Report hate crimes, civil rights violations, and police brutality to civil rights organizations right from your social media page",
     "permissions": [
         "activeTab",
