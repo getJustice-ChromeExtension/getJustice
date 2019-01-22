@@ -2,9 +2,41 @@
 {% load static %}
 
 {% block content %}
+{% include 'messages.html' %}  
+<div class="line">
+</div>
+<div class="line-two">
+</div>
+<div class="container">
+<br>
+        <div class="container text-center">
+<br>
+        <h5 class="display-5">You've activated your political power! Check out more ways to get involved below</h5>
+<br>
 
+ <div class="card-columns">
+  <div class="card">
+        <h5 class="card-title">Know Your Reps </h5>
+    <a href="{% url 'reps' %}" class=" btn-lg active">Your Representatives</a>
+    <div class="card-body">
 
+      <p class="card-text">Register to vote and stay informed on who your State and Federal Representatives are and how to contact them about important issues. </p>
+          <footer class="blockquote-footer">
+      </footer>
+    </div>
+  </div>
 
-"Your report was sent!"
+ <div class="card-columns">
+  <div class="card">
+        <h5 class="card-title">Know Your Rights </h5>
+    <a href="{% url 'rights' %}"><img class="card-img-top" type="image/png" src="{% static 'ReportingRighs.jpg' %}"  alt="Card image cap"></a>
+    <div class="card-body">
+          <footer class="blockquote-footer">
+      </footer>
+    </div>
+  </div>
 
+</div>
+
+  
 {% endblock %}
