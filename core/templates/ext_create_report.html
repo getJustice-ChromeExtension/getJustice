@@ -15,7 +15,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-	<link rel="stylesheet" href="{% static 'css/extstyle.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 	<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
     
 
@@ -32,26 +32,19 @@
 </head> 
 <div class="view" style="background-image: url('https://files.slack.com/files-pri/TA8C04VUN-FFGGHTK42/getjusticebackgroundhomeopaque.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 
-		<nav class="navbar navbar-expand-lg navbar-dark">
+		 <nav class="navbar navbar-expand-lg navbar-dark">
 			<a href="{% url 'home' %}"><img src="/static/GetJusticeFist32.png" id="fistLogo" class="img-responsive pull-left logo" alt="logo" height= "40"/></a>	
-			<a class="navbar-brand" href="{% url 'home' %}"><h1><img src="/static/getJusticeLogo.png" width="100%%"></h1></a> 							
-					{% comment %} <ul class="navbar-nav mr-auto move">
-						<li class="nav-item active"><a class="nav-link" href="{% url 'faq' %}">FAQs</a></li>
-						<li><a class="nav-link" href="{% url 'rights' %}">Rights</a></li>
-						<li><a class="nav-link" href="{% url 'reps' %}">Reps</a></li>		 {% endcomment %}
-              </nav>   
-        <div class="container register">    {% if user.is_authenticated %}
-                   
-                        <a class="log" href="{% url 'auth_logout' %}">Logout</a>
-                    
-                    {% else %}
-                  
-                        <a class="log" href="{% url 'auth_login' %}">Login</a>
-                   
-                   
-                        <a class="log" href="{% url 'registration_register' %}">Register</a>
-        </div>
-            {% endif %} 
+			<a class="navbar-brand extnlogo" href="{% url 'home' %}"><h1><img src="/static/getJusticeLogo.png" width="100%%"></h1></a>					<ul>	
+            {% if user.is_authenticated %}								   
+                       <li> <a class="log nav-link" href="{% url 'auth_logout' %}"><span>Logout</span></a></li>			
+                    			{% else %}                  
+                       <a class="log nav-link" href="{% url 'auth_login' %}"><span>Login</span></a>                                     
+                       <li> <a class="log nav-link" href="{% url 'registration_register' %}
+					   "><span>Register</span></a></li>
+					   {% endif %} 	
+			</ul>		
+              </nav>    
+        
 <body>
 
 		
@@ -71,18 +64,18 @@
     
     
     <h5> I would like to report a: </h5>
-    <p>Hover over each type of crime for a definition</p>
+    <p>[Hover over each type of crime for a definition]</p>
     <br>
    
         <div>
-            <button id="hate-crime-button" type="button" class="subject-button form-btn btn-lg" data-type="Hate Crime" data-toggle="collapse" data-target="#form-one-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip"  data-placement="bottom" title="**Prejudice-motivated crime **Perpetrator targets a victim because of his or her membership in a certain social group or race">Hate Crime</button>
+            <button id="hate-crime-button" type="button" class="subject-button form-btn btn-lg" data-type="Hate Crime" data-toggle="collapse" data-target="#form-one-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip"  data-placement="bottom" title="Prejudice-motivated crime, Perpetrator targets a victim because of his or her membership in a certain social group or race"> Hate Crime</button>
             
     
-            <button id="police-brut-button" class="subject-button form-btn btn-lg" data-type="Police Brutality" data-toggle="collapse" data-target="#form-two-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip"  data-placement="bottom" title="**Wrongful arrests **Unjustified searches **Unlawful destruction of evidence **Excessive force **Unlawful police shootings.">Police Brutality</span></button>
+        <button id="police-brut-button" class="subject-button form-btn btn-lg" data-type="Police Brutality" data-toggle="collapse" data-target="#form-two-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip"  data-placement="bottom" title="Wrongful arrests, Unjustified searches, Unlawful destruction of evidence, Excessive force, Unlawful police shootings."> Police Brutality</span></button>
             
             
 
-            <button id="civ-rights-violate-button" class="subject-button form-btn btn-lg" data-type="Civil Rights Violation" data-toggle="collapse" data-target="#form-three-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip"  data-placement="bottom" title="**Hate crimes **Migrant worker exploitation **Law enforcement misconduct **Religious interference or property damage **Health care access interference, such as phone threat or bombing **Slavery rings.">Civil Rights Violation</span></button>
+            <button id="civ-rights-violate-button" class="subject-button form-btn btn-lg" data-type="Civil Rights Violation" data-toggle="collapse" data-target="#form-three-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip"  data-placement="bottom" title="Hate crimes, Migrant worker exploitation, Law enforcement misconduct, Religious interference or property damage, Health care access interference, Slavery rings.">Civil Rights Violation</span></button>
 
     </div>
 </div>
@@ -104,11 +97,11 @@
                         <br>
 
                             <p>Optional: deselect any you would not like to include in your email</p>
-                            <p>Email reports sent using getJustice are anonymous. Create an account or login if you would like to include your email as the "reply-to" email. Edit the email text below if you would like to include more details about the crime. </p>
+                            <p>Email reports sent using getJustice are anonymous. Create an account or login if you would like to include your email as the "reply-to" email. Edit the email text below if you would like to include more details about the incident. </p>
                         <div>
                             
                          
-                            <button id="mayor-button" class="email-button hate-crime form-btn btn-sm" data-type="council@durhamnc.gov" data-toggle="tooltip" data-placement="top" title="City Council is comprised of 7 members, 3 members are elected from specific wards, 3 are at-large members, and the Mayor. They have the right to ask questions and examine cases against the city police">Durham city council</button>
+                            <button id="mayor-button" class="email-button hate-crime form-btn btn-sm" data-type="council@durhamnc.gov" data-toggle="tooltip" data-placement="top" title="City Council is comprised of 7 members, 3 members are elected from specific wards, 3 are at-large members, and the Mayor. They have the right to ask questions and examine cases against the city police">Durham City Council</button>
                     
                         
                             <button id="spcl-button" class="email-button hate-crime form-btn btn-sm" data-type="fotc@splcenter.org" data-toggle="tooltip" data-placement="top" title="The Southern Poverty Law Center is dedicated to fighting hate and bigotry; to seeking justice for the most vulnerable members of our society. Using litigation, education, and other forms of advocacy, the SPLC works toward the day when the ideals of equal justice and equal opportunity will be a reality.">SPLCenter</button>
@@ -121,9 +114,9 @@
                     
                             <button id="aclu-button" class="email-button civ-rights form-btn btn-sm" data-type="aclupreferences@aclu.org" data-toggle="tooltip" data-placement="top" title="For almost 100 years, the American Civil Liberties Union has worked to defend and preserve the individual rights and liberties guaranteed by the Constitution and laws of the United States">ACLU</button>
 
-                            <button id="sheriff-button" class="email-button civ-rights form-btn btn-sm" data-type="cfbirkhead@durhamsheriff.org" data-toggle="tooltip" data-placement="top" title="The Sheriff is the elected head of the police department looking after Durham county">Durham county Sheriff</button>
+                            <button id="sheriff-button" class="email-button civ-rights form-btn btn-sm" data-type="cfbirkhead@durhamsheriff.org" data-toggle="tooltip" data-placement="top" title="The Sheriff is the elected head of the police department looking after Durham county">Durham County Sheriff</button>
 
-                            <button id="police-button" class="email-button hate-crime form-btn btn-sm" data-type="cj.davis@durhamnc.gov" data-toggle="tooltip" data-placement="top" title="The Durham police department is the law enforcement agency for the city of Durham">Durham police chief</button>
+                            <button id="police-button" class="email-button hate-crime form-btn btn-sm" data-type="cj.davis@durhamnc.gov" data-toggle="tooltip" data-placement="top" title="The Durham police department is the law enforcement agency for the city of Durham">Durham Police Chief</button>
 
                             <button id="getJustice-button" class="email-button form-btn btn-sm" data-type="info@get-justice.org" data-toggle="tooltip" data-placement="top" title="getJustice testing email">getJustice</button>
 
