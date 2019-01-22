@@ -14,21 +14,6 @@ function removeScreenshot() {
         $('#no-screenshot').hide()
     });
 };
-//*** function to keep the buttons pressed down ***//
-
-function buttonPress() {
-    $(document).ready(function () {
-        $(".form-btn").on({
-
-            click: function () {
-                $(this).css("background-color", "black");
-                $(this).css("font-size", "18px");
-                $(this).css("color", "white");
-                $(this).css("font-family", "Opensans, sans-serif");
-            }
-        });
-    });
-}
 
 
 function toggelButtons() {
@@ -46,8 +31,6 @@ function toggelButtons() {
     })
 }
 
-
-//*** functions for the buttons ***/
 
 function addRemoveHateCrimeAdresses() {
     button = get('hate-crime-button')
@@ -111,7 +94,6 @@ function addRemoveCivilRightsAdresses() {
                 addressField = get('email-address')
                 if (addressField.value.includes(`${newEmail}, `)) {
                     email.classList.remove('active')
-                    current = addressField.value
                     edited = addressField.value.replace(`${newEmail}, `, '')
                     addressField.value = edited
                 } else {
@@ -131,12 +113,32 @@ function addRemoveSubject() {
             subject = button.getAttribute("data-type")
             subjectField = get('subject')
             if (subjectField.value.includes(`${subject}, `)) {
-                current = subjectField.value
                 edited = subjectField.value.replace(`${subject}, `, '')
                 subjectField.value = edited
+                extra = subjectField.value.slice(-2)
+                console.log(extra)
+                if (extra === ', ') {
+                    finalStr = subjectField.value.replace(extra, '')
+                    subjectField.value = finalStr
+                }
+            } else if (subjectField.value.includes(`${subject}`)) {
+                edited = subjectField.value.replace(`${subject}`, '')
+                subjectField.value = edited
+                extra = subjectField.value.slice(-2)
+                console.log(extra)
+                if (extra === ', ') {
+                    finalStr = subjectField.value.replace(extra, '')
+                    subjectField.value = finalStr
+                }
             } else {
                 current = subjectField.value
                 subjectField.value = `${subject}, ${current}`
+                extra = subjectField.value.slice(-2)
+                console.log(extra)
+                if (extra === ', '){
+                    finalStr = subjectField.value.replace(extra, '')
+                    subjectField.value = finalStr
+                }
             }
         })
     })
@@ -149,11 +151,11 @@ function addRemoveEmailAddress() {
         button.addEventListener('click', () => {
             newAddress = button.getAttribute("data-type")
             addressField = get('email-address')
-            if (addressField.value.includes(`${newAddress}, `)) {
-                current = addressField.value
-                edited = addressField.value.replace(`${newAddress}, `, '')
+            if (addressField.value.includes(`${newAddress},`)) {
+                edited = addressField.value.replace(`${newAddress},`, '')
                 addressField.value = edited
-            } else {
+            } 
+            else {
                 current = addressField.value
                 addressField.value = `${newAddress}, ${current}`
             }
@@ -165,7 +167,6 @@ function addRemoveEmailAddress() {
 //*** called functions ***/
 removeScreenshot()
 toggelButtons()
-// buttonPress()
 get()
 addRemoveEmailAddress()
 addRemoveSubject()
