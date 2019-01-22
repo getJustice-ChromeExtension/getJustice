@@ -1,4 +1,4 @@
- {% comment %} {% extends 'base.html' %}  {% endcomment %}
+ {% extends 'base.html' %} 
 
 {% load static %}
 
@@ -34,12 +34,12 @@
 		<div class="view" style="background-image: url('https://files.slack.com/files-pri/TA8C04VUN-FFGGHTK42/getjusticebackgroundhomeopaque.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
  
 		{% comment %} <nav class="navbar navbar-expand-lg navbar-dark">  {% endcomment %}
-			<a href="{% url 'home' %}"><img src="/static/GetJusticeFist32.png" id="fistLogo" class="img-responsive pull-left logo" alt="logo" height= "40"/></a>
+			{% comment %} <a href="{% url 'home' %}"><img src="/static/GetJusticeFist32.png" id="fistLogo" class="img-responsive pull-left logo" alt="logo" height= "40"/></a>
 
           
             <div class="container text-center">
             <h1>getJustice</h1>	
-            </div>
+            </div> {% endcomment %}
             
 		 {% comment %} <a class="navbar-brand" href="{% url 'home' %}"><h1><img src="/static/getjusticelogo.png" height="80px" width="300px"></h1></a> 	  {% endcomment %}
 
@@ -167,7 +167,7 @@
                 </div>            
             </div>
 
-            <div class="container register">    
+            {% comment %} <div class="container register">    
                 {% if user.is_authenticated %}
                    
                         <a class="log" href="{% url 'auth_logout' %}">Logout</a>
@@ -179,7 +179,7 @@
                    
                     <a class="log" href="{% url 'registration_register' %}">Register</a>
                 {% endif %} 
-             </div> 
+             </div>  {% endcomment %}
         <div id="no-screenshot" class="form-group">
                 <label for="exampleFormControlFile1">Image/screenshot of post describing crime</label> 
 
