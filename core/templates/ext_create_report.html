@@ -1,4 +1,4 @@
- {% extends 'base.html' %} 
+
 
 {% load static %}
 
@@ -15,8 +15,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/extstyle.css' %}">
 	<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+    
 
 	<!-- bootstrap -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
@@ -29,19 +30,31 @@
 	 crossorigin="anonymous">
 	
 </head> 
+<div class="view" style="background-image: url('https://files.slack.com/files-pri/TA8C04VUN-FFGGHTK42/getjusticebackgroundhomeopaque.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<a href="{% url 'home' %}"><img src="/static/GetJusticeFist32.png" id="fistLogo" class="img-responsive pull-left logo" alt="logo" height= "40"/></a>	
+			<a class="navbar-brand" href="{% url 'home' %}"><h1><img src="/static/getJusticeLogo.png" width="100%%"></h1></a> 							
+					{% comment %} <ul class="navbar-nav mr-auto move">
+						<li class="nav-item active"><a class="nav-link" href="{% url 'faq' %}">FAQs</a></li>
+						<li><a class="nav-link" href="{% url 'rights' %}">Rights</a></li>
+						<li><a class="nav-link" href="{% url 'reps' %}">Reps</a></li>		 {% endcomment %}
+              </nav>   
+        <div class="container register">    {% if user.is_authenticated %}
+                   
+                        <a class="log" href="{% url 'auth_logout' %}">Logout</a>
+                    
+                    {% else %}
+                  
+                        <a class="log" href="{% url 'auth_login' %}">Login</a>
+                   
+                   
+                        <a class="log" href="{% url 'registration_register' %}">Register</a>
+        </div>
+            {% endif %} 
 <body>
-		<div class="view" style="background-image: url('https://files.slack.com/files-pri/TA8C04VUN-FFGGHTK42/getjusticebackgroundhomeopaque.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
- 
-		{% comment %} <nav class="navbar navbar-expand-lg navbar-dark">  {% endcomment %}
-			{% comment %} <a href="{% url 'home' %}"><img src="/static/GetJusticeFist32.png" id="fistLogo" class="img-responsive pull-left logo" alt="logo" height= "40"/></a> {% endcomment %}
 
-          
-            <div class="container text-center">
-            <h1>getJustice</h1>	
-            </div>
-            
-		 {% comment %} <a class="navbar-brand" href="{% url 'home' %}"><h1><img src="/static/getjusticelogo.png" height="80px" width="300px"></h1></a> 	  {% endcomment %}
+		
 
 <script src="{% static 'js/report.js' %}" defer></script>
 <script src="{% static 'js/util.js' %}" defer></script>
@@ -68,6 +81,7 @@
             <button id="police-brut-button" class="subject-button form-btn btn-lg" data-type="Police Brutality" data-toggle="collapse" data-target="#form-two-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip"  data-placement="bottom" title="**Wrongful arrests **Unjustified searches **Unlawful destruction of evidence **Excessive force **Unlawful police shootings.">Police Brutality</span></button>
             
             
+
             <button id="civ-rights-violate-button" class="subject-button form-btn btn-lg" data-type="Civil Rights Violation" data-toggle="collapse" data-target="#form-three-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip"  data-placement="bottom" title="**Hate crimes **Migrant worker exploitation **Law enforcement misconduct **Religious interference or property damage **Health care access interference, such as phone threat or bombing **Slavery rings.">Civil Rights Violation</span></button>
 
     </div>
@@ -136,14 +150,14 @@
                     <input type="text" name="subject" class="form-control" id="subject" maxlength="500" placeholder="Subject" required>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" name="message" id="email-body" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident(optional)" required>
-                    I am a concerned citizen who wishes to raise this issue of civil injustice that I have become aware of. I request you to take up this matter seriously and hope that my concerns, as well as those of others involved in this matter of public importance, will be addressed by you at the earliest.  I have included an image with more information about the crime below.
+                    <textarea class="form-control" name="message" id="email-body" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident(optional)" required>I am a concerned citizen who wishes to raise this issue of civil injustice that I have become aware of. I request you to take up this matter seriously and hope that my concerns, as well as those of others involved in this matter of public importance, will be addressed by you at the earliest.  I have included an image with more information about the crime below.
 
                     Sincerely,
                     getJUSTICE  user
                     </textarea>
 
                 </div>  
+                
                <div class="form-group">
            
             <div>
@@ -172,7 +186,11 @@
 
                 <label for="no-screenshot">Do you wish to remove the screenshot?</label>
                 <button id="remove-screenshot" type="submit" class="btn btn-danger btn-sm ">Yes</button>             
-            </div>      
+            </div>  
+            <div>
+            <input type="file" name="image">
+                    
+            </div>        
         </div>
     </div>
 
