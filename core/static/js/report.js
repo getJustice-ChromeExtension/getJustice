@@ -130,7 +130,6 @@ function addRemoveCivilRightsAdresses() {
 }
 
 
-// slice out from 24 and replace the rest
 function addRemoveSubject() {
     buttons = document.querySelectorAll('.subject-button')
     buttons.forEach(button => {
