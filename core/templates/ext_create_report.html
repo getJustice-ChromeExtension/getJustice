@@ -1,86 +1,46 @@
+{% extends 'base.html' %}
 
 
 {% load static %}
 
-<title>
-    getJustice 
-</title>
-
 {% block header %}
+
+
+
 {% endblock header %}
 
 {% block content %}
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-
-	<link rel="stylesheet" href="{% static 'css/style.css' %}">
-	<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
-    
-
-	<!-- bootstrap -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-	 crossorigin="anonymous" defer></script>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-	 crossorigin="anonymous" defer></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-	 crossorigin="anonymous" defer></script>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-	 crossorigin="anonymous">
-	
-</head> 
-<div class="view" style="background-image: url('https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/50676861_822393314770416_511573666295709696_n.jpg?_nc_cat=108&_nc_ht=scontent-iad3-1.xx&oh=a9de6a0d4138196cd9bc2cc73761293f&oe=5CFF163A'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-
-		 <nav class="navbar navbar-expand-lg navbar-dark">
-			<a href="{% url 'home' %}"><img src="/static/GetJusticeFist32.png" id="fistLogo" class="img-responsive pull-left logo" alt="logo" height= "40"/></a>	
-			<a class="navbar-brand extnlogo" href="{% url 'home' %}"><h1><img src="/static/getJusticeLogo.png" width="100%%"></h1></a>					<ul>	
-            {% if user.is_authenticated %}								   
-                       <li> <a class="log nav-link" href="{% url 'auth_logout' %}"><span>Logout</span></a></li>			
-                    			{% else %}                  
-                       <a class="log nav-link" href="{% url 'auth_login' %}"><span>Login</span></a>                                     
-                       <li> <a class="log nav-link" href="{% url 'registration_register' %}
-					   "><span>Register</span></a></li>
-					   {% endif %} 	
-			</ul>		
-              </nav>    
-        
-<body>
-
-		
-
 <script src="{% static 'js/report.js' %}" defer></script>
 <script src="{% static 'js/util.js' %}" defer></script>
-
 
 <!-- ***list of subjects*** -->
 <div class="container text-center">
 <div class="line">
 </div>
- {% comment %} <div class="line-two"> 
- </div>  {% endcomment %}
-    
+<div class="line-two">
+</div>
+
 
     
-    
-    <h5> I would like to report a: </h5>
+    <h4> I would like to report a:</h4>
     <p>[Hover over each type of crime for a definition]</p>
     <br>
    
         <div>
-            <button id="hate-crime-button" type="button" class="subject-button form-btn btn-lg" data-type="Hate Crime" data-toggle="collapse" data-target="#form-one-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip"  data-placement="bottom" title="Prejudice-motivated crime, Perpetrator targets a victim because of his or her membership in a certain social group or race"> Hate Crime</button>
+            <button id="hate-crime-button" type="button" class="subject-button form-btn btn-lg" data-type="Hate Crime" data-toggle="collapse" data-target="#form-one-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip"  data-placement="bottom" title="Prejudice-motivated crime, Perpetrator targets a victim because of his or her membership in a certain social group or race.">Hate Crime</button>
             
     
-        <button id="police-brut-button" class="subject-button form-btn btn-lg" data-type="Police Brutality" data-toggle="collapse" data-target="#form-two-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip"  data-placement="bottom" title="Wrongful arrests, Unjustified searches, Unlawful destruction of evidence, Excessive force, Unlawful police shootings."> Police Brutality</span></button>
+            <button id="police-brut-button" class="subject-button form-btn btn-lg" data-type="Police Brutality" data-toggle="collapse" data-target="#form-two-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip"  data-placement="bottom" title="Wrongful arrests,  Unjustified searches,   Unlawful destruction of evidence,  Excessive force,  Unlawful shootings.">Police Brutality</span></button>
             
             
-
-            <button id="civ-rights-violate-button" class="subject-button form-btn btn-lg" data-type="Civil Rights Violation" data-toggle="collapse" data-target="#form-three-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip"  data-placement="bottom" title="Hate crimes, Migrant worker exploitation, Law enforcement misconduct, Religious interference or property damage, Health care access interference, Slavery rings.">Civil Rights Violation</span></button>
+            <button id="civ-rights-violate-button" class="subject-button form-btn btn-lg" data-type="Civil Rights Violation" data-toggle="collapse" data-target="#form-three-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip" data-placement="bottom" title="Hate crimes, Migrant worker exploitation, Law enforcement misconduct, Religious interference or property damage, Health care access interference,  Slavery rings.">Civil Rights Violation</span></button>
 
     </div>
 </div>
-
-
+<br>
+<br>
+<br>
 
 
 <div class="collapse" id="formcollapseLink"> 
@@ -97,31 +57,28 @@
                         <br>
 
                             <p>Optional: deselect any you would not like to include in your email</p>
-                            <p>Email reports sent using getJustice are anonymous. Create an account or login if you would like to include your email as the "reply-to" email. Edit the email text below if you would like to include more details about the incident. </p>
+                            <p>Email reports sent using getJustice are anonymous. Create an account or login if you would like to include your email as the "reply-to" email. Edit the email text below if you would like to include more details about the crime. </p>
+
                         <div>
                             
-                         
-                            <button id="mayor-button" class="email-button hate-crime form-btn btn-sm" data-type="council@durhamnc.gov" data-toggle="tooltip" data-placement="top" title="City Council is comprised of 7 members, 3 members are elected from specific wards, 3 are at-large members, and the Mayor. They have the right to ask questions and examine cases against the city police">Durham City Council</button>
+                            <button id="mayor-button" class="email-button hate-crime form-btn btn-sm" data-type="council@durhamnc.gov" data-toggle="tooltip" data-placement="top" title="City Council is comprised of 7 members, 3 members are elected from specific wards, 3 are at-large members, and the Mayor. They have the right to ask questions and examine cases against the city police.">Durham City Council</button>
                     
                         
                             <button id="spcl-button" class="email-button hate-crime form-btn btn-sm" data-type="fotc@splcenter.org" data-toggle="tooltip" data-placement="top" title="The Southern Poverty Law Center is dedicated to fighting hate and bigotry; to seeking justice for the most vulnerable members of our society. Using litigation, education, and other forms of advocacy, the SPLC works toward the day when the ideals of equal justice and equal opportunity will be a reality.">SPLCenter</button>
                     
-                            <button id="local-media-button" class="email-button police-brut form-btn btn-sm" data-type="editors@indyweek.com, assignmentdesk@wral.com" data-toggle="tooltip" data-placement="top" title="Indy Week newspaper and Durham WRAL News Station">Local Media</button>
+                            <button id="local-media-button" class="email-button police-brut form-btn btn-sm" data-type="editors@indyweek.com, assignmentdesk@wral.com" data-toggle="tooltip" data-placement="top" title="Indy Week newspaper and Durham WRAL News Station.">Local Media</button>
                     
                             <button id="scsj-button" class="email-button police-brut form-btn btn-sm" data-type="info@southerncoalition.org" data-toggle="tooltip" data-placement="top" title="The Southern Coalition for Social Justice partners with communities of color and economically disadvantaged communities in the south to defend and advance their political, social and economic rights through the combination of legal advocacy, research, organizing and communications.">SCSJ</button>
                         
                             <button id="naacp-button" class="email-button civ-rights form-btn btn-sm" data-type="info@naacpnc.org" data-toggle="tooltip" data-placement="top" title="The mission of the National Association for the Advancement of Colored People (NAACP) is to ensure the political, educational, social, and economic equality of rights of all persons and to eliminate race-based discrimination.">NAACP</button>
                     
-                            <button id="aclu-button" class="email-button civ-rights form-btn btn-sm" data-type="aclupreferences@aclu.org" data-toggle="tooltip" data-placement="top" title="For almost 100 years, the American Civil Liberties Union has worked to defend and preserve the individual rights and liberties guaranteed by the Constitution and laws of the United States">ACLU</button>
+                            <button id="aclu-button" class="email-button civ-rights form-btn btn-sm" data-type="aclupreferences@aclu.org" data-toggle="tooltip" data-placement="top" title="For almost 100 years, the American Civil Liberties Union has worked to defend and preserve the individual rights and liberties guaranteed by the Constitution and laws of the United States.">ACLU</button>
 
-                            <button id="sheriff-button" class="email-button civ-rights form-btn btn-sm" data-type="cfbirkhead@durhamsheriff.org" data-toggle="tooltip" data-placement="top" title="The Sheriff is the elected head of the police department looking after Durham county">Durham County Sheriff</button>
+                            <button id="sheriff-button" class="email-button civ-rights form-btn btn-sm" data-type="cfbirkhead@durhamsheriff.org" data-toggle="tooltip" data-placement="top" title="The Sheriff is the elected head of the police department looking after Durham county.">Durham County Sheriff</button>
 
-                            <button id="police-button" class="email-button hate-crime form-btn btn-sm" data-type="cj.davis@durhamnc.gov" data-toggle="tooltip" data-placement="top" title="The Durham police department is the law enforcement agency for the city of Durham">Durham Police Chief</button>
+                            <button id="police-button" class="email-button hate-crime form-btn btn-sm" data-type="cj.davis@durhamnc.gov" data-toggle="tooltip" data-placement="top" title="The Durham police department is the law enforcement agency for the city of Durham.">Durham Police chief</button>
 
                             <button id="getJustice-button" class="email-button form-btn btn-sm" data-type="info@get-justice.org" data-toggle="tooltip" data-placement="top" title="getJustice testing email">getJustice</button>
-
-
-
                         </div>
                     </div> 
                 </div>
@@ -131,7 +88,7 @@
             <br>
             <br>
             
-            <form action="{% url 'ext_report' %}" id="report-form" method="POST" class="form-group" enctype="multipart/form-data">
+            <form action="{% url 'website_report' %}" id="report-form" method="POST" class="form-group" enctype="multipart/form-data">
                     {% csrf_token %} 
                 <div class="form-group">
                     <input type="text" name="send_to" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients" required readonly>
@@ -140,16 +97,16 @@
                     <input type="text" name="reply_to" class="form-control" id="cc-address" value="{{ request.user.email }}" maxlength="500" placeholder="my email address" readonly>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="subject" class="form-control" id="subject" maxlength="500" placeholder="Subject" value="Report from getJustice: " required>
+                    <input type="text" name="subject" value="Report from getJustice: " class="form-control" id="subject" maxlength="500" placeholder="Subject" required>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" name="message" id="email-body" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident(optional)" required>I am a concerned citizen who wishes to raise this issue of civil injustice that I have become aware of. I request you to take up this matter seriously and hope that my concerns, as well as those of others involved in this matter of public importance, will be addressed by you at the earliest.  I have included an image with more information about the crime below.
+                    <textarea class="form-control" name="message" id="email-body" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident(optional)" required>I am a concerned citizen who wishes to raise this issue of civil injustice that I have become aware of. I request you to take up this matter seriously and hope that my concerns, as well as those of others involved in this matter of public importance, will be addressed by you at the earliest.  I have included below an image with more information about the incident.
 
                     Sincerely,
-                    getJUSTICE  user
+                    getJustice  user
                     </textarea>
 
-                </div>  
+                </div>   
                 
                <div class="form-group">
            
