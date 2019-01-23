@@ -7,6 +7,8 @@ function get(id) {
     return object
 }
 
+let subjectHeader = "Report from getJustice: "
+
 //*** function to remove screenshot ***//
 function removeScreenshot() {
     $('#remove-screenshot').on('click', function () {
@@ -14,21 +16,6 @@ function removeScreenshot() {
         $('#no-screenshot').hide()
     });
 };
-//*** function to keep the buttons pressed down ***//
-
-function buttonPress() {
-    $(document).ready(function () {
-        $(".form-btn").on({
-
-            click: function () {
-                $(this).css("background-color", "black");
-                $(this).css("font-size", "18px");
-                $(this).css("color", "white");
-                $(this).css("font-family", "Opensans, sans-serif");
-            }
-        });
-    });
-}
 
 
 function toggelButtons() {
@@ -46,8 +33,6 @@ function toggelButtons() {
     })
 }
 
-
-//*** functions for the buttons ***/
 
 function addRemoveHateCrimeAdresses() {
     button = get('hate-crime-button')
@@ -111,7 +96,6 @@ function addRemoveCivilRightsAdresses() {
                 addressField = get('email-address')
                 if (addressField.value.includes(`${newEmail}, `)) {
                     email.classList.remove('active')
-                    current = addressField.value
                     edited = addressField.value.replace(`${newEmail}, `, '')
                     addressField.value = edited
                 } else {
@@ -124,19 +108,49 @@ function addRemoveCivilRightsAdresses() {
 }
 
 
+// slice out from 24 and replace the rest
 function addRemoveSubject() {
     buttons = document.querySelectorAll('.subject-button')
     buttons.forEach(button => {
         button.addEventListener('click', () => {
-            subject = button.getAttribute("data-type")
-            subjectField = get('subject')
+            let subject = button.getAttribute("data-type")
+            let subjectField = get('subject')
             if (subjectField.value.includes(`${subject}, `)) {
-                current = subjectField.value
-                edited = subjectField.value.replace(`${subject}, `, '')
+                let edited = subjectField.value.replace(`${subject}, `, '')
                 subjectField.value = edited
+                let extraEnd = subjectField.value.slice(-2)
+                let extraFront = subjectField.value.slice(24, 26)
+                if (extraEnd === ', ') {
+                    let finalStr = subjectField.value.replace(extra, '')
+                    subjectField.value = finalStr
+                }else if (extraFront === ', ') {
+                    let newStr = subjectField.value.replace(extraFront, '')
+                    subjectField.value = newStr
+                }
+            } else if (subjectField.value.includes(`${subject}`)) {
+                let edited = subjectField.value.replace(`${subject}`, '')
+                subjectField.value = edited
+                let extraEnd = subjectField.value.slice(-2)
+                let extraFront = subjectField.value.slice(24, 26)
+                if (extraEnd === ', ') {
+                    let finalStr = subjectField.value.replace(extraEnd, '')
+                    subjectField.value = finalStr
+                }else if (extraFront === ', '){
+                    let newStr = subjectField.value.replace(extraFront, '')
+                    subjectField.value = newStr
+                }
             } else {
-                current = subjectField.value
-                subjectField.value = `${subject}, ${current}`
+                let current = subjectField.value
+                subjectField.value = `${current}, ${subject}`
+                let extraEnd = subjectField.value.slice(-2)
+                let extraFront = subjectField.value.slice(24, 26)
+                if (extraEnd === ', '){
+                    let finalStr = subjectField.value.replace(extraEnd, '')
+                    subjectField.value = finalStr
+                }else if (extraFront === ', ') {
+                    let newStr = subjectField.value.replace(extraFront, '')
+                    subjectField.value = newStr
+                }
             }
         })
     })
@@ -144,17 +158,17 @@ function addRemoveSubject() {
 
 
 function addRemoveEmailAddress() {
-    buttons = document.querySelectorAll('.email-button')
+    let buttons = document.querySelectorAll('.email-button')
     buttons.forEach(button => {
         button.addEventListener('click', () => {
-            newAddress = button.getAttribute("data-type")
-            addressField = get('email-address')
-            if (addressField.value.includes(`${newAddress}, `)) {
-                current = addressField.value
-                edited = addressField.value.replace(`${newAddress}, `, '')
+            let newAddress = button.getAttribute("data-type")
+            let addressField = get('email-address')
+            if (addressField.value.includes(`${newAddress},`)) {
+                let edited = addressField.value.replace(`${newAddress},`, '')
                 addressField.value = edited
-            } else {
-                current = addressField.value
+            } 
+            else {
+                let current = addressField.value
                 addressField.value = `${newAddress}, ${current}`
             }
         })
@@ -165,7 +179,6 @@ function addRemoveEmailAddress() {
 //*** called functions ***/
 removeScreenshot()
 toggelButtons()
-// buttonPress()
 get()
 addRemoveEmailAddress()
 addRemoveSubject()

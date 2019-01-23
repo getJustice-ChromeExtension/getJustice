@@ -122,6 +122,10 @@ a.active{
     border-width: 2px;
     border-style: solid;
     margin: 2px;
+<<<<<<< HEAD
+    
+=======
+>>>>>>> master
    
   
   }
@@ -131,8 +135,9 @@ a.active{
     color: whitesmoke;
 } 
 
-
-  
+.logname {
+    font-size: 14px;
+}  
   
 .button-info {
 
@@ -140,6 +145,12 @@ a.active{
     margin-left: 0;
 
 }
+
+.extnlogo {
+    margin-left:2%;
+}
+
+
 .vision {
 
     font-size: 16px;   

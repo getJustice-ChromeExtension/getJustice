@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+
 {% load static %}
 
 {% block header %}
@@ -19,21 +20,21 @@
 </div>
 <div class="line-two">
 </div>
- 
+
 
     
     <h4> I would like to report a:</h4>
-    <p>Hover over each type of crime for a definition</p>
+    <p>[Hover over each type of crime for a definition]</p>
     <br>
    
         <div>
-            <button id="hate-crime-button" type="button" class="subject-button form-btn btn-lg" data-type="Hate Crime" data-toggle="collapse" data-target="#form-one-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip"  data-placement="bottom" title=" **Prejudice-motivated crime   **Perpetrator targets a victim because of his or her membership in a certain social group or race">Hate Crime</button>
+            <button id="hate-crime-button" type="button" class="subject-button form-btn btn-lg" data-type="Hate Crime" data-toggle="collapse" data-target="#form-one-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip"  data-placement="bottom" title="Prejudice-motivated crime, Perpetrator targets a victim because of his or her membership in a certain social group or race">Hate Crime</button>
             
     
-            <button id="police-brut-button" class="subject-button form-btn btn-lg" data-type="Police Brutality" data-toggle="collapse" data-target="#form-two-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip"  data-placement="bottom" title="**Wrongful arrests   **Unjustified searches   **Unlawful destruction of evidence   **Excessive force  **Unlawful police shootings.">Police Brutality</span></button>
+            <button id="police-brut-button" class="subject-button form-btn btn-lg" data-type="Police Brutality" data-toggle="collapse" data-target="#form-two-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip"  data-placement="bottom" title="Wrongful arrests,  Unjustified searches,   Unlawful destruction of evidence,  Excessive force,  Unlawful police shootings.">Police Brutality</span></button>
             
             
-            <button id="civ-rights-violate-button" class="subject-button form-btn btn-lg" data-type="Civil Rights Violation" data-toggle="collapse" data-target="#form-three-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip" d data-placement="bottom" title="**Hate crimes **Migrant worker exploitation **Law enforcement misconduct **Religious interference or property damage **Health care access interference, such as phone threat or bombing **Slavery rings.">Civil Rights Violation</span></button>
+            <button id="civ-rights-violate-button" class="subject-button form-btn btn-lg" data-type="Civil Rights Violation" data-toggle="collapse" data-target="#form-three-collapseLink" aria-expanded="false" aria-controls="formcollapseLink"><span data-toggle="tooltip" data-placement="bottom" title="Hate crimes, Migrant worker exploitation, Law enforcement misconduct, Religious interference or property damage, Health care access interference,  Slavery rings.">Civil Rights Violation</span></button>
 
     </div>
 </div>
@@ -96,10 +97,10 @@
                     <input type="text" name="reply_to" class="form-control" id="cc-address" value="{{ request.user.email }}" maxlength="500" placeholder="my email address" readonly>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="subject" class="form-control" id="subject" maxlength="500" placeholder="Subject" required>
+                    <input type="text" name="subject" value="Report from getJustice: " class="form-control" id="subject" maxlength="500" placeholder="Subject" required>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" name="message" id="email-body" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident(optional)" required>I am a concerned citizen who wishes to raise this issue of civil injustice that I have become aware of. I request you to take up this matter seriously and hope that my concerns, as well as those of others involved in this matter of public importance, will be addressed by you at the earliest.  I have included an image with more information about the crime below.
+                    <textarea class="form-control" name="message" id="email-body" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident(optional)" required>I am a concerned citizen who wishes to raise this issue of civil injustice that I have become aware of. I request you to take up this matter seriously and hope that my concerns, as well as those of others involved in this matter of public importance, will be addressed by you at the earliest.  I have included an image with more information about the incident below.
 
                     Sincerely,
                     getJUSTICE  user

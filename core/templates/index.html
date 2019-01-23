@@ -2,12 +2,11 @@
 
 {% load static %}
 
-{% block header %}  
-{% endblock header %}
 
+            
 {% block content %}
 
-
+<script src="{% static 'js/util.js' %}" defer></script>
 <body>  
 <div class="line">
 </div>
@@ -22,45 +21,63 @@
     <div class= "row">
       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
         <div class="extension text-center">
-        <a href="https://chrome.google.com/webstore/detail/getjustice/pgfhiopfgohejdoddncmbfpfiffmcpkp" class="extn-button"><img src="/static/getJusticeExtension.png" height="60px" width="200px"></a>
-        <br>  
+        
+      
         <br>
-        <p class="vision">Download our extension and with just three clicks, report injustice to civil rights groups, the police, and local media without leaving Twitter or Facebook.</p>
+        <p class="vision">Report injustice. Add our extension to chrome</p>
+        <a href="https://chrome.google.com/webstore/detail/lpofflhiaihmkcadpgakbdfhbfbkpiod/" class="extn-button"><img src="/static/getJusticeExtension.png" height="60px" width="200px" data-toggle="tooltip" data-placement="right" title="This extension is an attached tool to the chrome browser which allows you to take screenshots of the content of the webpage you are on and send it along with a report to the authorities and civil rights groups."></a>
         <br>
-        <a href="{% url 'website_report' %}" class="btn btn-success">Report </a>
         <br>
+        <p>OR</p>
         <br>
-        <p class="vision">Or report from our site.</p>
+        <p class="vision">Report injustice from this website.</p>
         <br>
         {% comment %} <h4><strong>Know about getJustice:</strong></h4> {% endcomment %}
-        <embed src="static/getJusticeTrailer.mp4" width="208" height="60" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <a href="{% url 'website_report' %}" class="btn btn-success">Report from this site </a>
+        
+        
+        
+        <br>
+        
         </div>
       </div>              
         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
           <div class="about">
             <div>
             
-              <h1 class="display-5">How I do getJustice</h1>                   
+              <h1 class="display-6">Get Justice Get Peace</h1>                   
             </div>
-          <br>
-          <br>
+          
+          
             <div class="container main">
              <div class="row">
-                <div class="col-lg-5 col-md-45 col-sm-12 col-xs-12">
-                  <p class="goal">Decrease the time from an act of injustice seen on social media to a suspect charged with the crime.</p>
-                  <p class="goal">We foster a new generation of political activists. Bring pressure through collective action on the authorities to respond proactively.</p>
-                  <p class="goal" ><strong>Activate your political power.</strong<></p>
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-11 col-xs-11">
-              <img src="/static/getJusticePromo.jpg">       
-              </div>
+                {% comment %} <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> {% endcomment %}
+                  <p class="goal">With just three clicks, send reports to civil rights groups, the police, the local government and local media without leaving your  webpage. We foster a new generation of political activists. Bring pressure through collective action on the authorities to respond proactively.</p>
+                {% comment %} </div>
+                 {% comment %} <div class="col-lg-4 col-md-4 col-sm-11 col-xs-11"> {% endcomment %}
+                
+              </div> 
+             <p class="goal" ><strong>Activate your political power.</strong<></p>
+        {% comment %} <iframe width="500" height="200" src="https://www.youtube.com/embed/ZG0k3yJIcbI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> {% endcomment %}
+        <div style="position:relative; padding-bottom:56.25%; padding-top:30px; height:0; overflow:hidden;">
+        {% comment %} <video width="500" height="200" controls> {% endcomment %}
+        <embed src="static/getJusticeTrailer.mp4" width="500" height="200" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% comment %} </video>  {% endcomment %}
+        </div>
+              {% comment %} <img src="/static/getJusticePromo.jpg">        {% endcomment %}
+             
             </div>   
           </div> 
         </div>
         
       </div>
     </div>
-  </div>          
+  </div>         
+  <div class="tooltip" role="tooltip">
+  <div class="arrow"></div>
+  <div class="tooltip-inner"></div>
+  </div>
+  </body> 
 {% endblock content %}
 {% block footer %}
 {% endblock footer %}

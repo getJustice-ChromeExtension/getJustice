@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
     {% block title %}
 
         Registration Form - {{ block.super }}
@@ -9,19 +9,19 @@
 
 
     {% block content %}
-
-        <h1>Registration Form</h1>
+<div class="container">
+        <h4>Registration Form</h4>
 
         <form role="form" action="" method="post">
 
             {% csrf_token %}
-
-            {{ form.as_p }}
+         {% comment %} {% crispy form %}  {% endcomment %}
+            {{ form | crispy}}  
 
             <input type="submit" value="Submit" />
 
         <p class="loginmsg">Please click on the extension again after you register to take the screenshot you wish to send. Thank you.</p>
         </form>
 
-
+</div>
     {% endblock content %}
