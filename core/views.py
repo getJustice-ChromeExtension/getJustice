@@ -41,7 +41,7 @@ def ext_create_report(request):
             screenshot_png = screenshot_decoder(screenshot)
             image = form.cleaned_data['image']
             msg = EmailMessage(
-                subject, message, 'getJustice.act@gmail.com', send_to)
+                subject, message, 'info@get-justice.org', send_to)
             msg.content_subtype = "html"
             if screenshot:
                 msg.attach('screenshot.png', screenshot_png, 'image/png')

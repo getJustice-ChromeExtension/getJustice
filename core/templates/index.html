@@ -32,6 +32,7 @@
         <br>
         <p class="vision">Report injustice from this website.</p>
         <br>
+        {% comment %} <h4><strong>Know about getJustice:</strong></h4> {% endcomment %}
         <a href="{% url 'website_report' %}" class="btn btn-success">Report from this site </a>
         
         
@@ -61,10 +62,11 @@
         
         
         <div style="position:relative; padding-bottom:56.25%; padding-top:30px; height:0; overflow:hidden;">
-        <video width="500" height="200" controls>
-        <source src="{% static "/video/getjusticevideo.mov" %}% type="video/MPEG-4">
-        </video> 
-        </div> 
+
+        {% comment %} <video width="500" height="200" controls> {% endcomment %}
+        <embed src="static/getJusticeTrailer.mp4" width="550" height="325" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        {% comment %} </video>  {% endcomment %}
+        </div>
               {% comment %} <img src="/static/getJusticePromo.jpg">        {% endcomment %}
              
             </div>   
