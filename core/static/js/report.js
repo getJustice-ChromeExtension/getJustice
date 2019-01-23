@@ -7,9 +7,29 @@ function get(id) {
     return object
 }
 
+
 let subjectHeader = "Report from getJustice: "
 
+
+function removeComma(toClean){
+    let extraEnd = toClean.value.slice(-2)
+    let extraFront = toClean.value.slice(24, 26)
+    if (extraEnd === ', ') {
+        let newStr = toClean.value.replace(extraEnd, '')
+        toClean.value = newStr
+        let cleanedStr = toClean.value
+        return cleanedStr
+    } else if (extraFront === ', ') {
+        let newStr = toClean.value.replace(extraFront, '')
+        toClean.value = newStr
+        let cleanedStr = toClean.value
+        return cleanedStr
+    }
+}
+
+
 //*** function to remove screenshot ***//
+
 function removeScreenshot() {
     $('#remove-screenshot').on('click', function () {
         $('#new-screenshot').remove()
@@ -17,6 +37,8 @@ function removeScreenshot() {
     });
 };
 
+
+//***  button functions ***/
 
 function toggelButtons() {
     buttons = document.querySelectorAll('.form-btn')
@@ -108,7 +130,6 @@ function addRemoveCivilRightsAdresses() {
 }
 
 
-// slice out from 24 and replace the rest
 function addRemoveSubject() {
     buttons = document.querySelectorAll('.subject-button')
     buttons.forEach(button => {
@@ -117,40 +138,19 @@ function addRemoveSubject() {
             let subjectField = get('subject')
             if (subjectField.value.includes(`${subject}, `)) {
                 let edited = subjectField.value.replace(`${subject}, `, '')
-                subjectField.value = edited
-                let extraEnd = subjectField.value.slice(-2)
-                let extraFront = subjectField.value.slice(24, 26)
-                if (extraEnd === ', ') {
-                    let finalStr = subjectField.value.replace(extra, '')
-                    subjectField.value = finalStr
-                }else if (extraFront === ', ') {
-                    let newStr = subjectField.value.replace(extraFront, '')
-                    subjectField.value = newStr
-                }
+                subjectField.value = edited           
+                let toClean = subjectField
+                removeComma(toClean)
             } else if (subjectField.value.includes(`${subject}`)) {
                 let edited = subjectField.value.replace(`${subject}`, '')
                 subjectField.value = edited
-                let extraEnd = subjectField.value.slice(-2)
-                let extraFront = subjectField.value.slice(24, 26)
-                if (extraEnd === ', ') {
-                    let finalStr = subjectField.value.replace(extraEnd, '')
-                    subjectField.value = finalStr
-                }else if (extraFront === ', '){
-                    let newStr = subjectField.value.replace(extraFront, '')
-                    subjectField.value = newStr
-                }
+                let toClean = subjectField
+                removeComma(toClean)
             } else {
                 let current = subjectField.value
                 subjectField.value = `${current}, ${subject}`
-                let extraEnd = subjectField.value.slice(-2)
-                let extraFront = subjectField.value.slice(24, 26)
-                if (extraEnd === ', '){
-                    let finalStr = subjectField.value.replace(extraEnd, '')
-                    subjectField.value = finalStr
-                }else if (extraFront === ', ') {
-                    let newStr = subjectField.value.replace(extraFront, '')
-                    subjectField.value = newStr
-                }
+                let toClean = subjectField
+                removeComma(toClean)
             }
         })
     })
