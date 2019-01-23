@@ -35,7 +35,7 @@ SECRET_KEY = os.getenv("GETJUSTICE_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # Application definition
 
@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'pwa',
     'registration',
+    'crispy_forms',
 
     # 'allauth',
     # 'allauth.account',
@@ -125,7 +126,7 @@ DATABASES = {
     }
 }
 
-SITE_ID=1
+SITE_ID = 1
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
