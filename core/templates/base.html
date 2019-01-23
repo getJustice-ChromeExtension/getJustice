@@ -19,37 +19,37 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 	 crossorigin="anonymous" defer></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-	 crossorigin="anonymous" defer></script>
+	 crossorigin="anonymous" defer></script>	
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
 	 crossorigin="anonymous">
+	<script src="{% static 'js/util.js' %}" defer></script>
 	
 </head> 
 
 <body>
 		<div class="view" style="background-image: url('https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/50676861_822393314770416_511573666295709696_n.jpg?_nc_cat=108&_nc_ht=scontent-iad3-1.xx&oh=a9de6a0d4138196cd9bc2cc73761293f&oe=5CFF163A'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 
-		{% block header %}
-		{% endblock header %}
+		{% block header %}  
+{% endblock header %}
 		<nav class="navbar navbar-expand-lg navbar-dark">
 			<a href="{% url 'home' %}"><img src="/static/GetJusticeFist32.png" id="fistLogo" class="img-responsive pull-left logo" alt="logo" height= "40"/></a>	
 			<a class="navbar-brand" href="{% url 'home' %}"><h1><img src="/static/getJusticeLogo.png" width="100%%"></h1></a> 							
 					<ul class="navbar-nav mr-auto move">
-						<li class="nav-item active"><a class="nav-link" href="{% url 'faq' %}">FAQs</a></li>
+					
+						<li class="nav-item"><a class="nav-link" href="{% url 'faq' %}">FAQs</a></li>
 						<li><a class="nav-link" href="{% url 'rights' %}">Rights</a></li>
-						<li><a class="nav-link" href="{% url 'reps' %}">Reps</a></li>		
-              </nav>   
-        <div class="container register">    {% if user.is_authenticated %}
-                   
-                        <a class="log" href="{% url 'auth_logout' %}">Logout</a>
-                    
-                    {% else %}
-                  
-                        <a class="log" href="{% url 'auth_login' %}">Login</a>
-                   
-                   
-                        <a class="log" href="{% url 'registration_register' %}">Register</a>
+						<li><a class="nav-link" href="{% url 'reps' %}">Reps</a></li>	
+                 			{% if user.is_authenticated %}	
+							 <li class="nav-link logname"><span>You are logged in as: {{ user.username }}</span></li>	  
+                       <li> <a class="log nav-link" href="{% url 'auth_logout' %}"><span>Logout</span></a></li>			
+                    			{% else %}                  
+                       <li><a class="log nav-link" href="{% url 'auth_login' %}"><span>Login</span></a></li>                                      
+                       <li> <a class="log nav-link" href="{% url 'registration_register' %}
+					   "><span>Register</span></a></li>
+					   {% endif %} 
+				</nav>	   
         </div>
-            {% endif %} 
+            
   				
 		
 			
