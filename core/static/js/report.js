@@ -7,6 +7,8 @@ function get(id) {
     return object
 }
 
+let subjectHeader = "Report from getJustice:"
+
 //*** function to remove screenshot ***//
 function removeScreenshot() {
     $('#remove-screenshot').on('click', function () {
@@ -105,39 +107,65 @@ function addRemoveCivilRightsAdresses() {
     })
 }
 
+function changeSubject() {
+    buttons = document.querySelectorAll('.subject-button')
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            let subject = button.getAttribute("data-type")
+            let subjectField = get('subject')
+            let subjectArray = []
 
+        })
+    })
+}
+
+
+
+// slice out from 24 and replace the rest
 function addRemoveSubject() {
     buttons = document.querySelectorAll('.subject-button')
     buttons.forEach(button => {
         button.addEventListener('click', () => {
-            subject = button.getAttribute("data-type")
-            subjectField = get('subject')
+            let subject = button.getAttribute("data-type")
+            let subjectField = get('subject')
             if (subjectField.value.includes(`${subject}, `)) {
-                edited = subjectField.value.replace(`${subject}, `, '')
+                let edited = subjectField.value.replace(`${subject}, `, '')
                 subjectField.value = edited
-                extra = subjectField.value.slice(-2)
-                console.log(extra)
-                if (extra === ', ') {
-                    finalStr = subjectField.value.replace(extra, '')
+                let extraEnd = subjectField.value.slice(-2)
+                let extraFront = subjectField.value.slice(0, 2)
+                console.log(extraFront)
+                if (extraEnd === ', ') {
+                    let finalStr = subjectField.value.replace(extra, '')
                     subjectField.value = finalStr
+                }else if (extraFront === ', ') {
+                    let newStr = subjectField.value.replace(extraFront, '')
+                    subjectField.value = newStr
                 }
             } else if (subjectField.value.includes(`${subject}`)) {
-                edited = subjectField.value.replace(`${subject}`, '')
+                let edited = subjectField.value.replace(`${subject}`, '')
                 subjectField.value = edited
-                extra = subjectField.value.slice(-2)
-                console.log(extra)
-                if (extra === ', ') {
-                    finalStr = subjectField.value.replace(extra, '')
+                let extraEnd = subjectField.value.slice(-2)
+                let extraFront = subjectField.value.slice(0, 2)
+                console.log(extraFront)
+                if (extraEnd === ', ') {
+                    let finalStr = subjectField.value.replace(extraEnd, '')
                     subjectField.value = finalStr
+                }else if (extraFront === ', '){
+                    let newStr = subjectField.value.replace(extraFront, '')
+                    subjectField.value = newStr
                 }
             } else {
-                current = subjectField.value
-                subjectField.value = `${subject}, ${current}`
-                extra = subjectField.value.slice(-2)
-                console.log(extra)
-                if (extra === ', '){
-                    finalStr = subjectField.value.replace(extra, '')
+                let current = subjectField.value
+                subjectField.value = `${current}, ${subject}`
+                let extraEnd = subjectField.value.slice(-2)
+                let extraFront = subjectField.value.slice(0, 2)
+                console.log(extraFront)
+                if (extraEnd === ', '){
+                    let finalStr = subjectField.value.replace(extraEnd, '')
                     subjectField.value = finalStr
+                }else if (extraFront === ', ') {
+                    let newStr = subjectField.value.replace(extraFront, '')
+                    subjectField.value = newStr
                 }
             }
         })
@@ -170,6 +198,7 @@ toggelButtons()
 get()
 addRemoveEmailAddress()
 addRemoveSubject()
+// changeSubject()
 addRemoveHateCrimeAdresses()
 addRemovePoliceBrutailityAdresses()
 addRemoveCivilRightsAdresses()
