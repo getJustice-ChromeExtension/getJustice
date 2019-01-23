@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 from dotenv import load_dotenv
-import django_heroku
+
 
 load_dotenv()
 
@@ -24,6 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PWA_SERVICE_WORKER_PATH = os.path.join(
     BASE_DIR, 'core/static/js', 'serviceworker.js')
 
+# COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -33,8 +34,8 @@ SECRET_KEY = os.getenv("GETJUSTICE_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'http://getjustice.herokuapp.com']
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # Application definition
@@ -51,6 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
@@ -71,6 +73,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -168,6 +171,7 @@ AUTH_USER_MODEL = 'core.User'
 
 STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
 STATICFILES_DIR = os.path.join(BASE_DIR, 'static')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -192,8 +196,6 @@ REST_FRAMEWORK = {
 # Activate django_heroku
 
 
-django_heroku.settings(locals())
-
 # Email Settings
 
 # SendGrid Email Settings (Sends email to real people)
@@ -211,7 +213,7 @@ django_heroku.settings(locals())
 #     EMAIL_HOST_PASSWORD = ""
 #     EMAIL_PORT = 1025
 #     EMAIL_USE_TLS = False
-#     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 
 # MailGun
 
@@ -220,6 +222,8 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'postmaster@sandboxb913aef2e2364d4292ac548befbb1a04.mailgun.org'
 EMAIL_HOST_PASSWORD = os.getenv('MAILGUN_PASS')
 EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'getjustice.act@gmail.com'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # MailDev Email Settings (Doesn't send email to real people)
 # if DEBUG:
