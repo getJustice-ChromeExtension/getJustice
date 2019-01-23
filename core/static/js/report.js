@@ -107,19 +107,6 @@ function addRemoveCivilRightsAdresses() {
     })
 }
 
-function changeSubject() {
-    buttons = document.querySelectorAll('.subject-button')
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            let subject = button.getAttribute("data-type")
-            let subjectField = get('subject')
-            let subjectArray = []
-
-        })
-    })
-}
-
-
 
 // slice out from 24 and replace the rest
 function addRemoveSubject() {
@@ -171,17 +158,17 @@ function addRemoveSubject() {
 
 
 function addRemoveEmailAddress() {
-    buttons = document.querySelectorAll('.email-button')
+    let buttons = document.querySelectorAll('.email-button')
     buttons.forEach(button => {
         button.addEventListener('click', () => {
-            newAddress = button.getAttribute("data-type")
-            addressField = get('email-address')
+            let newAddress = button.getAttribute("data-type")
+            let addressField = get('email-address')
             if (addressField.value.includes(`${newAddress},`)) {
-                edited = addressField.value.replace(`${newAddress},`, '')
+                let edited = addressField.value.replace(`${newAddress},`, '')
                 addressField.value = edited
             } 
             else {
-                current = addressField.value
+                let current = addressField.value
                 addressField.value = `${newAddress}, ${current}`
             }
         })
@@ -195,7 +182,6 @@ toggelButtons()
 get()
 addRemoveEmailAddress()
 addRemoveSubject()
-// changeSubject()
 addRemoveHateCrimeAdresses()
 addRemovePoliceBrutailityAdresses()
 addRemoveCivilRightsAdresses()

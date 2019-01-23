@@ -44,7 +44,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
                         windowId: newWin.id,
                         index: 0,
                         focused: false
-                    }, function() {
+                    } , function() {
                         var lastIdx = tabsToClose.length - 1;
                         tabsToClose.forEach(function(t, idx) {
                             chrome.tabs.remove(t[0].id);
