@@ -7,7 +7,7 @@ function get(id) {
     return object
 }
 
-let subjectHeader = "Report from getJustice:"
+let subjectHeader = "Report from getJustice: "
 
 //*** function to remove screenshot ***//
 function removeScreenshot() {
@@ -132,8 +132,7 @@ function addRemoveSubject() {
                 let edited = subjectField.value.replace(`${subject}, `, '')
                 subjectField.value = edited
                 let extraEnd = subjectField.value.slice(-2)
-                let extraFront = subjectField.value.slice(0, 2)
-                console.log(extraFront)
+                let extraFront = subjectField.value.slice(24, 26)
                 if (extraEnd === ', ') {
                     let finalStr = subjectField.value.replace(extra, '')
                     subjectField.value = finalStr
@@ -145,8 +144,7 @@ function addRemoveSubject() {
                 let edited = subjectField.value.replace(`${subject}`, '')
                 subjectField.value = edited
                 let extraEnd = subjectField.value.slice(-2)
-                let extraFront = subjectField.value.slice(0, 2)
-                console.log(extraFront)
+                let extraFront = subjectField.value.slice(24, 26)
                 if (extraEnd === ', ') {
                     let finalStr = subjectField.value.replace(extraEnd, '')
                     subjectField.value = finalStr
@@ -158,8 +156,7 @@ function addRemoveSubject() {
                 let current = subjectField.value
                 subjectField.value = `${current}, ${subject}`
                 let extraEnd = subjectField.value.slice(-2)
-                let extraFront = subjectField.value.slice(0, 2)
-                console.log(extraFront)
+                let extraFront = subjectField.value.slice(24, 26)
                 if (extraEnd === ', '){
                     let finalStr = subjectField.value.replace(extraEnd, '')
                     subjectField.value = finalStr
