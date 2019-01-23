@@ -1,24 +1,18 @@
 
 
 
-.wrapper {
-    position: relative;
-    height: 100vh;
-}
+
 .logo {
     margin-left: 5%;
 }
 
 .extension {
-    background-color: black;
-    /* float: left; */
+    background-color: black;  
     border: white;
     border-style: solid;
     border-width: 2px; 
     padding: 40px;
-    font-weight: bold;    
-    /* height: 50%; */
-    
+    font-weight: bold;     
     color: whitesmoke;
 
 }
@@ -61,13 +55,11 @@
     font-family: 'Opensans', sans-serif;
 
 }
-/* .register {
-    float: right;
-} */
+
 
 .log {
-    font-size: 14px;
-    color: green;
+    font-size: 12px;
+    color: white;
 
 }
 .report {
@@ -91,7 +83,7 @@ a.active{
 
 .navbar-brand {
     margin-left: 35%;
-    /* margin-right: 30%; */
+    
     
 }
 .navbar {
@@ -122,10 +114,6 @@ a.active{
     border-width: 2px;
     border-style: solid;
     margin: 2px;
-<<<<<<< HEAD
-    
-=======
->>>>>>> master
    
   
   }
@@ -136,7 +124,7 @@ a.active{
 } 
 
 .logname {
-    font-size: 14px;
+    font-size: 12px;
 }  
   
 .button-info {
