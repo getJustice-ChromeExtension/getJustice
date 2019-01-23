@@ -57,7 +57,12 @@
                 
               </div> 
              <p class="goal" ><strong>Activate your political power.</strong<></p>
-        <iframe width="500" height="200" src="https://www.youtube.com/embed/ZG0k3yJIcbI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% comment %} <iframe width="500" height="200" src="https://www.youtube.com/embed/ZG0k3yJIcbI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> {% endcomment %}
+        <div style="position:relative; padding-bottom:56.25%; padding-top:30px; height:0; overflow:hidden;">
+        <video width="500" height="200" controls>
+        <source src="{{ STATIC_URL }}getjusticevideo.mov" type="video/MPEG-4">
+        </video> 
+        </div>
               {% comment %} <img src="/static/getJusticePromo.jpg">        {% endcomment %}
              
             </div>   
