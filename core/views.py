@@ -41,7 +41,7 @@ def ext_create_report(request):
             screenshot_png = screenshot_decoder(screenshot)
             image = form.cleaned_data['image']
             msg = EmailMessage(
-                subject, message, 'info@get-justice.org', send_to)
+                subject, message, 'getjusticereport@gmail.com', send_to)
             msg.content_subtype = "html"
             if screenshot:
                 msg.attach('screenshot.png', screenshot_png, 'image/png')
@@ -86,7 +86,7 @@ def create_report(request):
 
             image = form.cleaned_data['image']
             msg = EmailMessage(
-                subject, message, 'info@get-justice.org', send_to)
+                subject, message, 'getjusticereport@gmail.com', send_to)
             msg.content_subtype = "html"
             if image:
                 msg.attach(image.name, image.read(), image.content_type)
