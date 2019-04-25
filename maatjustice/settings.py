@@ -197,12 +197,12 @@ django_heroku.settings(locals())
 # Email Settings
 
 # SendGrid Email Settings (Sends email to real people)
-# EMAIL_HOST = 'smtp.sendgrid.net'
-# EMAIL_HOST_USER = 'apikey'
-# EMAIL_HOST_PASSWORD = os.getenv("Justice_Key")
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = os.getenv("Justice_Key")
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # MailDev Email Settings (Doesn't send email to real people)
 # if DEBUG:
@@ -213,13 +213,13 @@ django_heroku.settings(locals())
 #     EMAIL_USE_TLS = False
 #     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-# MailGun
+# MailGun (Doesn't send to real people)
 
-EMAIL_HOST = 'smtp.mailgun.org'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'postmaster@sandboxb913aef2e2364d4292ac548befbb1a04.mailgun.org'
-EMAIL_HOST_PASSWORD = os.getenv('MAILGUN_PASS')
-EMAIL_USE_TLS = True
+# EMAIL_HOST = 'smtp.mailgun.org'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'postmaster@sandboxb913aef2e2364d4292ac548befbb1a04.mailgun.org'
+# EMAIL_HOST_PASSWORD = os.getenv('MAILGUN_PASS')
+# EMAIL_USE_TLS = True
 
 # MailDev Email Settings (Doesn't send email to real people)
 # if DEBUG:
