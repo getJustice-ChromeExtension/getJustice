@@ -43,14 +43,14 @@
 						<li class="nav-item"><a class="nav-link" href="{% url 'faq' %}">FAQs</a></li>
 						<li><a class="nav-link" href="{% url 'rights' %}">Rights</a></li>
 						<li><a class="nav-link" href="{% url 'reps' %}">Reps</a></li>	
-							{% if user.is_authenticated %}	
+							{% comment %} {% if user.is_authenticated %}	
 							 <li class="nav-link logname">Logged in as: {{ user.username }}</li>	  
                        <li> <a class="log nav-link" href="{% url 'auth_logout' %}">Logout</a></li>			
                     			{% else %}                  
                        <li><a class="log nav-link" href="{% url 'auth_login' %}">Login</a></li>                                      
                        <li> <a class="log nav-link" href="{% url 'registration_register' %}
 					   "><span>Register</span></a></li>
-					   {% endif %}  
+					   {% endif %}   {% endcomment %}
 				</nav>
 			
 			
