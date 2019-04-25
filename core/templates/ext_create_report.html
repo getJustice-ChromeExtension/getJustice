@@ -33,7 +33,8 @@
 <div class="view" style="background-image: url('https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/50676861_822393314770416_511573666295709696_n.jpg?_nc_cat=108&_nc_ht=scontent-iad3-1.xx&oh=a9de6a0d4138196cd9bc2cc73761293f&oe=5CFF163A'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 
 		 <nav class="navbar navbar-expand-lg navbar-dark">
-			<h1><img src="/static/getJusticeLogo.png" width="100%%"></h1>				<ul>	
+			{% comment %} <a href="{% url 'home' %}"><img src="/static/GetJusticeFist32.png" id="fistLogo" class="img-responsive pull-left logo" alt="logo" height= "40"/></a>	 {% endcomment %}
+			<h1><img src="/static/getJusticeLogo.png" class="center-block" width="100%%"></h1>				<ul>	
             {% comment %} {% if user.is_authenticated %}								   
                        <li> <a class="log nav-link" href="{% url 'auth_logout' %}"><span>Logout</span></a></li>			
                     			{% else %}                  
