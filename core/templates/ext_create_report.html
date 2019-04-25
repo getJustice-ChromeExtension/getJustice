@@ -124,9 +124,9 @@
                 <div class="form-group">
                     <input type="text" name="send_to" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients" required readonly>
                 </div>
-                <div class="form-group">
+                {% comment %} <div class="form-group">
                     <input type="text" name="reply_to" class="form-control" id="cc-address" value="{{ request.user.email }}" maxlength="500" placeholder="my email address" readonly>
-                </div>
+                </div> {% endcomment %}
                 <div class="form-group">
                     <input type="text" name="subject" class="form-control" id="subject" maxlength="500" placeholder="Subject" value="Report from getJustice: " required>
                 </div>
