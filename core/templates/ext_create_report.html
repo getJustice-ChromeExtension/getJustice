@@ -122,7 +122,7 @@
             <form action="{% url 'ext_report' %}" id="report-form" method="POST" class="form-group" enctype="multipart/form-data">
                     {% csrf_token %} 
                 <div class="form-group">
-                    <input type="text" name="send_to" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients" required readonly>
+                    <input type="text" name="send_to" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients" required >
                 </div>
                 {% comment %} <div class="form-group">
                     <input type="text" name="reply_to" class="form-control" id="cc-address" value="{{ request.user.email }}" maxlength="500" placeholder="my email address" readonly>
