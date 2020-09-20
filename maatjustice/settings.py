@@ -196,6 +196,13 @@ django_heroku.settings(locals())
 
 # Email Settings
 
+# MailGun (Sends to real people)
+EMAIL_HOST = 'smtp.mailgun.org'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'postmaster@get-justice.org'
+EMAIL_HOST_PASSWORD = os.getenv('MAILGUN_PASS')
+EMAIL_USE_TLS = True
+
 # MailDev Email Settings (Doesn't send email to real people)
 # if DEBUG:
 #     EMAIL_HOST = '127.0.0.1'
@@ -204,13 +211,5 @@ django_heroku.settings(locals())
 #     EMAIL_PORT = 1025
 #     EMAIL_USE_TLS = False
 #     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
-# MailGun
-
-EMAIL_HOST = 'smtp.mailgun.org'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'postmaster@get-justice.org'
-EMAIL_HOST_PASSWORD = os.getenv('MAILGUN_PASS')
-EMAIL_USE_TLS = True
 
 ACCOUNT_ACTIVATION_DAYS = 7
